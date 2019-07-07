@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+      .buttonShape {
+      width: 100%;
+      background: rgba(156, 37, 249, 0.4);
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      font-family: b-nazanin;
+   }
+  </style>
+
+  <body>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+          <div class="row" style="margin-top: 80px">
+         <div class="col-md-2"></div>
+           <div class="col-md-2">
+               <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
+               <div class="buttonShape">مطالبه</div>
+            </div>
+           <div class="col-md-2">
+               <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
+               <div class="buttonShape">بدهی</div>
+            </div>
+           <div class="col-md-2">
+              <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
+               <div class="buttonShape">هزینه</div>
+            </div>
+           <div class="col-md-2">
+              <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
+               <div class="buttonShape">درآمد</div>
+            </div>
+        <div class="co-md-2"></div>
+        </div>
+          <div class="row" style="margin-top: 35px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+              <input type="text" name="searchText" class="buttonShape" placeholder="کلمه مورد نظر برای جستجو را وارد کنید">
+            </div>
+            <div class="col-md-4">
+              <select name="bank" class="buttonShape">
+                {% if selected_source %}
+                <option value="{{ selected_source.id }}">{{ selected_source.name_bank }}</option>
+                {% endif %}
+               <option value="0">همه</option>
+                {% for company in name_bank %}
+                <option value="{{ company.id }}">{{ company.name_bank }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          <div class="row" style="margin-top: 35px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <button type="submit" class="buttonShape">انتخاب</button>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+      </form>
+      <div class="row" style="margin-top: 35px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <p class="buttonShape"> مجموع {{ type }}: {{ sumOfType }}</p>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 35px;">
+        <div class="col-md-12">
+          <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center">عنوان</th>
+                <th scope="col" style="text-align: center">رقم</th>
+                <th scope="col" style="text-align: center">تاریخ</th>
+                <th scope="col" style="text-align: center">منبع</th>
+                <th scope="col" style="text-align: center">تضویحات</th>
+              </tr>
+              {% for transaction in transactions %}
+              <tr align="center">
+                <td>{{ transaction.title }}</td>
+                <td>{{ transaction.cash }}</td>
+                <td>{{ transaction.date }}</td>
+                <td>{{ transaction.source }}</td>
+                <td>{{ transaction.desc }}</td>
+              </tr>
+              {% endfor %}
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

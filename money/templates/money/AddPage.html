@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <style>
+      .buttonShape {
+      width: 100%;
+      background: rgba(156, 37, 249, 0.4);
+      border-radius: 5px;
+      text-align: center;
+      font-size: 18px;
+      font-family: b-nazanin;
+   }
+  </style>
+  <body>
+  <script type='text/javascript'>
+   $("input:radio").change(function () {$("#postGender").prop("disabled", false);});
+  </script>
+
+    <div class="container" style="text-align: right;">
+      <div class="row"></div>
+      <form method="post" id="type" onsubmit="alert('مبادله با موفقیت ذخیره شده');">
+        {% csrf_token %}
+       <div class="row" style="margin-top: 80px">
+         <div class="col-md-2"></div>
+           <div class="col-md-2">
+               <input type="radio"  name="income" value="4">
+               <div class="buttonShape">مطالبه</div>
+            </div>
+           <div class="col-md-2">
+               <input type="radio"  name="income" value="3">
+               <div class="buttonShape">بدهی</div>
+            </div>
+           <div class="col-md-2">
+              <input type="radio"  name="income" value="2">
+               <div class="buttonShape">هزینه</div>
+            </div>
+           <div class="col-md-2">
+              <input type="radio" name="income" value="1">
+               <div class="buttonShape">درآمد</div>
+            </div>
+        <div class="co-md-2"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-2"></div>
+            <div class="col-md-8">
+            <select name="bank" class="buttonShape">
+              <option>انتخاب کنید</option>
+              {% for company in name_bank %}
+              <option value="{{ company.name_bank }}">{{ company.name_bank }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-2">
+              <P class="buttonShape">منبع مالی</P>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <input type="date" name="date" class="buttonShape jalali-datepicker" style="text-align: center;">
+          </div>
+            <div class="col-md-2">
+              <p class="buttonShape">تاریخ</p>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <input type="text" name="title" class="buttonShape">
+          </div>
+          <div class="col-md-2">
+              <p class="buttonShape">عنوان</p>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <input type="number" name="cash" class="buttonShape">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">مبلغ</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <input type="text" name="desc" class="buttonShape">
+          </div>
+            <div class="col-md-2">
+                <p class="buttonShape">توضیحات</p>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <button type="submit" class="buttonShape">ذخیره</button>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

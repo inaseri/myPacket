@@ -6,98 +6,248 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {%  load static %}
+    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+    <title>مبادلات</title>
+    <script>
+        function openlSlideMenu() {
+            document.getElementById('side-menu').style.width = '250px';
+        }
+        function closeSlideMenu() {
+            document.getElementById('side-menu').style.width = '0px';
+        }
+    </script>
   </head>
-  <style>
-      .buttonShape {
-      width: 100%;
-      background: rgba(156, 37, 249, 0.4);
-      border-radius: 5px;
-      text-align: center;
-      font-size: 18px;
-      font-family: b-nazanin;
-   }
-  </style>
-
   <body>
     <div class="container">
-      <form method="post">
-        {% csrf_token %}
-          <div class="row" style="margin-top: 80px">
-         <div class="col-md-2"></div>
-           <div class="col-md-2">
-               <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
-               <div class="buttonShape">مطالبه</div>
-            </div>
-           <div class="col-md-2">
-               <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
-               <div class="buttonShape">بدهی</div>
-            </div>
-           <div class="col-md-2">
-              <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
-               <div class="buttonShape">هزینه</div>
-            </div>
-           <div class="col-md-2">
-              <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
-               <div class="buttonShape">درآمد</div>
-            </div>
-        <div class="co-md-2"></div>
-        </div>
+      {% load humanize %}
+      <div class="row">
+              <div class="col-xs-12">
+                  <nav class="navbar " style="margin-bottom: 35px;">
+                      <p class="vertical-center style-logo-header">بانک من : {{ sum_bank|intcomma }}</p>
+                      <span class="open-slide">
+                      <a href="#" onclick="openlSlideMenu()">
+                          <svg style="width: 30px; height: 30px; margin-top: 8px; margin-left: 10px;">
+                              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                          </svg>
+                      </a>
+                    </span>
+                      <div id="side-menu" class="side-nav">
+                          <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                          <a href="{% url 'addTransactions' %}" >خانه</a>
+                          <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
+                          <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
+                          <a href="{% url 'index' %}" >تمامی مبادلات</a>
+                          <a href="{% url 'banks' %}" >تمامی بانک ها</a>
+                          <a href="{% url 'addTransactions' %}" >مشخصات من</a>
+                          <a href="{% url 'addTransactions' %}" >خروج</a>
+                      </div>
+                  </nav>
+              </div>
+          </div>
+      <div id="mainRowPhones">
+          <form method="post">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col-xs-3">
+                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
+                      <div class="buttonShape">مطالبه</div>
+                  </div>
+                  <div class="col-xs-3">
+                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
+                      <div class="buttonShape">بدهی</div>
+                  </div>
+                  <div class="col-xs-3">
+                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
+                      <div class="buttonShape">هزینه</div>
+                  </div>
+                  <div class="col-xs-3">
+                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
+                      <div class="buttonShape">درآمد</div>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-xs-6">
+                      <select name="bank" class="buttonShape">
+                          {% if selected_source %}
+                          <option value="{{ selected_source.id }}">{{ selected_source.name_bank }}</option>
+                          {% endif %}
+                          <option value="0">همه</option>
+                          {% for company in name_bank %}
+                          <option value="{{ company.id }}">{{ company.name_bank }}</option>
+                          {% endfor %}
+                      </select>
+                  </div>
+                  <div class="col-xs-6">
+                      <p class="buttonShape">منبع مالی</p>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 35px">
+                  <div class="col-xs-4">
+                      <input type="text"  name="endDate" class="buttonShape">
+                  </div>
+                  <div class="col-xs-2">
+                      <div class="buttonShape">تا</div>
+                  </div>
+                  <div class="col-xs-4">
+                      <input type="text"  name="startDate" class="buttonShape">
+                  </div>
+                  <div class="col-xs-2">
+                      <div class="buttonShape">از</div>
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-xs-12">
+                      <input type="text" name="searchText" class="buttonShape" placeholder="کلمه مورد نظر برای جستجو را وارد کنید">
+                  </div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-xs-12">
+                      <button type="submit" class="buttonShape">انتخاب</button>
+                  </div>
+              </div>
+          </form>
           <div class="row" style="margin-top: 35px;">
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-              <input type="text" name="searchText" class="buttonShape" placeholder="کلمه مورد نظر برای جستجو را وارد کنید">
-            </div>
-            <div class="col-md-4">
-              <select name="bank" class="buttonShape">
-                {% if selected_source %}
-                <option value="{{ selected_source.id }}">{{ selected_source.name_bank }}</option>
-                {% endif %}
-               <option value="0">همه</option>
-                {% for company in name_bank %}
-                <option value="{{ company.id }}">{{ company.name_bank }}</option>
-                {% endfor %}
-              </select>
-            </div>
-            <div class="col-md-2"></div>
+              <div class="col-xs-12">
+                  <p class="buttonShape"> مجموع {{ type }}: {{ sumOfType|intcomma }}</p>
+              </div>
           </div>
           <div class="row" style="margin-top: 35px;">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
-              <button type="submit" class="buttonShape">انتخاب</button>
-            </div>
-            <div class="col-md-2"></div>
+              <div class="col-xs-12">
+                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+                      <thead>
+                      <tr>
+                          <th scope="col" style="text-align: center">عنوان</th>
+                          <th scope="col" style="text-align: center">رقم</th>
+                          <th scope="col" style="text-align: center">تاریخ</th>
+                          <th scope="col" style="text-align: center">منبع</th>
+                          <th scope="col" style="text-align: center">تضویحات</th>
+                      </tr>
+                      {% for transaction in transactions %}
+                      <tr align="center">
+                          <td>{{ transaction.title }}</td>
+                          <td>{{ transaction.cash|intcomma }}</td>
+                          <td>{{ transaction.date }}</td>
+                          <td>{{ transaction.source }}</td>
+                          <td>{{ transaction.desc }}</td>
+                      </tr>
+                      {% endfor %}
+                      </thead>
+                  </table>
+              </div>
           </div>
-      </form>
-      <div class="row" style="margin-top: 35px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <p class="buttonShape"> مجموع {{ type }}: {{ sumOfType }}</p>
-        </div>
       </div>
-      <div class="row" style="margin-top: 35px;">
-        <div class="col-md-12">
-          <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
-            <thead>
-              <tr>
-                <th scope="col" style="text-align: center">عنوان</th>
-                <th scope="col" style="text-align: center">رقم</th>
-                <th scope="col" style="text-align: center">تاریخ</th>
-                <th scope="col" style="text-align: center">منبع</th>
-                <th scope="col" style="text-align: center">تضویحات</th>
-              </tr>
-              {% for transaction in transactions %}
-              <tr align="center">
-                <td>{{ transaction.title }}</td>
-                <td>{{ transaction.cash }}</td>
-                <td>{{ transaction.date }}</td>
-                <td>{{ transaction.source }}</td>
-                <td>{{ transaction.desc }}</td>
-              </tr>
-              {% endfor %}
-            </thead>
-          </table>
-        </div>
+      <div id="mainRowCamputer">
+          <form method="post">
+              {% csrf_token %}
+              <div class="row">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
+                      <div class="buttonShape">مطالبه</div>
+                  </div>
+                  <div class="col-md-2">
+                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
+                      <div class="buttonShape">بدهی</div>
+                  </div>
+                  <div class="col-md-2">
+                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
+                      <div class="buttonShape">هزینه</div>
+                  </div>
+                  <div class="col-md-2">
+                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
+                      <div class="buttonShape">درآمد</div>
+                  </div>
+                  <div class="co-md-2"></div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-4">
+                      <select name="bank" class="buttonShape">
+                          {% if selected_source %}
+                          <option value="{{ selected_source.id }}">{{ selected_source.name_bank }}</option>
+                          {% endif %}
+                          <option value="0">همه</option>
+                          {% for company in name_bank %}
+                          <option value="{{ company.id }}">{{ company.name_bank }}</option>
+                          {% endfor %}
+                      </select>
+                  </div>
+                  <div class="col-md-4">
+                      <p class="buttonShape">منبع مالی</p>
+                  </div>
+                  <div class="col-md-2"></div>
+              </div>
+              <div class="row" style="margin-top: 35px">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-2">
+                      <input type="text"  name="endDate" class="buttonShape">
+                  </div>
+                  <div class="col-md-2">
+                      <div class="buttonShape">تا</div>
+                  </div>
+                  <div class="col-md-2">
+                      <input type="text"  name="startDate" class="buttonShape">
+                  </div>
+                  <div class="col-md-2">
+                      <div class="buttonShape">از</div>
+                  </div>
+                  <div class="co-md-2"></div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                      <input type="text" name="searchText" class="buttonShape" placeholder="کلمه مورد نظر برای جستجو را وارد کنید">
+                  </div>
+                  <div class="col-md-2"></div>
+              </div>
+              <div class="row" style="margin-top: 35px;">
+                  <div class="col-md-2"></div>
+                  <div class="col-md-8">
+                      <button type="submit" class="buttonShape">انتخاب</button>
+                  </div>
+                  <div class="col-md-2"></div>
+              </div>
+          </form>
+          <div class="row" style="margin-top: 35px;">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <p class="buttonShape"> مجموع {{ type }}: {{ sumOfType|intcomma }}</p>
+              </div>
+          </div>
+          <div class="row" style="margin-top: 35px;">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+                      <thead>
+                      <tr>
+                          <th scope="col" style="text-align: center">عنوان</th>
+                          <th scope="col" style="text-align: center">رقم</th>
+                          <th scope="col" style="text-align: center">تاریخ</th>
+                          <th scope="col" style="text-align: center">منبع</th>
+                          <th scope="col" style="text-align: center">تضویحات</th>
+                      </tr>
+                      {% for transaction in transactions %}
+                      <tr align="center">
+                          <td>{{ transaction.title }}</td>
+                          <td>{{ transaction.cash|intcomma }}</td>
+                          <td>{{ transaction.date }}</td>
+                          <td>{{ transaction.source }}</td>
+                          <td>{{ transaction.desc }}</td>
+                      </tr>
+                      {% endfor %}
+                      </thead>
+                  </table>
+              </div>
+              <div class="col-md-2"></div>
+          </div>
       </div>
+      <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+	</script>
     </div>
   </body>
 </html>

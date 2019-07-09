@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    {%  load static %}
+    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+    <title>بانک ها</title>
+    <script>
+        function openlSlideMenu() {
+            document.getElementById('side-menu').style.width = '250px';
+        }
+        function closeSlideMenu() {
+            document.getElementById('side-menu').style.width = '0px';
+        }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+       {% load humanize %}
+      <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar ">
+                    <p class="vertical-center style-logo-header">تمام دارایی بدون معادلات انجام شده : {{ sum_cash_bank|intcomma }}</p>
+                    <span class="open-slide">
+                      <a href="#" onclick="openlSlideMenu()">
+                          <svg style="width: 30px; height: 30px; margin-top: 8px; margin-left: 10px;">
+                              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                          </svg>
+                      </a>
+                    </span>
+                    <div id="side-menu" class="side-nav">
+                      <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                      <a href="{% url 'addTransactions' %}" >خانه</a>
+                      <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
+                      <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
+                      <a href="{% url 'index' %}" >تمامی مبادلات</a>
+                      <a href="{% url 'banks' %}" >تمامی بانک ها</a>
+                      <a href="{% url 'addTransactions' %}" >مشخصات من</a>
+                      <a href="{% url 'addTransactions' %}" >خروج</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+      <div id="mainRowPhones">
+          <div class="row">
+              <div class="col-xs-12">
+                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+                      <thead>
+                      <tr>
+                          <th scope="col" style="text-align: center">موجودی</th>
+                          <th scope="col" style="text-align: center">نام بانک</th>
+                      </tr>
+                      {% for all_bank in all_banks %}
+                      <tr align="center">
+                          <td>{{ all_bank.cash_bank|intcomma }}</td>
+                          <td>{{ all_bank.name_bank }}</td>
+                      </tr>
+                      {% endfor %}
+                      </thead>
+                  </table>
+              </div>
+          </div>
+      </div>
+      <div id="mainRowCamputer">
+          <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+                      <thead>
+                      <tr>
+                          <th scope="col" style="text-align: center">موجودی</th>
+                          <th scope="col" style="text-align: center">نام بانک</th>
+                      </tr>
+                      {% for all_bank in all_banks %}
+                      <tr align="center">
+                          <td>{{ all_bank.cash_bank|intcomma }}</td>
+                          <td>{{ all_bank.name_bank }}</td>
+                      </tr>
+                      {% endfor %}
+                      </thead>
+                  </table>
+              </div>
+              <div class="col-md-2"></div>
+          </div>
+      </div>
+      <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+</script>
+    </div>
+  </body>
+</html>

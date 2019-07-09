@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{%  load static %}
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+    <title>اضافه کردن بانک</title>
+    <script>
+        function openlSlideMenu() {
+            document.getElementById('side-menu').style.width = '250px';
+        }
+        function closeSlideMenu() {
+            document.getElementById('side-menu').style.width = '0px';
+        }
+    </script>
+  </head>
+  <body>
+  <script type='text/javascript'>
+   $("input:radio").change(function () {$("#postGender").prop("disabled", false);});
+  </script>
+    <div class="container">
+       {% load humanize %}
+      <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar ">
+                    <p class="vertical-center style-logo-header">جیب من</p>
+                    <span class="open-slide">
+                      <a href="#" onclick="openlSlideMenu()">
+                          <svg style="width: 30px; height: 30px; margin-top: 8px; margin-left: 10px;">
+                              <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                              <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                              <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+                          </svg>
+                      </a>
+                    </span>
+                    <div id="side-menu" class="side-nav">
+                      <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
+                      <a href="{% url 'addTransactions' %}" >خانه</a>
+                      <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
+                      <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
+                      <a href="{% url 'index' %}" >تمامی مبادلات</a>
+                      <a href="{% url 'banks' %}" >تمامی بانک ها</a>
+                      <a href="{% url 'addTransactions' %}" >مشخصات من</a>
+                      <a href="{% url 'addTransactions' %}" >خروج</a>
+                    </div>
+                </nav>
+            </div>
+      </div>
+      <div id="mainRowPhones">
+            <form method="post" id="type" onsubmit="alert('شرکت با موفقیت ثبت شد');">
+                {% csrf_token %}
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-xs-6">
+                        <input type="text" name="bankName" class="buttonShape">
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="buttonShape">اسم بانک</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-xs-6">
+                        <input type="text" name="cashInBank" class="buttonShape">
+                    </div>
+                    <div class="col-xs-6">
+                        <p class="buttonShape">رقم بانک</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-xs-12">
+                        <button type="submit" class="buttonShape">ذخیره</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+      <div id="mainRowCamputer">
+            <form method="post" id="type" onsubmit="alert('شرکت با موفقیت ثبت شد');">
+                {% csrf_token %}
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="text" name="bankName" class="buttonShape">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="buttonShape">اسم بانک</p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <input type="text" name="cashInBank" class="buttonShape">
+                    </div>
+                    <div class="col-md-4">
+                        <p class="buttonShape">رقم بانک</p>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <button type="submit" class="buttonShape">ذخیره</button>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+                <div class="row" style="margin-top: 35px;">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <a href="{% url 'banks'%}" class="buttonShape">تمامی شرکت ها</a>
+                        <a></a>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </div>
+      <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+</script>
+    </div>
+  </body>
+</html>

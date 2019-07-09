@@ -4,6 +4,7 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('add/', views.addTransaction, name='addTransactions'),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('addtransactions/', views.addTransaction, name='addTransactions'),
+    path('addbank/', views.addBank, name='addBank'),
+    path('banks/', views.banks, name='banks')
 ]

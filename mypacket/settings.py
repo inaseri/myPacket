@@ -25,7 +25,7 @@ SECRET_KEY = 'ox5@xlm^j9ii52f8kuw0b1%k&4mp9z3-j5icg#j&d(yc$7l*6u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.28']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'money',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,8 @@ LOGIN_REDIRECT_URL = 'home'
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+FORMAT_MODULE_PATH = [
+    'Iman.formats',
+    'ImanSite.formats',
+]

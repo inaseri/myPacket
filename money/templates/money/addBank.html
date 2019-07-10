@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%  load static %}
+{% load pwa %}
 <html lang="fa">
   <head>
     <meta charset="utf-8">
@@ -120,6 +121,7 @@
 		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
 		document.getElementById("mainRowPhones").classList.toggle("showAll")
 </script>
+      {% progressive_web_app_meta %}
     </div>
   </body>
 </html>

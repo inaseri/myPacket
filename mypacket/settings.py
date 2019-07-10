@@ -25,7 +25,7 @@ SECRET_KEY = 'ox5@xlm^j9ii52f8kuw0b1%k&4mp9z3-j5icg#j&d(yc$7l*6u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.28']
+ALLOWED_HOSTS = ['192.168.1.28','172.16.1.178','127.0.0.1']
 
 
 # Application definition
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'money',
     'django.contrib.humanize',
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,29 @@ USE_TZ = True
 
 LOGIN_REDIRECT_URL = 'home'
 
+PWA_APP_NAME = 'جیب من'
+PWA_APP_DESCRIPTION = "مدیریت هزینه ها بدون هزینه"
+PWA_APP_THEME_COLOR = '#0A0302'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/money',
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/money'
+PWA_APP_ICONS = [
+{
+'src': '/static/my-app-icone.png',
+'sizes': '160x160',
+}
+]
+PWA_APP_SPLASH_SCREEN = [
+{
+# 'src': '/static/my-app-icone.png',
+# 'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+}
+]
+PWA_APP_DIR = 'rtl'
+PWA_APP_LANG = 'en-US'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -127,3 +151,5 @@ FORMAT_MODULE_PATH = [
     'Iman.formats',
     'ImanSite.formats',
 ]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'money/static/money/js', 'serviceworker.js')

@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import Banks,Transactions
-from django.contrib.auth import authenticate,login,logout
 from django.http.response import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate,login,logout
 
-
+@login_required(login_url=r'accounts/login')
 def index(requset):
     context = {}
     sum = 0
@@ -87,7 +87,7 @@ def index(requset):
 
     return render(requset,'money/transactions.html',context)
 
-
+@login_required(login_url=r'accounts/login')
 def addTransaction(request):
     context = {}
 
@@ -113,7 +113,7 @@ def addTransaction(request):
 
     return render(request, 'money/addPage.html',context)
 
-
+@login_required(login_url=r'accounts/login')
 def addBank(request):
     context = {}
 
@@ -136,7 +136,7 @@ def addBank(request):
 
     return render (request, 'money/addBank.html',context)
 
-
+@login_required(login_url=r'accounts/login')
 def banks(request):
     context = {}
     allbanks = Banks.objects.all()
@@ -149,16 +149,30 @@ def banks(request):
     return render(request,'money/banks.html', context)
 
 
-def cLogin(request):
+def clogin(request):
     context = {}
-    username = 'iman'
-    password = '3802'
-    user = authenticate(request, username=username, password=password)
-    print("user is:",user)
-    if user is not None:
-        login(request, user)
-        return render(request,'money/transactions.html')
-        print("login is success fully")
-    else:
-        return HttpResponseRedirect('money/login.html')
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(request.GET.get("next", "/"))
+        print("user is_authenticated ")
+    if request.method == 'POST':
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        try:
+            user = authenticate(username=username,password=password)
+            print("user is: ", user)
+        except:
+            user = None
+        if user is not None:
+            if user.is_active:
+                print("user is: ", user)
+                login(request,user)
+                return HttpResponseRedirect(request.GET.get("get","/money"))
+            else:
+                print("The Username Or Password is incorrect!")
     return render(request, 'money/login.html', context)
+
+@login_required
+def clogout(request):
+    if request.user.is_authenticated:
+        logout(request)
+        return HttpResponseRedirect(request.GET.get("next","/money"))

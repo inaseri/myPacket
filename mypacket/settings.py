@@ -153,3 +153,4 @@ FORMAT_MODULE_PATH = [
 ]
 
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'money/static/money/js', 'serviceworker.js')
+

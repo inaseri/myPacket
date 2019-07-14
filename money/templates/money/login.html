@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {%  load static %}
+{% load pwa %}
 <html lang="fa">
   <head>
     <meta charset="utf-8">
@@ -9,6 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{% static 'money/style.css' %}">
   </head>
+  {% progressive_web_app_meta %}
   <body>
     <div class="container">
       <form method="post">

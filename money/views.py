@@ -3,6 +3,7 @@ from .models import Banks,Transactions
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import User
 
 @login_required(login_url=r'accounts/login')
 def index(requset):
@@ -11,7 +12,7 @@ def index(requset):
     selectedSource = None
 
     # this two lines use for get all bank name and show them in html
-    source = Banks.objects.all()
+    source = Banks.objects.all().filter(owner=requset.user)
     context['name_bank'] = source
 
     # this if condition use for get type and bank selected by use for filtering
@@ -176,3 +177,42 @@ def clogout(request):
     if request.user.is_authenticated:
         logout(request)
         return HttpResponseRedirect(request.GET.get("next","/money"))
+
+
+def register(request):
+    if request.method == 'POST':
+        firstName = request.POST.get("firstName")
+        lastName = request.POST.get("lastName")
+        emailAddress = request.POST.get("emailAddress")
+        password = request.POST.get("password")
+        password2 = request.POST.get("password2")
+        user = User.objects.create_user(firstName, emailAddress, password)
+        user.last_name = lastName
+        user.save()
+        print("user saved in it is:", user)
+    return render(request, 'money/register.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

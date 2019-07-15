@@ -25,7 +25,7 @@ SECRET_KEY = 'ox5@xlm^j9ii52f8kuw0b1%k&4mp9z3-j5icg#j&d(yc$7l*6u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.28','172.16.1.178','127.0.0.1','192.168.0.10']
+ALLOWED_HOSTS = ['192.168.1.28','172.16.1.185','127.0.0.1','192.168.0.10']
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'pwa',
 ]
 
+AUTH_USER_MODEL = "money.User"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'mypacket.urls'
 

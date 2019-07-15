@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{%  load static %}
+{% load pwa %}
+<html lang="fa">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+  </head>
+  {% progressive_web_app_meta %}
+  <body>
+    <div class="container">
+      <form method="post">
+        {% csrf_token %}
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <input class="buttonShape" type="text" name="firstName" placeholder="your first name">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">نام</p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <input class="buttonShape" type="text" name="lastName" placeholder="your last name">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">نام خانوادگی</p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <input class="buttonShape" type="text" name="emailAddress" placeholder="example@email.com">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">ایمیل</p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <input class="buttonShape" type="password" name="password" placeholder="password">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">رمز</p>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <input class="buttonShape" type="password" name="password2" placeholder="re-enter password">
+            </div>
+            <div class="col-md-2">
+                <p class="buttonShape">تکرار رمز</p>
+            </div>
+            <div class="col-md-3"></div>
+    </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <button type="submit" class="buttonShape">ثبت نام</button>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="row" style="margin-top: 35px;">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <a class="buttonShape" href="{% url 'login' %}">ورود</a>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

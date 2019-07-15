@@ -1,9 +1,9 @@
 from django.shortcuts import render
-from .models import Banks,Transactions
+from .models import Banks,Transactions, User
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 
 @login_required(login_url=r'accounts/login')
 def index(requset):
@@ -23,7 +23,7 @@ def index(requset):
         type = requset.POST.get("income")
         if type is None:
             type = 1
-        transactions = Transactions.objects.filter(type=type, source=selectedSource)
+        transactions = Transactions.objects.filter(type=type, source=selectedSource,owner=requset.user)
         sourcName = Banks.objects.get(id=selectedSource)
         context['selected_source'] = sourcName
         context['transactions'] = transactions
@@ -31,7 +31,7 @@ def index(requset):
         type = requset.POST.get("income")
         if type is None:
             type = 1
-        transactions = Transactions.objects.filter(type=type)
+        transactions = Transactions.objects.filter(type=type,owner=requset.user)
         context['transactions'] = transactions
 
     # this four conditions use for check for type
@@ -59,12 +59,12 @@ def index(requset):
     sumOfExpens = 0
 
     # this two lines use for get all of the expenses and incomes
-    incomes = Transactions.objects.filter(type=1,source=selectedSource)
-    expenses = Transactions.objects.filter(type=2,source=selectedSource)
+    incomes = Transactions.objects.filter(type=1,source=selectedSource,owner=requset.user.id)
+    expenses = Transactions.objects.filter(type=2,source=selectedSource,owner=requset.user.id)
 
     # this if check the source is selected or not, if it is selected the value of that is not equal to 0
     if selectedSource is not None and selectedSource != 0:
-        cashOfBank = Banks.objects.filter(id=selectedSource)
+        cashOfBank = Banks.objects.filter(id=selectedSource,owner=requset.user.id)
         for cashOfBanks in cashOfBank:
             cashOfSelectedBank = cashOfBanks.cash_bank
         for income in incomes:
@@ -86,6 +86,7 @@ def index(requset):
         sumOfBank = (sumOfIncome + cashOfSelectedBank) - sumOfExpens
         context['sum_bank'] = sumOfBank
 
+    context['user'] = requset.user
     return render(requset,'money/transactions.html',context)
 
 @login_required(login_url=r'accounts/login')
@@ -93,7 +94,7 @@ def addTransaction(request):
     context = {}
 
     # this two lines use for get name of banks and show them in html
-    source = Banks.objects.all().values('name_bank')
+    source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['name_bank'] = source
 
     if request.method == 'POST':
@@ -107,11 +108,12 @@ def addTransaction(request):
             desc = request.POST.get("desc")
 
             # this line use for save data in database
-            Transactions(source=bank, date=date, title=title, cash=cash, desc=desc, type=type_transaction).save()
+            Transactions(source=bank, date=date, title=title, cash=cash, desc=desc, type=type_transaction, owner=request.user).save()
             print("saved")
         except:
             pass
 
+    context['user'] = request.user
     return render(request, 'money/addPage.html',context)
 
 @login_required(login_url=r'accounts/login')
@@ -129,24 +131,26 @@ def addBank(request):
         # this if check the cash is null or not, if it was null we assign 0 to cash_bank
         if cashOfBank is None or cashOfBank == '':
             cashOfBank = 0
-            Banks(name_bank=nameOfBank,cash_bank= cashOfBank).save()
+            Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user.id).save()
             print("save company successfully and cash in it is:", cashOfBank)
         else:
-            Banks(name_bank=nameOfBank, cash_bank=cashOfBank).save()
+            Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
             print("save company successfully and cash in it is:", cashOfBank)
 
+    context['user'] = request.user
     return render (request, 'money/addBank.html',context)
 
 @login_required(login_url=r'accounts/login')
 def banks(request):
     context = {}
-    allbanks = Banks.objects.all()
+    allbanks = Banks.objects.all().filter(owner=request.user)
     sumOfBnak = 0
     for allbank in allbanks:
         cashInBank = allbank.cash_bank
         sumOfBnak = cashInBank + sumOfBnak
     context['sum_cash_bank'] = sumOfBnak
     context['all_banks'] = allbanks
+    context['user'] = request.user
     return render(request,'money/banks.html', context)
 
 

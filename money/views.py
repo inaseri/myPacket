@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 # from django.contrib.auth.models import User
 
+
 @login_required(login_url=r'accounts/login')
 def index(requset):
     context = {}
@@ -89,6 +90,7 @@ def index(requset):
     context['user'] = requset.user
     return render(requset,'money/transactions.html',context)
 
+
 @login_required(login_url=r'accounts/login')
 def addTransaction(request):
     context = {}
@@ -116,6 +118,7 @@ def addTransaction(request):
     context['user'] = request.user
     return render(request, 'money/AddPage.html',context)
 
+
 @login_required(login_url=r'accounts/login')
 def addBank(request):
     context = {}
@@ -139,6 +142,7 @@ def addBank(request):
 
     context['user'] = request.user
     return render (request, 'money/addBank.html',context)
+
 
 @login_required(login_url=r'accounts/login')
 def banks(request):
@@ -176,6 +180,7 @@ def clogin(request):
                 print("The Username Or Password is incorrect!")
     return render(request, 'money/login.html', context)
 
+
 @login_required
 def clogout(request):
     if request.user.is_authenticated:
@@ -184,38 +189,18 @@ def clogout(request):
 
 
 def register(request):
+    context = {}
     if request.method == 'POST':
-        firstName = request.POST.get("firstName")
+        username = request.POST.get("firstName")
         lastName = request.POST.get("lastName")
         emailAddress = request.POST.get("emailAddress")
         password = request.POST.get("password")
         password2 = request.POST.get("password2")
-        user = User.objects.create_user(firstName, emailAddress, password)
-        user.last_name = lastName
-        user.save()
-    return render(request, 'money/register.html')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if User.objects.filter(username=username).exists():
+            context["success"] = True
+        else:
+            user = User.objects.create_user(username, emailAddress, password)
+            user.save()
+            context["success"] = False
+    return render(request, 'money/register.html',context)

@@ -1,15 +1,14 @@
     .buttonShape {
         width: 100%;
-        background: rgba(156, 37, 249, 0.4);
+        background: rgb(141, 110, 99);
         border-radius: 5px;
         text-align: center;
         font-size: 22px;
         font-family: b-nazanin;
-        box-shadow: 0px 10px 4px rgba(179, 92, 249, 0.35);
     }
     .navbar {
-        background: rgba(156, 37, 249, 0.4);
-        color: black;
+        background: rgb(43, 15, 7);
+        color: white;
         overflow: hidden;
     }
 
@@ -27,7 +26,7 @@
         left: 0px;
         overflow-x: hidden;
         padding-top: 60px;
-        background-color: #111;
+        background-color: rgb(43, 15, 7);
         transition: 0.5s;
     }
 

@@ -114,7 +114,7 @@ def addTransaction(request):
             pass
 
     context['user'] = request.user
-    return render(request, 'money/addPage.html',context)
+    return render(request, 'money/AddPage.html',context)
 
 @login_required(login_url=r'accounts/login')
 def addBank(request):

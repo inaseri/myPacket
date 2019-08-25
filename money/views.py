@@ -193,7 +193,6 @@ def register(request):
         user = User.objects.create_user(firstName, emailAddress, password)
         user.last_name = lastName
         user.save()
-        print("user saved in it is:", user)
     return render(request, 'money/register.html')
 
 

@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'money',
     'django.contrib.humanize',
+    'money',
     'pwa',
 ]
 
@@ -60,7 +60,7 @@ ROOT_URLCONF = 'mypacket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -151,7 +151,7 @@ PWA_APP_LANG = 'en-US'
 STATIC_URL = '/static/'
 
 FORMAT_MODULE_PATH = [
-    'Iman.formats',
+    'Mypacket.formats',
     'ImanSite.formats',
 ]
 

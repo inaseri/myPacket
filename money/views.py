@@ -3,6 +3,7 @@ from .models import Banks,Transactions, User
 from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
+import jdatetime
 # from django.contrib.auth.models import User
 
 
@@ -108,6 +109,23 @@ def addTransaction(request):
             title = request.POST.get("title")
             cash = request.POST.get("cash")
             desc = request.POST.get("desc")
+
+            # this tree line use for convert persian date to gregorian
+            date.split('/')
+            firstY = date[0]
+            seconY = date[1]
+            thirdY = date[2]
+            forthY = date[3]
+            firstM = date[5]
+            seconM = date[6]
+            firstD = date[8]
+            seconD = date[9]
+            yearString = firstY + seconY + thirdY + forthY
+            monthString = firstM + seconM
+            dayString = firstD + seconD
+
+            date = jdatetime.date(int(yearString), int(monthString), int(dayString), locale='fa_IR')
+            date = date.togregorian()
 
             # this line use for save data in database
             Transactions(source=bank, date=date, title=title, cash=cash, desc=desc, type=type_transaction, owner=request.user).save()

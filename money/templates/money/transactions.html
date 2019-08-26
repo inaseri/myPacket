@@ -1,14 +1,21 @@
 <!DOCTYPE html>
-{%  load static %}
+{% load static %}
 {% load pwa %}
+{% load Iman %}
 <html lang="fa">
+
   <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
     <link rel="stylesheet" href="{% static 'money/style.css' %}">
+
     <title>مبادلات</title>
     <script>
         function openlSlideMenu() {
@@ -89,13 +96,13 @@
               </div>
               <div class="row" style="margin-top: 35px">
                   <div class="col-xs-4">
-                      <input type="text"  name="endDate" class="buttonShape">
+                      <input type="text"  name="endDate" class="buttonShape jalali-datepicker">
                   </div>
                   <div class="col-xs-2">
                       <div class="buttonShape">تا</div>
                   </div>
                   <div class="col-xs-4">
-                      <input type="text"  name="startDate" class="buttonShape">
+                      <input type="text"  name="startDate" class="buttonShape jalali-datepicker">
                   </div>
                   <div class="col-xs-2">
                       <div class="buttonShape">از</div>
@@ -186,13 +193,13 @@
               <div class="row" style="margin-top: 35px">
                   <div class="col-md-2"></div>
                   <div class="col-md-2">
-                      <input type="text"  name="endDate" class="buttonShape">
+                      <input type="text"  name="endDate" class="buttonShape jalali-datepicker">
                   </div>
                   <div class="col-md-2">
                       <div class="buttonShape">تا</div>
                   </div>
                   <div class="col-md-2">
-                      <input type="text"  name="startDate" class="buttonShape">
+                      <input type="text"  name="startDate" class="buttonShape jalali-datepicker">
                   </div>
                   <div class="col-md-2">
                       <div class="buttonShape">از</div>
@@ -236,7 +243,7 @@
                       <tr align="center">
                           <td>{{ transaction.title }}</td>
                           <td>{{ transaction.cash|intcomma }}</td>
-                          <td>{{ transaction.date }}</td>
+                          <td>{{ transaction.date|jdate:'%y/%m/%d' }}</td>
                           <td>{{ transaction.source }}</td>
                           <td>{{ transaction.desc }}</td>
                       </tr>
@@ -252,5 +259,81 @@
 		document.getElementById("mainRowPhones").classList.toggle("showAll")
 	</script>
     </div>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <script src="{% static 'money/js/moment.min.js' %}" type="text/javascript"></script>
+      <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
+      <script src="{% static 'money/js/daterangepicker-fa-ex.js' %}"></script>
+      <script>
+        $(document).ready(function () {
+            var night;
+            var isRtl = true;
+            var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
+            var dateFrom = false ? moment("") : undefined;
+            var dateTo = false ? moment("") : undefined;
+            var $dateRanger = $("#dateRangePicker");
+
+            $dateRanger.daterangepicker({
+                clearLabel: 'Clear',
+                autoUpdateInput: !!(dateFrom && dateTo),
+                minDate: moment(),
+                autoApply: true,
+                opens: isRtl ? 'left' : 'right',
+                locale: {
+                    separator: ' - ',
+                    format: dateFormat
+                },
+                startDate: dateFrom,
+                endDate: dateTo,
+                jalaali: isRtl,
+                showDropdowns: true
+            }).on('apply.daterangepicker', function (ev, picker) {
+                night = picker.endDate.diff(picker.startDate, 'days');
+                if (night > 0) {
+                    $(this).val(picker.startDate.format(dateFormat));
+                    $('#dateRangePickerEnd').val(picker.endDate.format(dateFormat));
+                } else {
+                    $(this).val('')
+                }
+            });
+
+
+            $('.ga-datepicker').daterangepicker({
+                clearLabel: 'Clear',
+                // autoUpdateInput: !!(dateFrom && dateTo),
+                //minDate: moment(),
+                autoApply: true,
+                opens: 'right',
+                singleDatePicker: true,
+                showDropdowns: true,
+                language: 'en'
+            }).on('apply.daterangepicker', function () {
+                $('.tooltip').hide();
+                $('.date-select').text($(this).val());
+            });
+
+            $('.jalali-datepicker').daterangepicker({
+                clearLabel: 'Clear',
+                autoApply: true,
+                opens: 'left',
+                singleDatePicker: true,
+                showDropdowns: true,
+                jalaali: true,
+                language: 'fa'
+            }).on('apply.daterangepicker', function () {
+                $('.tooltip').hide();
+                $('.date-select').text($(this).val());
+            });
+
+            $(document).on('mouseover', '.daterangepicker .calendar td', function () {
+                var gagDate = $(this).attr('data-original-title');
+                $('.date-hover').text('');
+                $('.date-hover').text(gagDate);
+
+                $('[data-toggle="tooltip"]').tooltip()
+            });
+
+        });
+      </script>
   </body>
 </html>

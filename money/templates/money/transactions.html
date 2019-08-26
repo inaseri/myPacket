@@ -126,7 +126,7 @@
           </div>
           <div class="row" style="margin-top: 35px;">
               <div class="col-xs-12">
-                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgba(156, 37, 249, 0.4);">
+                  <table dir="ltr" border=".5" width="100%"   cellpadding="4" cellspacing="3" align="center" style="border-color: rgb(43, 15, 7);">
                       <thead>
                       <tr>
                           <th scope="col" style="text-align: center">عنوان</th>
@@ -139,7 +139,7 @@
                       <tr align="center">
                           <td>{{ transaction.title }}</td>
                           <td>{{ transaction.cash|intcomma }}</td>
-                          <td>{{ transaction.date }}</td>
+                          <td>{{ transaction.date|jdate:'%y/%m/%d' }}</td>
                           <td>{{ transaction.source }}</td>
                           <td>{{ transaction.desc }}</td>
                       </tr>

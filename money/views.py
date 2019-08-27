@@ -14,7 +14,6 @@ def index(requset):
     sum = 0
     selectedSource = None
     type = requset.session.get('selected_type_list')
-    print("type is:", type)
     # this two lines use for get all bank name and show them in html
     source = Banks.objects.all().filter(owner=requset.user)
     context['name_bank'] = source
@@ -97,10 +96,8 @@ def addTransaction(request):
             desc = request.POST.get("desc")
             if desc == "":
                 desc = "بدون توضیحات"
-
             bank = Banks.objects.get(name_bank=request.POST.get("bank"))
             date = request.POST.get("date")
-            print("adsfadsfasdf")
 
             # this tree line use for convert persian date to gregorian
             date.split('/')
@@ -133,20 +130,22 @@ def addTransaction(request):
 def addBank(request):
     context = {}
 
-    # this two lines get name and cash of bank for save in db
-    nameOfBank = request.POST.get("bankName")
-    cashOfBank = request.POST.get("cashInBank")
-
     # first if check the name of bank is null or not if it was null we have an error print
     if request.method == 'POST':
-        if nameOfBank is None or nameOfBank == '':
-            print("please enter a name for bank")
+        # this two lines get name and cash of bank for save in db
+        nameOfBank = request.POST.get("bankName")
+        cashOfBank = request.POST.get("cashInBank")
+        print("name of bank is:", nameOfBank)
+        print("cash of bank is:", cashOfBank)
+
+
+        if nameOfBank is None or nameOfBank == "":
             context["saveBank"] = 0
         else:
             # this if check the cash is null or not, if it was null we assign 0 to cash_bank
             if cashOfBank is None or cashOfBank == '':
-                cashOfBank = 0
-                Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user.id).save()
+                cashOfBank = 1
+                Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
             else:
                 Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
@@ -228,7 +227,7 @@ def homePage(requset):
             return HttpResponseRedirect(reverse('addTransactions'))
         if typeAdd == "3":
             requset.session['selected_type'] = typeAdd
-            return HttpResponseRedirect(reverse('addBanks'))
+            return HttpResponseRedirect(reverse('addBank'))
 
 
         typeList = requset.POST.get("list")

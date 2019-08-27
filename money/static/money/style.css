@@ -93,7 +93,6 @@
         color: black;
         padding: 30%;
     }
-
     a.buttonShape {
         padding: 0 8px;
         line-height: 36px;
@@ -104,6 +103,13 @@
         padding: 0 8px;
         line-height: 36px;
         display: table;
+    }
+
+    a.style-logo-header {
+        padding: 0 8px;
+        line-height: 36px;
+        display: table;
+        color: white;
     }
     @media only screen and (max-width: 998px) {
         .hideAll {

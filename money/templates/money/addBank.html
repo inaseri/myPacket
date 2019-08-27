@@ -17,6 +17,13 @@
         function closeSlideMenu() {
             document.getElementById('side-menu').style.width = '0px';
         }
+        $("#type").submit(function () {
+        });
+        {% if saveBank == 1 %}
+            alert("حساب شما با موفقیت ذخیره شد");
+        {% elif saveBank == 0 %}
+            alert("نام حساب را وارد نکردید، لطفا مجددا تلاش کنید")
+        {% endif %}
     </script>
   </head>
   <body>
@@ -53,7 +60,7 @@
             </div>
       </div>
       <div id="mainRowPhones">
-            <form method="post" id="type" onsubmit="alert('شرکت با موفقیت ثبت شد');">
+            <form method="post" id="type">
                 {% csrf_token %}
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-xs-6">
@@ -79,7 +86,7 @@
             </form>
         </div>
       <div id="mainRowCamputer">
-            <form method="post" id="type" onsubmit="alert('شرکت با موفقیت ثبت شد');">
+            <form method="post" id="type">
                 {% csrf_token %}
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-md-2"></div>
@@ -121,7 +128,7 @@
       <script type="text/javascript">
 		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
 		document.getElementById("mainRowPhones").classList.toggle("showAll")
-</script>
+      </script>
       {% progressive_web_app_meta %}
     </div>
   </body>

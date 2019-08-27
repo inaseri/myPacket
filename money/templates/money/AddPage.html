@@ -23,6 +23,30 @@
         function closeSlideMenu() {
             document.getElementById('side-menu').style.width = '0px';
         }
+        $("#type").submit(function () {
+        });
+        {% if saveTransaction == 0 %}
+            alert("لطفا یک نوع را از گزینه های بالا انتخاب کنید");
+        {% elif saveTransaction == 2 %}
+            alert("لطفا یک عنوان برای تراکنش خود بنویسید");
+        {% elif saveTransaction == 3 %}
+            alert("رقم تراکنش خود را مشخص کنید");
+        {% elif saveTransaction == 4 %}
+            alert("تراکنش شما با موفقیت ذخیره شد");
+        {% endif %}
+
+        $(document).ready(function () {
+        $("#submit").click(function () {
+                var banks = $('#selBank');
+                if (banks.val() === '') {
+                    alert("لطفا یک حساب را از حساب های خود انتخاب کنید یا یک حساب جدید از منو سمت چپ ایجاد کنید");
+                    $('#selBank').focus();
+
+                    return false;
+                }
+                else return;
+            });
+        });
     </script>
     {% progressive_web_app_meta %}
 
@@ -62,7 +86,7 @@
             </div>
         </div>
       <div id="mainRowPhones">
-            <form method="post" id="type" onsubmit="alert('مبادله با موفقیت ذخیره شده');">
+            <form method="post" id="type">
               {% csrf_token %}
               <div class="row">
                   <div class="col-xs-3">
@@ -135,7 +159,7 @@
           </form>
         </div>
       <div id="mainRowCamputer" >
-          <form method="post" id="type" onsubmit="alert('مبادله با موفقیت ذخیره شده');">
+          <form method="post" id="type">
               {% csrf_token %}
               <div class="row">
                   <div class="col-md-2"></div>
@@ -160,8 +184,8 @@
               <div class="row" style="margin-top: 35px;">
                   <div class="col-md-2"></div>
                   <div class="col-md-4">
-                      <select name="bank" class="buttonShape">
-                          <option>انتخاب کنید</option>
+                      <select name="bank" class="buttonShape" id="selBank">
+                          <option value="">انتخاب کنید</option>
                           {% for company in name_bank %}
                           <option value="{{ company.name_bank }}">{{ company.name_bank }}</option>
                           {% endfor %}
@@ -215,7 +239,7 @@
               <div class="row" style="margin-top: 35px;">
                   <div class="col-md-2"></div>
                   <div class="col-md-8">
-                      <button type="submit" class="buttonShape">ذخیره</button>
+                      <button type="submit" class="buttonShape" id="submit">ذخیره</button>
                   </div>
                   <div class="col-md-2"></div>
               </div>

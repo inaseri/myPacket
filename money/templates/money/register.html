@@ -12,9 +12,11 @@
     <script>
     $("#save").submit(function () {
     });
-	{% if success %}
+	{% if success == 1%}
 	    alert("شما از قبل ثبت نام نموده اید");
-	{% endif %}
+	{% elif success == 2 %}
+        alert("ثبت نام شما با موفقیت صورت گرفت")
+    {% endif %}
     </script>
   </head>
   {% progressive_web_app_meta %}

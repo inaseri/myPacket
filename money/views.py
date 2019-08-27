@@ -104,11 +104,24 @@ def addTransaction(request):
         try:
             # theses lines use for get values from html
             type_transaction = request.POST.get("income")
+            if type_transaction is None:
+                context["saveTransaction"] = 0
+
+            title = request.POST.get("title")
+            if title == "":
+                context["saveTransaction"] = 2
+
+            cash = request.POST.get("cash")
+            if cash == "":
+                context["saveTransaction"] = 3
+
+            desc = request.POST.get("desc")
+            if desc == "":
+                desc = "بدون توضیحات"
+
             bank = Banks.objects.get(name_bank=request.POST.get("bank"))
             date = request.POST.get("date")
-            title = request.POST.get("title")
-            cash = request.POST.get("cash")
-            desc = request.POST.get("desc")
+
 
             # this tree line use for convert persian date to gregorian
             date.split('/')
@@ -129,7 +142,7 @@ def addTransaction(request):
 
             # this line use for save data in database
             Transactions(source=bank, date=date, title=title, cash=cash, desc=desc, type=type_transaction, owner=request.user).save()
-            print("saved")
+            context["saveTransaction"] = 4
         except:
             pass
 
@@ -146,17 +159,20 @@ def addBank(request):
     cashOfBank = request.POST.get("cashInBank")
 
     # first if check the name of bank is null or not if it was null we have an error print
-    if nameOfBank is None or nameOfBank == '':
-        print("please enter a name for bank")
-    else:
-        # this if check the cash is null or not, if it was null we assign 0 to cash_bank
-        if cashOfBank is None or cashOfBank == '':
-            cashOfBank = 0
-            Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user.id).save()
-            print("save company successfully and cash in it is:", cashOfBank)
+    if request.method == 'POST':
+        if nameOfBank is None or nameOfBank == '':
+            print("please enter a name for bank")
+            context["saveBank"] = 0
         else:
-            Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
-            print("save company successfully and cash in it is:", cashOfBank)
+            # this if check the cash is null or not, if it was null we assign 0 to cash_bank
+            if cashOfBank is None or cashOfBank == '':
+                cashOfBank = 0
+                Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user.id).save()
+                context["saveBank"] = 1
+            else:
+                Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
+                context["saveBank"] = 1
+
 
     context['user'] = request.user
     return render (request, 'money/addBank.html',context)
@@ -186,12 +202,10 @@ def clogin(request):
         password = request.POST.get("password")
         try:
             user = authenticate(username=username,password=password)
-            print("user is: ", user)
         except:
             user = None
         if user is not None:
             if user.is_active:
-                print("user is: ", user)
                 login(request,user)
                 return HttpResponseRedirect(request.GET.get("get","/money"))
             else:
@@ -216,9 +230,10 @@ def register(request):
         password2 = request.POST.get("password2")
 
         if User.objects.filter(username=username).exists():
-            context["success"] = True
+            context["success"] = 1
         else:
             user = User.objects.create_user(username, emailAddress, password)
             user.save()
-            context["success"] = False
+            context["success"] = 2
+            return render(request, 'money/login.html')
     return render(request, 'money/register.html',context)

@@ -74,11 +74,11 @@
                     </span>
                     <div id="side-menu" class="side-nav">
                       <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                      <a href="{% url 'addTransactions' %}" >خانه</a>
-                      <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
-                      <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
-                      <a href="{% url 'index' %}" >تمامی مبادلات</a>
-                      <a href="{% url 'banks' %}" >تمامی بانک ها</a>
+                      <a href="{% url 'home' %}" >خانه</a>
+                      <a href="{% url 'addTransactions' %}" >اضافه کردن تراکنش</a>
+                      <a href="{% url 'addBank' %}" >اضافه کردن حساب</a>
+                      <a href="{% url 'index' %}" >تمامی تراکنش ها</a>
+                      <a href="{% url 'banks' %}" >تمامی حساب ها ها</a>
                       <a href="{% url 'addTransactions' %}" >مشخصات من</a>
                       <a href="{% url 'logout' %}" >خروج</a>
                     </div>
@@ -153,7 +153,7 @@
               </div>
               <div class="row" style="margin-top: 35px;">
                   <div class="col-xs-12">
-                      <button type="submit" class="buttonShape">ذخیره</button>
+                      <button type="submit" class="buttonShapeGreen">ذخیره</button>
                   </div>
               </div>
           </form>
@@ -239,7 +239,7 @@
               <div class="row" style="margin-top: 35px;">
                   <div class="col-md-2"></div>
                   <div class="col-md-8">
-                      <button type="submit" class="buttonShape" id="submit">ذخیره</button>
+                      <button type="submit" class="buttonShapeGreen" id="submit">ذخیره</button>
                   </div>
                   <div class="col-md-2"></div>
               </div>

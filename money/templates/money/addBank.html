@@ -48,11 +48,11 @@
                     </span>
                     <div id="side-menu" class="side-nav">
                       <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
-                      <a href="{% url 'addTransactions' %}" >خانه</a>
-                      <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
-                      <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
-                      <a href="{% url 'index' %}" >تمامی مبادلات</a>
-                      <a href="{% url 'banks' %}" >تمامی بانک ها</a>
+                      <a href="{% url 'home' %}" >خانه</a>
+                      <a href="{% url 'addTransactions' %}" >اضافه کردن تراکنش</a>
+                      <a href="{% url 'addBank' %}" >اضافه کردن حساب</a>
+                      <a href="{% url 'index' %}" >تمامی تراکنش ها</a>
+                      <a href="{% url 'banks' %}" >تمامی حساب ها</a>
                       <a href="{% url 'addTransactions' %}" >مشخصات من</a>
                       <a href="{% url 'logout' %}" >خروج</a>
                     </div>
@@ -67,7 +67,7 @@
                         <input type="text" name="bankName" class="buttonShape">
                     </div>
                     <div class="col-xs-6">
-                        <p class="buttonShape">اسم بانک</p>
+                        <p class="buttonShapeGreen">اسم حساب</p>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 35px;">
@@ -75,12 +75,12 @@
                         <input type="text" name="cashInBank" class="buttonShape">
                     </div>
                     <div class="col-xs-6">
-                        <p class="buttonShape">رقم بانک</p>
+                        <p class="buttonShape">رقم حساب</p>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-xs-12">
-                        <button type="submit" class="buttonShape">ذخیره</button>
+                        <button type="submit" class="buttonShapeGreen">ذخیره</button>
                     </div>
                 </div>
             </form>
@@ -94,7 +94,7 @@
                         <input type="text" name="bankName" class="buttonShape">
                     </div>
                     <div class="col-md-4">
-                        <p class="buttonShape">اسم بانک</p>
+                        <p class="buttonShape">اسم حساب</p>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -104,21 +104,21 @@
                         <input type="text" name="cashInBank" class="buttonShape">
                     </div>
                     <div class="col-md-4">
-                        <p class="buttonShape">رقم بانک</p>
+                        <p class="buttonShape">رقم حساب</p>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <button type="submit" class="buttonShape">ذخیره</button>
+                        <button type="submit" class="buttonShapeGreen">ذخیره</button>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
-                        <a href="{% url 'banks'%}" class="buttonShape">تمامی شرکت ها</a>
+                        <a href="{% url 'banks'%}" class="buttonShapeGreen">تمامی حساب ها</a>
                         <a></a>
                     </div>
                     <div class="col-md-2"></div>

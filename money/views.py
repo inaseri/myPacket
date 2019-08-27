@@ -237,3 +237,7 @@ def register(request):
             context["success"] = 2
             return render(request, 'money/login.html')
     return render(request, 'money/register.html',context)
+
+@login_required(login_url=r'accounts/login')
+def homePage(requset):
+    return render(requset,'money/home.html')

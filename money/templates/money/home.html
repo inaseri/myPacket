@@ -24,6 +24,7 @@
                 document.getElementById('side-menu').style.width = '0px';
             }
         </script>
+
         {% progressive_web_app_meta %}
 
     </head>
@@ -48,90 +49,93 @@
                     <div id="side-menu" class="side-nav">
                       <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
                       <a href="{% url 'home' %}" >خانه</a>
-                      <a href="{% url 'addTransactions' %}" >اضافه کردن تراکنش</a>
-                      <a href="{% url 'addBank' %}" >اضافه کردن حساب</a>
-                      <a href="{% url 'index' %}" >تمامی حساب ها</a>
-                      <a href="{% url 'banks' %}" >تمامی تراکنش ها</a>
+{#                      <a href="{% url 'addTransactions' %}" >اضافه کردن تراکنش</a>#}
+{#                      <a href="{% url 'addBank' %}" >اضافه کردن حساب</a>#}
+{#                      <a href="{% url 'transactions' %}" >تمامی تراکنش ها</a>#}
+{#                      <a href="{% url 'banks' %}" >تمامی حساب ها</a>#}
                       <a href="{% url 'addTransactions' %}" >مشخصات من</a>
                       <a href="{% url 'logout' %}" >خروج</a>
                     </div>
                 </nav>
             </div>
             </div>
-            <div id="mainRowPhones">
+            <form method="POST">
+                {% csrf_token %}
+                <div id="mainRowPhones">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p class="boxShape">درآمد</p>
+                            <input type="button" class="buttonShapeGreen" name="add" value="1"
+                                   onclick="location.href='{% url 'addTransactions' %}';" >افزودن</input>
+                            <button name="list" value="1" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <p class="boxShape">هزینه</p>
+                            <button class="buttonShapeGreen" name="add" value="2">افزودن</button>
+                            <button name="list" value="1" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <p class="boxShape">حساب</p>
+                            <button class="buttonShapeGreen" name="add" value="3">افزودن</button>
+                            <button name="list" value="1" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                    </div>
 
-                <div class="row">
-                    <div class="col-xs-4">
-                        <p class="boxShape">درآمد</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
+                    <div class="row" style="margin-top: 5%;">
+                        <div class="col-xs-2"></div>
+                        <div class="col-xs-4">
+                            <p class="boxShape">مطالبه</p>
+                            <button class="buttonShapeGreen" name="add" value="4">افزودن</button>
+                            <button name="list" value="1" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-xs-4">
+                            <p class="boxShape">بدهی</p>
+                            <button class="buttonShapeGreen" name="add" value="5">افزودن</button>
+                            <button name="list" value="1" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-xs-2"></div>
                     </div>
-                    <div class="col-xs-4">
-                        <p class="boxShape">هزینه</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-xs-4">
-                        <p class="boxShape">حساب</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
+
                 </div>
 
-                <div class="row" style="margin-top: 5%;">
-                    <div class="col-xs-2"></div>
-                    <div class="col-xs-4">
-                        <p class="boxShape">مطالبه</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
+                <div id="mainRowCamputer" >
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-3" style="margin-right: 4%;">
+                            <p class="boxShape">درآمد</p>
+                            <button class="buttonShapeGreen" name="add" value="1">اضافه کردن</button>
+                            <button class="buttonShape" name="list" value="1" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-md-3" style="margin-right: 5%;">
+                            <p class="boxShape">هزینه</p>
+                            <button class="buttonShapeGreen" name="add" value="2">اضافه کردن</button>
+                            <button name="list" value="2" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="boxShape">حساب</p>
+                            <button class="buttonShapeGreen" name="add" value="3">اضافه کردن</button>
+                            <button name="list" value="3" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-md-1"></div>
                     </div>
-                    <div class="col-xs-4">
-                        <p class="boxShape">بدهی</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-xs-2"></div>
-                </div>
+                    <div class="row" style="margin-top: 5%;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
+                            <p class="boxShape">مطالبه</p>
+                            <button class="buttonShapeGreen" name="add" value="4">اضافه کردن</button>
+                            <button name="list" value="4" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-md-3">
+                            <p class="boxShape">بدهی</p>
+                            <button class="buttonShapeGreen" name="add" value="5">اضافه کردن</button>
+                            <button name="list" value="5" class="buttonShape" style="margin-top: 10px;">مشاهد همه</button>
+                        </div>
+                        <div class="col-md-3"></div>
+                 </div>
 
             </div>
-            <div id="mainRowCamputer" >
 
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3" style="margin-right: 4%;">
-                        <p class="boxShape">درآمد</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-md-3" style="margin-right: 5%;">
-                        <p class="boxShape">هزینه</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="boxShape">حساب</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-{#                <div class="row" style="margin-top: 15px;"></div>#}
-                <div class="row" style="margin-top: 5%;">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-3">
-                        <p class="boxShape">مطالبه</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-md-3">
-                        <p class="boxShape">بدهی</p>
-                        <a class="buttonShapeGreen">اضافه کردن</a>
-                        <a class="buttonShape" style="margin-top: 10px;">مشاهد همه</a>
-                    </div>
-                    <div class="col-md-3"></div>
-                </div>
-
-            </div>
+            </form>
             <script type="text/javascript">
             document.getElementById("mainRowCamputer").classList.toggle("hideAll")
             document.getElementById("mainRowPhones").classList.toggle("showAll")

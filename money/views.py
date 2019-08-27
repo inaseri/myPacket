@@ -4,6 +4,7 @@ from django.http.response import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 import jdatetime
+from django.urls import reverse
 # from django.contrib.auth.models import User
 
 
@@ -12,7 +13,8 @@ def index(requset):
     context = {}
     sum = 0
     selectedSource = None
-
+    type = requset.session.get('selected_type_list')
+    print("type is:", type)
     # this two lines use for get all bank name and show them in html
     source = Banks.objects.all().filter(owner=requset.user)
     context['name_bank'] = source
@@ -22,33 +24,13 @@ def index(requset):
         selectedSource = int(requset.POST.get("bank",0))
 
     if selectedSource is not None and selectedSource != 0:
-        type = requset.POST.get("income")
-        if type is None:
-            type = 1
         transactions = Transactions.objects.filter(type=type, source=selectedSource,owner=requset.user)
         sourcName = Banks.objects.get(id=selectedSource)
         context['selected_source'] = sourcName
         context['transactions'] = transactions
     else:
-        type = requset.POST.get("income")
-        if type is None:
-            type = 1
         transactions = Transactions.objects.filter(type=type,owner=requset.user)
         context['transactions'] = transactions
-
-    # this four conditions use for check for type
-    if int(type) == 1:
-        context['type'] = "درآمد"
-        context['type_int'] = 1
-    elif int(type) == 2:
-        context['type'] = "هزینه"
-        context['type_int'] = 2
-    elif int(type) == 3:
-        context['type'] = "بدهی"
-        context['type_int'] = 3
-    else:
-        context['type'] = "مطالبه"
-        context['type_int'] = 4
 
     # this loop calculate sum of transactions just in one type
     for transaction in transactions:
@@ -99,14 +81,11 @@ def addTransaction(request):
     # this two lines use for get name of banks and show them in html
     source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['name_bank'] = source
-
+    type_transaction = request.session.get('selected_type')
+    type_transaction = int(type_transaction)
     if request.method == 'POST':
         try:
             # theses lines use for get values from html
-            type_transaction = request.POST.get("income")
-            if type_transaction is None:
-                context["saveTransaction"] = 0
-
             title = request.POST.get("title")
             if title == "":
                 context["saveTransaction"] = 2
@@ -121,7 +100,7 @@ def addTransaction(request):
 
             bank = Banks.objects.get(name_bank=request.POST.get("bank"))
             date = request.POST.get("date")
-
+            print("adsfadsfasdf")
 
             # this tree line use for convert persian date to gregorian
             date.split('/')
@@ -238,6 +217,28 @@ def register(request):
             return render(request, 'money/login.html')
     return render(request, 'money/register.html',context)
 
+
 @login_required(login_url=r'accounts/login')
 def homePage(requset):
+    context = {}
+    if requset.method == 'POST':
+        typeAdd = requset.POST.get("add")
+        if typeAdd == "1" or typeAdd == "2" or typeAdd == "4" or typeAdd == "5":
+            requset.session['selected_type'] = typeAdd
+            return HttpResponseRedirect(reverse('addTransactions'))
+        if typeAdd == "3":
+            requset.session['selected_type'] = typeAdd
+            return HttpResponseRedirect(reverse('addBanks'))
+
+
+        typeList = requset.POST.get("list")
+        print("type list is;",typeList)
+        if typeList == "1" or typeList == "2" or typeList == "4" or typeAdd == "5":
+            requset.session['selected_type_list'] = typeList
+            return HttpResponseRedirect(reverse('transactions'))
+        if typeList == "3":
+            requset.session['selected_type_list'] = typeList
+            return HttpResponseRedirect(reverse('banks'))
+
+
     return render(requset,'money/home.html')

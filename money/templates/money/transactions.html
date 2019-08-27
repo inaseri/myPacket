@@ -47,11 +47,11 @@
                       <div id="side-menu" class="side-nav">
                           <a href="#" class="btn-close" onclick="closeSlideMenu()">&times;</a>
                           <a href="{% url 'home' %}" >خانه</a>
-                          <a href="{% url 'addTransactions' %}" >اضافه کردن مبادله</a>
-                          <a href="{% url 'addBank' %}" >اضافه کردن بانک</a>
-                          <a href="{% url 'index' %}" >تمامی مبادلات</a>
-                          <a href="{% url 'banks' %}" >تمامی بانک ها</a>
-                          <a href="{% url 'addTransactions' %}" >مشخصات من</a>
+{#                          <a href="{% url 'addTransactions' %}" >اضافه کردن تراکنش</a>#}
+{#                          <a href="{% url 'addBank' %}" >اضافه کردن حساب</a>#}
+{#                          <a href="{% url 'transactions' %}" >تمامی تراکنش ها</a>#}
+{#                          <a href="{% url 'banks' %}" >تمامی حساب ها</a>#}
+{#                          <a href="{% url 'addTransactions' %}" >مشخصات من</a>#}
                           <a href="{% url 'logout' %}" >خروج</a>
                       </div>
                   </nav>
@@ -60,24 +60,24 @@
       <div id="mainRowPhones">
           <form method="post">
               {% csrf_token %}
-              <div class="row">
-                  <div class="col-xs-3">
-                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
-                      <div class="buttonShape">مطالبه</div>
-                  </div>
-                  <div class="col-xs-3">
-                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
-                      <div class="buttonShape">بدهی</div>
-                  </div>
-                  <div class="col-xs-3">
-                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
-                      <div class="buttonShape">هزینه</div>
-                  </div>
-                  <div class="col-xs-3">
-                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
-                      <div class="buttonShape">درآمد</div>
-                  </div>
-              </div>
+{#              <div class="row">#}
+{#                  <div class="col-xs-3">#}
+{#                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">مطالبه</div>#}
+{#                  </div>#}
+{#                  <div class="col-xs-3">#}
+{#                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">بدهی</div>#}
+{#                  </div>#}
+{#                  <div class="col-xs-3">#}
+{#                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">هزینه</div>#}
+{#                  </div>#}
+{#                  <div class="col-xs-3">#}
+{#                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">درآمد</div>#}
+{#                  </div>#}
+{#              </div>#}
               <div class="row" style="margin-top: 35px;">
                   <div class="col-xs-6">
                       <select name="bank" class="buttonShape">
@@ -152,26 +152,26 @@
       <div id="mainRowCamputer">
           <form method="post">
               {% csrf_token %}
-              <div class="row">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-2">
-                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>
-                      <div class="buttonShape">مطالبه</div>
-                  </div>
-                  <div class="col-md-2">
-                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>
-                      <div class="buttonShape">بدهی</div>
-                  </div>
-                  <div class="col-md-2">
-                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>
-                      <div class="buttonShape">هزینه</div>
-                  </div>
-                  <div class="col-md-2">
-                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>
-                      <div class="buttonShape">درآمد</div>
-                  </div>
-                  <div class="co-md-2"></div>
-              </div>
+{#              <div class="row">#}
+{#                  <div class="col-md-2"></div>#}
+{#                  <div class="col-md-2">#}
+{#                      <input type="radio"  name="income" value="4" {% if type_int == 4 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">مطالبه</div>#}
+{#                  </div>#}
+{#                  <div class="col-md-2">#}
+{#                      <input type="radio"  name="income" value="3" {% if type_int == 3 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">بدهی</div>#}
+{#                  </div>#}
+{#                  <div class="col-md-2">#}
+{#                      <input type="radio"  name="income" value="2" {% if type_int == 2 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">هزینه</div>#}
+{#                  </div>#}
+{#                  <div class="col-md-2">#}
+{#                      <input type="radio" name="income" value="1" {% if type_int == 1 %} checked {% endif %}>#}
+{#                      <div class="buttonShape">درآمد</div>#}
+{#                  </div>#}
+{#                  <div class="co-md-2"></div>#}
+{#              </div>#}
               <div class="row" style="margin-top: 35px;">
                   <div class="col-md-2"></div>
                   <div class="col-md-4">

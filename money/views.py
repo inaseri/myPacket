@@ -29,6 +29,7 @@ def index(requset):
         context['transactions'] = transactions
     else:
         transactions = Transactions.objects.filter(type=type,owner=requset.user)
+        print("transactons is:",transactions)
         context['transactions'] = transactions
 
     # this loop calculate sum of transactions just in one type
@@ -231,8 +232,7 @@ def homePage(requset):
 
 
         typeList = requset.POST.get("list")
-        print("type list is;",typeList)
-        if typeList == "1" or typeList == "2" or typeList == "4" or typeAdd == "5":
+        if typeList == "1" or typeList == "2" or typeList == "4" or typeList == "5":
             requset.session['selected_type_list'] = typeList
             return HttpResponseRedirect(reverse('transactions'))
         if typeList == "3":

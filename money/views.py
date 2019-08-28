@@ -9,11 +9,11 @@ from django.urls import reverse
 
 
 @login_required(login_url=r'accounts/login')
-def index(requset):
+def index(requset,type):
     context = {}
     sum = 0
     selectedSource = None
-    type = requset.session.get('selected_type_list')
+    # type = requset.session.get('selected_type_list')
     # this two lines use for get all bank name and show them in html
     source = Banks.objects.all().filter(owner=requset.user)
     context['name_bank'] = source
@@ -74,14 +74,14 @@ def index(requset):
 
 
 @login_required(login_url=r'accounts/login')
-def addTransaction(request):
+def addTransaction(request, type):
     context = {}
 
     # this two lines use for get name of banks and show them in html
     source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['name_bank'] = source
-    type_transaction = request.session.get('selected_type')
-    type_transaction = int(type_transaction)
+    # type_transaction = request.session.get('selected_type')
+    type_transaction = type
     if request.method == 'POST':
         try:
             # theses lines use for get values from html
@@ -127,7 +127,7 @@ def addTransaction(request):
 
 
 @login_required(login_url=r'accounts/login')
-def addBank(request):
+def addBank(request, type):
     context = {}
 
     # first if check the name of bank is null or not if it was null we have an error print
@@ -135,8 +135,6 @@ def addBank(request):
         # this two lines get name and cash of bank for save in db
         nameOfBank = request.POST.get("bankName")
         cashOfBank = request.POST.get("cashInBank")
-        print("name of bank is:", nameOfBank)
-        print("cash of bank is:", cashOfBank)
 
 
         if nameOfBank is None or nameOfBank == "":
@@ -157,7 +155,7 @@ def addBank(request):
 
 
 @login_required(login_url=r'accounts/login')
-def banks(request):
+def banks(request, type):
     context = {}
     allbanks = Banks.objects.all().filter(owner=request.user)
     sumOfBnak = 0
@@ -223,20 +221,22 @@ def homePage(requset):
     if requset.method == 'POST':
         typeAdd = requset.POST.get("add")
         if typeAdd == "1" or typeAdd == "2" or typeAdd == "4" or typeAdd == "5":
-            requset.session['selected_type'] = typeAdd
-            return HttpResponseRedirect(reverse('addTransactions'))
+            # requset.session['selected_type'] = typeAdd
+            typeAdd = int(typeAdd)
+            return HttpResponseRedirect(reverse('addTransactions', kwargs={'type':typeAdd}))
         if typeAdd == "3":
-            requset.session['selected_type'] = typeAdd
-            return HttpResponseRedirect(reverse('addBank'))
+            # requset.session['selected_type'] = typeAdd
+            typeAdd = int(typeAdd)
+            return HttpResponseRedirect(reverse('addBank', kwargs={'type':typeAdd}))
 
 
         typeList = requset.POST.get("list")
         if typeList == "1" or typeList == "2" or typeList == "4" or typeList == "5":
-            requset.session['selected_type_list'] = typeList
-            return HttpResponseRedirect(reverse('transactions'))
+            # requset.session['selected_type_list'] = typeList
+            return HttpResponseRedirect(reverse('transactions', kwargs={'type':typeList}))
         if typeList == "3":
-            requset.session['selected_type_list'] = typeList
-            return HttpResponseRedirect(reverse('banks'))
+            # requset.session['selected_type_list'] = typeList
+            return HttpResponseRedirect(reverse('banks', kwargs={'type':typeList}))
 
 
     return render(requset,'money/home.html')

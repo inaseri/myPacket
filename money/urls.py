@@ -1,15 +1,16 @@
 from django.urls import path,include
 from . import views
+from django.conf.urls import url
 
 urlpatterns = [
     path('', views.homePage, name='index'),
     path('accounts/login/', views.clogin, name='login'),
     path(r'accounts/logout/',views.clogout,name="logout"),
-    path('addtransactions/', views.addTransaction, name='addTransactions'),
-    path('addbank/', views.addBank, name='addBank'),
-    path('banks/', views.banks, name='banks'),
+    url('addtransactions/(?P<type>[0-9]){1}/', views.addTransaction, name='addTransactions'),
+    url('addbank/(?P<type>[0-9]){1}/', views.addBank, name='addBank'),
+    url('banks/(?P<type>[0-9]){1}', views.banks, name='banks'),
     path('register/', views.register, name='register'),
     path('home/',views.homePage, name='home'),
-    path('transactions/',views.index, name='transactions'),
+    url(r'transactions/(?P<type>[0-9]){1}/',views.index, name='transactions'),
 ]
 

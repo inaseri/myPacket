@@ -61,24 +61,6 @@
       <div id="mainRowPhones">
             <form method="post" id="type">
               {% csrf_token %}
-{#              <div class="row">#}
-{#                  <div class="col-xs-3">#}
-{#                      <input type="radio"  name="income" value="4">#}
-{#                      <div class="buttonShape">مطالبه</div>#}
-{#                  </div>#}
-{#                  <div class="col-xs-3">#}
-{#                      <input type="radio"  name="income" value="3">#}
-{#                      <div class="buttonShape">بدهی</div>#}
-{#                  </div>#}
-{#                  <div class="col-xs-3">#}
-{#                      <input type="radio"  name="income" value="2">#}
-{#                      <div class="buttonShape">هزینه</div>#}
-{#                  </div>#}
-{#                  <div class="col-xs-3">#}
-{#                      <input type="radio" name="income" value="1">#}
-{#                      <div class="buttonShape">درآمد</div>#}
-{#                  </div>#}
-{#              </div>#}
               <div class="row" style="margin-top: 35px;">
                   <div class="col-xs-6">
                       <select name="bank" class="buttonShape" id="selBank">
@@ -129,31 +111,35 @@
                       <button type="submit" class="buttonShapeGreen" id="submit">ذخیره</button>
                   </div>
               </div>
-          </form>
+            </form>
+            <footer>
+                <div class="footer-top" style="margin-top: 39%;">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-2"></div>
+                            <div class="col-xs-4 segment-two">
+                                <h2 style="text-align: center">تماس با ما</h2>
+                                <ul>
+                                    <li><a href="#" ></a>inaseri.20@gmail.com </li>
+                                    <li><a href="#" ></a>+989127503802 </li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-4 segment-three">
+                                <h2 style="text-align: center">ما را دنبال کنید</h2>
+                                <ul>
+                                    <li><a href="https://t.me/Iman_Naseri" >تلگرام</a></li>
+                                    <li><a href="https://www.instagram.com/inaseri.20/" >اینستاگرام</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
       <div id="mainRowCamputer" >
           <form method="post" id="type">
               {% csrf_token %}
-{#              <div class="row">#}
-{#                  <div class="col-md-2"></div>#}
-{#                  <div class="col-md-2">#}
-{#                      <input type="radio"  name="income" value="4">#}
-{#                      <div class="buttonShape">مطالبه</div>#}
-{#                  </div>#}
-{#                  <div class="col-md-2">#}
-{#                      <input type="radio"  name="income" value="3">#}
-{#                      <div class="buttonShape">بدهی</div>#}
-{#                  </div>#}
-{#                  <div class="col-md-2">#}
-{#                      <input type="radio"  name="income" value="2">#}
-{#                      <div class="buttonShape">هزینه</div>#}
-{#                  </div>#}
-{#                  <div class="col-md-2">#}
-{#                      <input type="radio" name="income" value="1">#}
-{#                      <div class="buttonShape">درآمد</div>#}
-{#                  </div>#}
-{#                  <div class="co-md-2"></div>#}
-{#              </div>#}
               <div class="row" style="margin-top: 35px;">
                   <div class="col-md-2"></div>
                   <div class="col-md-4">
@@ -217,6 +203,33 @@
                   <div class="col-md-2"></div>
               </div>
           </form>
+          <footer>
+            <div class="footer-top" style="margin-top: 3%;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 segment-one">
+                            <h3 style="text-align: center">درباره ما</h3>
+                            <p style="text-align: right; color: white">.جیب من یک وب اپلیکیشن ایرانی است که به منظور کنترل هزینه ها بدون هزینه نوشته و توسعه یافته</p>
+                        </div>
+                        <div class="col-md-4 segment-two">
+                            <h2 style="text-align: center">تماس با ما</h2>
+                            <ul>
+                                <li><a href="#" ></a>inaseri.20@gmail.com </li>
+                                <li><a href="#" ></a>+989127503802 </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 segment-three">
+                            <h2 style="text-align: center">ما را دنبال کنید</h2>
+                            <ul>
+                                <li><a href="https://t.me/Iman_Naseri" >تلگرام</a></li>
+                                <li><a href="https://www.instagram.com/inaseri.20/" >اینستاگرام</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-bottom">تمام حقوق مادی و معنوی این سایت متعلق به جیب من می باشد</p>
+        </footer>
       </div>
       <script type="text/javascript">
 		document.getElementById("mainRowCamputer").classList.toggle("hideAll")

@@ -29,7 +29,6 @@ def index(requset):
         context['transactions'] = transactions
     else:
         transactions = Transactions.objects.filter(type=type,owner=requset.user)
-        print("transactons is:",transactions)
         context['transactions'] = transactions
 
     # this loop calculate sum of transactions just in one type

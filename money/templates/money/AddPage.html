@@ -1,21 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 {% load static %}
 {% load pwa %}
-<html lang="fa">
 
+<html lang="en">
   <head>
-
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
     <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
     <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
     <link rel="stylesheet" href="{% static 'money/style.css' %}">
-
-    <title>افزودن مبادله</title>
+    <title>افزودن تراکنش</title>
     <script>
         $("#type").submit(function () {
         });
@@ -26,242 +29,170 @@
         {% elif saveTransaction == 4 %}
             alert("تراکنش شما با موفقیت ذخیره شد");
         {% endif %}
-
         $(document).ready(function () {
-        $("#submit").click(function () {
-                var banks = $('#selBank');
-                if (banks.val() === '') {
-                    alert("لطفا یک حساب را از حساب های خود انتخاب کنید یا یک حساب جدید ایجاد کنید");
-                    $('#selBank').focus();
-                    return false;
-                }
-                else return;
+            $("#submit").click(function () {
+            var banks = $('#selBank');
+            if (banks.val() === '') {
+                alert("لطفا یک حساب را از حساب های خود انتخاب کنید یا یک حساب جدید ایجاد کنید");
+            $('#selBank').focus();
+                return false;
+            }
+            else return;
             });
         });
     </script>
-    {% progressive_web_app_meta %}
-
   </head>
 
-  <body>
-{#  <script type='text/javascript'>#}
-{#   $("input:radio").change(function () {$("#postGender").prop("disabled", false);});#}
-{#  </script>#}
+  <body style="background-color: #f1f1f1;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #4074B8!important;">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}" style="font-family: sans-serif; font-size: 12px;">برگشت به خانه</a>
+        </div>
+    </nav>
     <div class="container">
-      {% load humanize %}
-      <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar">
-                    <p class="vertical-center style-logo-header">جیب من</p>
-                    <p class="vertical-center style-logo-header" style="margin-left: 500px;">{{ user }}</p>
-                    <a class="style-logo-header" href="{% url 'home' %}" style="margin-top: 7px;">برگشت به خانه</a>
-                </nav>
+        {% load humanize %}
+        <form method="post" id="type">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                        <label>حساب مبدا را انتخاب کنید</label>
+                        <select name="bank" id="selBank" class="browser-default">
+                            <option value="" type="text">انتخاب کنید</option>
+                            {% for company in name_bank %}
+                                <option value="{{ company.name_bank }}">{{ company.name_bank }}</option>
+                            {% endfor %}
+                        </select>
+                </div>
+                <div class="form-group col-md-4" style="margin-top: 10px;">
+                    <label for="date" class="active" style="font-family: sans-serif">تاریخ</label>
+                    <input type="text" class="validate jalali-datepicker" id="date" name="date">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="input-field col-md-4">
+                    <label for="title" class="active" style="font-family: sans-serif">عنوان</label>
+                    <input id="title" type="text" class="validate" name="title">
+                </div>
+                <div class="input-field col-md-4">
+                    <label for="cash" class="active" style="font-family: sans-serif">رقم</label>
+                    <input type="number" class="validate" id="cash" name="cash">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="input-field col-md-8">
+                    <label for="desc" class="active" style="font-family: sans-serif">توضیحات</label>
+                    <input type="text" class="validate" id="desc" name="desc">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn waves-effect waves-light" id="submit" style="width: 100%;">
+                        ذخیره
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </form>
+    </div>
+    <footer class="section footer-classic context-dark bg-image" style="background: #4074B8; width:100%; bottom: 0; position: fixed; margin-bottom: -18px;">
+        <div class="container-fluid">
+            <div class="row" style="width: 100%;">
+                <div class="row no-gutters social-container">
+                    <div class="col-md-4">
+                        <a class="social-inner" href="https://www.instagram.com/inaseri.20/"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="social-inner" href="#https://telegram.me/iman_naseri/"><span class="icon mdi mdi-twitter"></span><span>telegram</span></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>email</span></a>
+                    </div>
+                </div>
             </div>
         </div>
-      <div id="mainRowPhones">
-            <form method="post" id="type">
-              {% csrf_token %}
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-6">
-                      <select name="bank" class="buttonShape" id="selBank">
-                          <option value="">انتخاب کنید</option>
-                          {% for company in name_bank %}
-                          <option value="{{ company.name_bank }}">{{ company.name_bank }}</option>
-                          {% endfor %}
-                      </select>
-                  </div>
-                  <div class="col-xs-6">
-                      <P class="buttonShape">منبع مالی</P>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-6">
-                      <input type="text" name="date" class="buttonShape jalali-datepicker" style="text-align: center;">
-                  </div>
-                  <div class="col-xs-6">
-                      <p class="buttonShape">تاریخ</p>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-6">
-                      <input type="text" name="title" class="buttonShape">
-                  </div>
-                  <div class="col-xs-6">
-                      <p class="buttonShape">عنوان</p>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-6">
-                      <input type="number" name="cash" class="buttonShape">
-                  </div>
-                  <div class="col-xs-6">
-                      <p class="buttonShape">مبلغ</p>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-6">
-                      <input type="text" name="desc" class="buttonShape">
-                  </div>
-                  <div class="col-xs-6">
-                      <p class="buttonShape">توضیحات</p>
-                  </div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-xs-12">
-                      <button type="submit" class="buttonShapeGreen" id="submit">ذخیره</button>
-                  </div>
-              </div>
-            </form>
-        </div>
-      <div id="mainRowCamputer" >
-          <form method="post" id="type">
-              {% csrf_token %}
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                      <select name="bank" class="buttonShape" id="selBank">
-                          <option value="">انتخاب کنید</option>
-                          {% for company in name_bank %}
-                          <option value="{{ company.name_bank }}">{{ company.name_bank }}</option>
-                          {% endfor %}
-                      </select>
-                  </div>
-                  <div class="col-md-4">
-                      <P class="buttonShape">منبع مالی</P>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                      <input type="text" name="date" class="buttonShape jalali-datepicker">
-                  </div>
-                  <div class="col-md-4">
-                      <p class="buttonShape">تاریخ</p>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                      <input type="text" name="title" class="buttonShape">
-                  </div>
-                  <div class="col-md-4">
-                      <p class="buttonShape">عنوان</p>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                      <input type="number" name="cash" class="buttonShape">
-                  </div>
-                  <div class="col-md-4">
-                      <p class="buttonShape">مبلغ</p>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-4">
-                      <input type="text" name="desc" class="buttonShape">
-                  </div>
-                  <div class="col-md-4">
-                      <p class="buttonShape">توضیحات</p>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-              <div class="row" style="margin-top: 35px;">
-                  <div class="col-md-2"></div>
-                  <div class="col-md-8">
-                      <button type="submit" class="buttonShapeGreen" id="submit">ذخیره</button>
-                  </div>
-                  <div class="col-md-2"></div>
-              </div>
-          </form>
-      </div>
-      <script type="text/javascript">
-		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-		document.getElementById("mainRowPhones").classList.toggle("showAll")
-      </script>
-    </div>
-
-      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-      <script src="{% static 'money/js/moment.min.js' %}" type="text/javascript"></script>
-      <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
-      <script src="{% static 'money/js/daterangepicker-fa-ex.js' %}"></script>
-      <script>
+    </footer>
+    <script src="{% static 'money/js/moment.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
+    <script src="{% static 'money/js/daterangepicker-fa-ex.js' %}"></script>
+    <script>
         $(document).ready(function () {
-            var night;
-            var isRtl = true;
-            var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
-            var dateFrom = false ? moment("") : undefined;
-            var dateTo = false ? moment("") : undefined;
-            var $dateRanger = $("#dateRangePicker");
+        var night;
+        var isRtl = true;
+        var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
+        var dateFrom = false ? moment("") : undefined;
+        var dateTo = false ? moment("") : undefined;
+        var $dateRanger = $("#dateRangePicker");
 
-            $dateRanger.daterangepicker({
-                clearLabel: 'Clear',
-                autoUpdateInput: !!(dateFrom && dateTo),
-                minDate: moment(),
-                autoApply: true,
-                opens: isRtl ? 'left' : 'right',
-                locale: {
-                    separator: ' - ',
-                    format: dateFormat
-                },
-                startDate: dateFrom,
-                endDate: dateTo,
-                jalaali: isRtl,
-                showDropdowns: true
-            }).on('apply.daterangepicker', function (ev, picker) {
-                night = picker.endDate.diff(picker.startDate, 'days');
-                if (night > 0) {
-                    $(this).val(picker.startDate.format(dateFormat));
-                    $('#dateRangePickerEnd').val(picker.endDate.format(dateFormat));
-                } else {
-                    $(this).val('')
-                }
-            });
-
-
-            $('.ga-datepicker').daterangepicker({
-                clearLabel: 'Clear',
-                // autoUpdateInput: !!(dateFrom && dateTo),
-                //minDate: moment(),
-                autoApply: true,
-                opens: 'right',
-                singleDatePicker: true,
-                showDropdowns: true,
-                language: 'en'
-            }).on('apply.daterangepicker', function () {
-                $('.tooltip').hide();
-                $('.date-select').text($(this).val());
-            });
-
-            $('.jalali-datepicker').daterangepicker({
-                clearLabel: 'Clear',
-                autoApply: true,
-                opens: 'left',
-                singleDatePicker: true,
-                showDropdowns: true,
-                jalaali: true,
-                language: 'fa'
-            }).on('apply.daterangepicker', function () {
-                $('.tooltip').hide();
-                $('.date-select').text($(this).val());
-            });
-
-            $(document).on('mouseover', '.daterangepicker .calendar td', function () {
-                var gagDate = $(this).attr('data-original-title');
-                $('.date-hover').text('');
-                $('.date-hover').text(gagDate);
-
-                $('[data-toggle="tooltip"]').tooltip()
-            });
-
+        $dateRanger.daterangepicker({
+            clearLabel: 'Clear',
+            autoUpdateInput: !!(dateFrom && dateTo),
+            minDate: moment(),
+            autoApply: true,
+            opens: isRtl ? 'left' : 'right',
+            locale: {
+                separator: ' - ',
+                format: dateFormat
+            },
+            startDate: dateFrom,
+            endDate: dateTo,
+            jalaali: isRtl,
+            showDropdowns: true
+        }).on('apply.daterangepicker', function (ev, picker) {
+            night = picker.endDate.diff(picker.startDate, 'days');
+            if (night > 0) {
+                $(this).val(picker.startDate.format(dateFormat));
+                $('#dateRangePickerEnd').val(picker.endDate.format(dateFormat));
+            } else {
+                $(this).val('')
+            }
         });
-      </script>
 
+
+        $('.ga-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            // autoUpdateInput: !!(dateFrom && dateTo),
+            //minDate: moment(),
+            autoApply: true,
+            opens: 'right',
+            singleDatePicker: true,
+            showDropdowns: true,
+            language: 'en'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $('.jalali-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            autoApply: true,
+            opens: 'left',
+            singleDatePicker: true,
+            showDropdowns: true,
+            jalaali: true,
+            language: 'fa'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $(document).on('mouseover', '.daterangepicker .calendar td', function () {
+            var gagDate = $(this).attr('data-original-title');
+            $('.date-hover').text('');
+            $('.date-hover').text(gagDate);
+
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+    });
+    </script>
+    <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
   </body>
 </html>

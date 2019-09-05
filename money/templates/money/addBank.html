@@ -3,18 +3,20 @@
 {% load pwa %}
 <html lang="fa">
   <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Material Design for Bootstrap fonts and icons -->
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'money/style.css' %}">
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <title>اضافه کردن بانک</title>
-
+    <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
+    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+    <title>افزودن حساب</title>
     <script>
         $("#type").submit(function () {
         });
@@ -23,93 +25,76 @@
         {% elif saveBank == 0 %}
             alert("نام حساب را وارد نکردید، لطفا مجددا تلاش کنید")
         {% endif %}
+
+        $(document).ready(function() {
+            $('select').material_select();
+        });
     </script>
 
   </head>
-  <body>
+
+  <body style="background-color: #f1f1f1;">
+
+    <footer class="section footer-classic context-dark bg-image" style="background: #4074B8;">
+        <div class="container">
+            <div class="row no-gutters social-container">
+                <div class="col-md-4">
+                    <a class="social-inner" href="{% url 'home' %}"><span class="icon mdi mdi-instagram"></span><span>برگشت به خانه</span></a>
+                </div>
+                <div class="col-md-4">
+{#                        <a class="social-inner" href="#https://telegram.me/iman_naseri/"><span class="icon mdi mdi-twitter"></span><span>telegram</span></a>#}
+                </div>
+                <div class="col-md-4">
+{#                        <a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>email</span></a>#}
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <div class="container">
        {% load humanize %}
-      <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar ">
-                    <p class="vertical-center style-logo-header">جیب من</p>
-                    <p class="vertical-center style-logo-header" style="margin-left: 500px;">{{ user }}</p>
-                    <a class="style-logo-header" href="{% url 'home' %}" style="margin-top: 7px;">برگشت به خانه</a>
-                </nav>
-            </div>
-      </div>
-      <div id="mainRowPhones">
-            <form method="post" id="type">
+            <form method="post" id="type" class="col s12">
                 {% csrf_token %}
                 <div class="row" style="margin-top: 35px;">
-                    <div class="col-xs-6">
-                        <input type="text" name="bankName" class="buttonShape">
+                    <div class="col-md-3"></div>
+                    <div class="input-field col-md-3">
+                        <input id="last_name" type="number" class="validate" name="cashInBank">
+                        <label for="last_name" style="text-align: right; font-size: 14px;" class="active">رقم حساب</label>
                     </div>
-                    <div class="col-xs-6">
-                        <p class="buttonShape">اسم حساب</p>
+                    <div class="input-field col-md-3">
+                        <input id="first_name" type="text" class="validate" name="bankName">
+                        <label for="first_name" style="text-align: right; font-size: 14px;" class="active">نام بانک</label>
                     </div>
-                </div>
-                <div class="row" style="margin-top: 35px;">
-                    <div class="col-xs-6">
-                        <input type="text" name="cashInBank" class="buttonShape">
-                    </div>
-                    <div class="col-xs-6">
-                        <p class="buttonShape">رقم حساب</p>
-                    </div>
+                    <div class="col-md-3"></div>
                 </div>
                 <div class="row" style="margin-top: 35px;">
                     <div class="col-xs-12">
-                        <button type="submit" class="buttonShapeGreen">ذخیره</button>
+                        <button type="submit" class="btn waves-effect waves-light" id="submit" style="width: 100%;">
+                            ذخیره
+                            <i class="material-icons right">send</i>
+                        </button>
                     </div>
                 </div>
             </form>
-        </div>
-      <div id="mainRowCamputer">
-            <form method="post" id="type">
-                {% csrf_token %}
-                <div class="row" style="margin-top: 35px;">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <input type="text" name="bankName" class="buttonShape">
-                    </div>
-                    <div class="col-md-4">
-                        <p class="buttonShape">اسم حساب</p>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-                <div class="row" style="margin-top: 35px;">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-4">
-                        <input type="text" name="cashInBank" class="buttonShape">
-                    </div>
-                    <div class="col-md-4">
-                        <p class="buttonShape">رقم حساب</p>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-                <div class="row" style="margin-top: 35px;">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <button type="submit" class="buttonShapeGreen">ذخیره</button>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-{#                <div class="row" style="margin-top: 35px;">#}
-{#                    <div class="col-md-2"></div>#}
-{#                    <div class="col-md-8">#}
-{#                        <a href="{% url 'banks'%}" class="buttonShapeGreen">تمامی حساب ها</a>#}
-{#                        <a></a>#}
-{#                    </div>#}
-{#                    <div class="col-md-2"></div>#}
-{#                </div>#}
-            </form>
-        </div>
-      <script type="text/javascript">
-		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-		document.getElementById("mainRowPhones").classList.toggle("showAll")
-      </script>
       {% progressive_web_app_meta %}
     </div>
+
+    <footer class="section footer-classic context-dark bg-image" style="background: #4074B8; position: fixed; bottom: 0; width: 100%;">
+        <div class="container">
+            <div class="row no-gutters social-container">
+                <div class="col-md-4">
+                    <a class="social-inner" href="https://www.instagram.com/inaseri.20/"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a>
+                </div>
+                <div class="col-md-4">
+                    <a class="social-inner" href="#https://telegram.me/iman_naseri/"><span class="icon mdi mdi-twitter"></span><span>telegram</span></a>
+                </div>
+                <div class="col-md-4">
+                    <a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>email</span></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
   </body>
 </html>

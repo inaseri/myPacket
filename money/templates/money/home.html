@@ -1,301 +1,217 @@
 <!DOCTYPE html>
 {% load static %}
 {% load pwa %}
-<html lang="fa">
+<html lang="en">
 
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Material Design for Bootstrap fonts and icons -->
-    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
-    <link rel="stylesheet" href="{% static 'money/style.css' %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>جیب من</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+  {% progressive_web_app_meta %}
+</head>
 
-    <title>خانه</title>
-    {% progressive_web_app_meta %}
-    </head>
+<body style="background-color: #f1f1f1;">
 
-    <body>
-        <footer class="section footer-classic context-dark bg-image" style="background: #4074B8;">
-            <div class="container">
-                <div class="row no-gutters social-container">
-                    <div class="col-md-4">
-                        <a class="social-inner" href="{% url 'logout' %}"><span class="icon mdi mdi-instagram"></span><span>خروج</span></a>
+
+<div class="container-fluid">
+
+    <!--Main Navigation-->
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+    <a class="navbar-brand" href="#"><strong>My Packet</strong></a>
+      <a class="nav-link" href="{% url 'logout' %}" style="color: white;">خروج<span class="sr-only">(current)</span></a>
+  </nav>
+</header>
+    <div id="mainRowPhones">
+        <form method="post">
+            {% csrf_token %}
+            <div class="row" style="margin-top: 30%">
+                <div class="col-3 col-sm-3"></div>
+                <div class="col-6 col-sm-6">
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="{% static 'ic-bank.png' %}" alt="Card image cap">
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a>حساب</a></h4>
+                            <!-- Button -->
+                            <button class="btn btn-outline-secondary waves-effect" value="3" name="add" style="width: 100%;">افزودن</button>
+                            <button class="btn btn-outline-success waves-effect" value="3" name="list" style="width: 100%;">همه</button>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-{#                        <a class="social-inner" href="#https://telegram.me/iman_naseri/"><span class="icon mdi mdi-twitter"></span><span>telegram</span></a>#}
+                </div>
+                <div class="col-3 col-sm-3"></div>
+            </div>
+            <div class="row" style="margin-top: 10%">
+                <div class="col-6 col-sm-6">
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="{% static 'ic-income.png' %}" alt="Card image cap">
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a>درآمد</a></h4>
+                            <!-- Button -->
+                            <button class="btn btn-outline-secondary waves-effect" value="1" name="add" style="width: 100%;">افزودن</button>
+                            <button class="btn btn-outline-success waves-effect" value="1" name="list" style="width: 100%;">همه</button>
+                        </div>
                     </div>
-                    <div class="col-md-4">
-{#                        <a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>email</span></a>#}
+                </div>
+                <div class="col-6 col-sm-6">
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="{% static 'ic-cost.png' %}" alt="Card image cap">
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a>هزینه</a></h4>
+                            <!-- Button -->
+                            <button class="btn btn-outline-secondary waves-effect" value="2" name="add" style="width: 100%;">افزودن</button>
+                            <button class="btn btn-outline-success waves-effect" value="2" name="add" style="width: 100%;">همه</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-        </footer>
-        <div class="container">
-        {% load humanize %}
-            <form method="post">
-                {% csrf_token %}
-                <div id="mainRowPhones">
-                    <div class="row">
-                      <div class="col-xs-3" style="width: 100%;height: 100%;margin-top: 10px;">
-                        <div class="card">
-
-                          <div class="view">
-                            <img src="{% static 'ic-bank.png' %}" class="card-img-top" alt="photo" style="width: 50%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">حساب</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی حساب های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="3" name="add">افزودن</button>
-                            <button class="buttonShape" value="3" name="list" style="margin-top: 3%;">مشاهده همه</button>
-                          </div>
-
+            <div class="row" style="margin-top: 10%; margin-bottom: 30%;">
+                <div class="col-6 col-sm-6">
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="{% static 'ic-debt.jpg' %}" alt="Card image cap">
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a>بدهی</a></h4>
+                            <!-- Button -->
+                            <button class="btn btn-outline-secondary waves-effect" name="add" value="4" style="width: 100%;">افزودن</button>
+                            <button class="btn btn-outline-success waves-effect" name="list" value="4" style="width: 100%;">همه</button>
                         </div>
-                      </div>
-                      <div class="col-xs-3" style="height: 100%;width: 100%;margin-top: 30px;">
-                        <div class="card" style="width: 100%;">
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-income.png' %}" class="card-img-top" alt="photo" style="width: 50%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">درآمد</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی درآمد های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="1" name="add">افزودن</button>
-                            <button class="buttonShape" value="1" name="list" style="margin-top: 3%;">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="col-xs-3" style="width: 100%;height: 100%;margin-top: 30px;">
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-cost.png' %}" class="card-img-top" alt="photo" style="width: 50%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">هزینه </h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی هزینه های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="2" name="add">افزودن</button>
-                            <button class="buttonShape" value="2" name="list" style="margin-top: 3%;">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="col-xs-3" style="width: 100%;height: 100%;margin-top: 30px;">
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-debt.jpg' %}" class="card-img-top" alt="photo" style="width: 50%">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">بدهکاری</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی بدهی های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" name="add" value="4">افزودن</button>
-                            <button class="buttonShape" name="list" value="4" style="margin-top: 3%;">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="col-xs-3" style="width: 100%;height: 100%;margin-top: 30px;margin-bottom: 40px;">
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-demand.png' %}" class="card-img-top" alt="photo" style="width: 50%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">طلب کاری</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی طلب های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="5" name="add">افزودن</button>
-                            <button class="buttonShape" value="5" name="list" style="margin-top: 3%;">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
                     </div>
                 </div>
-                <div id="mainRowCamputer">
-                    <div class="row" style="margin-top: 1%;">
-                      <div class="col-md-1"></div>
-                      <div class="col-md-3" >
-                        <div class="card">
-
-                          <div class="view">
-                            <img src="{% static 'ic-bank.png' %}" class="card-img-top" alt="photo" style="width: 100%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">حساب</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی حساب های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="3" name="add">افزودن</button>
-                            <button class="buttonShape" value="3" name="list">مشاهده همه</button>
-                          </div>
-
+                <div class="col-6 col-sm-6">
+                    <div class="card">
+                        <!-- Card image -->
+                        <img class="card-img-top" src="{% static 'ic-demand.png' %}" alt="Card image cap">
+                        <!-- Card content -->
+                        <div class="card-body">
+                            <!-- Title -->
+                            <h4 class="card-title"><a>طلب</a></h4>
+                            <!-- Button -->
+                            <button class="btn btn-outline-secondary waves-effect" value="5" name="add" style="width: 100%">افزودن</button>
+                            <button class="btn btn-outline-success waves-effect" value="5" name="list" style="width: 100%;">همه</button>
                         </div>
-                      </div>
-                      <div class="col-md-3" >
-                        <div class="card" style="width: 100%;">
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-income.png' %}" class="card-img-top" alt="photo" style="width: 100%; height: 100%;">
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">درآمد</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی درآمد های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="1" name="add">افزودن</button>
-                            <button class="buttonShape" value="1" name="list">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="col-md-3" >
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-cost.png' %}" class="card-img-top" alt="photo" style="width: 100%;">
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">هزینه </h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی هزینه های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="2" name="add">افزودن</button>
-                            <button class="buttonShape" value="2" name="list">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                      <div class="col-md-2"></div>
-                    </div>
-                    <div class="row" style="margin-top: 3%; margin-bottom: 3%;">
-                        <div class="col-md-3"></div>
-                        <div class="col-md-3">
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-debt.jpg' %}" class="card-img-top" alt="photo" style="width: 100%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">بدهکاری</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی بدهی های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" name="add" value="4">افزودن</button>
-                            <button class="buttonShape" name="list" value="4">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                        <div class="col-md-3">
-                        <div class="card">
-
-                          <!--Card image-->
-                          <div class="view">
-                            <img src="{% static 'ic-demand.png' %}" class="card-img-top" alt="photo" style="width: 100%;">
-                            <a href="#">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
-                          <!--Card content-->
-                          <div class="card-body">
-                            <!--Title-->
-                            <h4 class="card-title">طلب کاری</h4>
-                            <!--Text-->
-                            <p class="card-text">در این قسمت شما می توانید تمامی طلب های خود را به سادگی کنترل یا به آن اضافه کنید</p>
-                            <button class="buttonShape" value="5" name="add">افزودن</button>
-                            <button class="buttonShape" value="5" name="list">مشاهده همه</button>
-                          </div>
-
-                        </div>
-                      </div>
-                        <div class="col-md-3"></div>
-                    </div>
-                </div>
-            </form>
-            <script type="text/javascript">
-                document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-                document.getElementById("mainRowPhones").classList.toggle("showAll")
-            </script>
-        </div>
-        <footer class="section footer-classic context-dark bg-image" style="background: #4074B8;">
-            <div class="container">
-                <div class="row no-gutters social-container">
-                    <div class="col-md-4">
-                        <a class="social-inner" href="https://www.instagram.com/inaseri.20/"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="social-inner" href="#https://telegram.me/iman_naseri/"><span class="icon mdi mdi-twitter"></span><span>telegram</span></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>email</span></a>
                     </div>
                 </div>
             </div>
+        </form>
+    </div>
 
-        </footer>
-    </body>
+
+
+    <div id="mainRowCamputer">
+        <form method="post">
+        {% csrf_token %}
+            <div class="row" style="margin-top: 8%;">
+                <div class="col-md-1"></div>
+                <div class="col-md-2">
+                    <div class="card">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{% static 'ic-bank.png' %}" alt="Card image cap">
+                            <!-- Card content -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h4 class="card-title"><a>حساب</a></h4>
+                                <!-- Button -->
+                                <button class="btn btn-outline-secondary waves-effect" value="3" name="add" style="width: 100%;">افزودن</button>
+                                <button class="btn btn-outline-success waves-effect" value="3" name="list" style="width: 100%;">همه</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{% static 'ic-income.png' %}" alt="Card image cap">
+                            <!-- Card content -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h4 class="card-title"><a>درآمد</a></h4>
+                                <!-- Button -->
+                                <button class="btn btn-outline-secondary waves-effect" value="1" name="add" style="width: 100%;">افزودن</button>
+                                <button class="btn btn-outline-success waves-effect" value="1" name="list" style="width: 100%;">همه</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{% static 'ic-cost.png' %}" alt="Card image cap">
+                            <!-- Card content -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h4 class="card-title"><a>هزینه</a></h4>
+                                <!-- Button -->
+                                <button class="btn btn-outline-secondary waves-effect" value="2" name="add" style="width: 100%;">افزودن</button>
+                                <button class="btn btn-outline-success waves-effect" value="2" name="add" style="width: 100%;">همه</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{% static 'ic-debt.jpg' %}" alt="Card image cap">
+                            <!-- Card content -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h4 class="card-title"><a>بدهی</a></h4>
+                                <!-- Button -->
+                                <button class="btn btn-outline-secondary waves-effect" name="add" value="4" style="width: 100%;">افزودن</button>
+                                <button class="btn btn-outline-success waves-effect" name="list" value="4" style="width: 100%;">همه</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="card">
+                            <!-- Card image -->
+                            <img class="card-img-top" src="{% static 'ic-demand.png' %}" alt="Card image cap">
+                            <!-- Card content -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h4 class="card-title"><a>طلب</a></h4>
+                                <!-- Button -->
+                                <button class="btn btn-outline-secondary waves-effect" value="5" name="add" style="width: 100%">افزودن</button>
+                                <button class="btn btn-outline-success waves-effect" value="5" name="list" style="width: 100%;">همه</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript">
+      document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+      document.getElementById("mainRowPhones").classList.toggle("showAll")
+  </script>
+
+</body>
 </html>

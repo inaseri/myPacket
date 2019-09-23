@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-{%  load static %}
+{% load static %}
 {% load pwa %}
-<html lang="fa">
-  <head>
+{% load Iman %}
+<html lang="en">
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'money/style.css' %}">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
-    <script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>همه تراکنش ها</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
+  <script>
     $("#save").submit(function () {
     });
 	{% if success == 1%}
@@ -21,79 +28,71 @@
 	{% elif success == 2 %}
         alert("ثبت نام شما با موفقیت صورت گرفت")
     {% endif %}
-    </script>
-
-  </head>
+  </script>
   {% progressive_web_app_meta %}
-  <body style="background-color: #f1f1f1;">
-    <div class="container">
+</head>
+
+<body style="background-color: #f1f1f1;">
+<!--Main Navigation-->
+<header>
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+    <a class="navbar-brand" href="{% url 'index' %}"><strong>My Packet</strong></a>
+  </nav>
+</header>
+    <div class="container-fluid">
       <form method="post" id="save" >
-        {% csrf_token %}
-        <div class="row" style="margin-top: 35px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <input class="buttonShape" type="text" name="firstName" placeholder="enter username">
-            </div>
-            <div class="col-md-2">
-                <p class="buttonShape">نام کاربری</p>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row" style="margin-top: 35px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <input class="buttonShape" type="text" name="lastName" placeholder="your last name">
-            </div>
-            <div class="col-md-2">
-                <p class="buttonShape">نام خانوادگی</p>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row" style="margin-top: 35px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <input class="buttonShape" type="text" name="emailAddress" placeholder="example@email.com">
-            </div>
-            <div class="col-md-2">
-                <p class="buttonShape">ایمیل</p>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row" style="margin-top: 35px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <input class="buttonShape" type="password" name="password" placeholder="password">
-            </div>
-            <div class="col-md-2">
-                <p class="buttonShape">رمز</p>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row" style="margin-top: 35px;">
-            <div class="col-md-3"></div>
-            <div class="col-md-4">
-                <input class="buttonShape" type="password" name="password2" placeholder="re-enter password">
-            </div>
-            <div class="col-md-2">
-                <p class="buttonShape">تکرار رمز</p>
-            </div>
-            <div class="col-md-3"></div>
-    </div>
-        <div class="row" style="margin-top: 35px;">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-            <button type="submit" class="buttonShapeGreen">ثبت نام</button>
+          {% csrf_token %}
+          <div class="row" style="margin-top: 8%;">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 md-form">
+                    <i class="fas fa-envelope prefix"></i>
+                    <input type="text" id="inputValidationEx" class="form-control validate" placeholder="نام کاربری" name="firstName">
+              </div>
+              <div class="col-md-4"></div>
           </div>
-          <div class="col-md-3"></div>
-        </div>
-        <div class="row" style="margin-top: 35px;">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
-            <a class="buttonShape" href="{% url 'login' %}">ورود</a>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 md-form">
+                    <i class="fas fa-envelope prefix"></i>
+                    <input type="email" id="inputValidationEx" class="form-control validate" placeholder="آدرس ایمیل" name="emailAddress">
+              </div>
+              <div class="col-md-4"></div>
           </div>
-          <div class="col-md-3"></div>
-        </div>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4 md-form">
+                    <i class="fas fa-lock prefix"></i>
+                    <input type="password" id="inputValidationEx2" class="form-control validate" placeholder="رمز ورود" name="password">
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                    <button type="submit" class="btn blue-gradient" style="width: 105%">ثبت نام</button>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
+          <div class="row">
+              <div class="col-md-4"></div>
+              <div class="col-md-4">
+                  <a href="{% url 'login' %}" class="btn peach-gradient" style="width: 105%">ورود</a>
+              </div>
+              <div class="col-md-4"></div>
+          </div>
       </form>
     </div>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
   </body>
 </html>

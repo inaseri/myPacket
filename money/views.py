@@ -136,18 +136,18 @@ def addBank(request, type):
         nameOfBank = request.POST.get("bankName")
         cashOfBank = request.POST.get("cashInBank")
 
-
         if nameOfBank is None or nameOfBank == "":
             context["saveBank"] = 0
         else:
             # this if check the cash is null or not, if it was null we assign 0 to cash_bank
             if cashOfBank is None or cashOfBank == '':
-                cashOfBank = 1
+                cashOfBank = 0
                 Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
             else:
                 Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
+            print("saveBank is:", context["saveBank"])
 
 
     context['user'] = request.user
@@ -165,6 +165,12 @@ def banks(request, type):
     context['sum_cash_bank'] = sumOfBnak
     context['all_banks'] = allbanks
     context['user'] = request.user
+
+    if request.method == 'POST':
+        showBank = request.POST.get("goToBank")
+        showBank = int(showBank)
+        print("show bank is:", showBank)
+        return HttpResponseRedirect(reverse('addBank', kwargs={'type': showBank}))
     return render(request,'money/banks.html', context)
 
 
@@ -200,18 +206,18 @@ def register(request):
     context = {}
     if request.method == 'POST':
         username = request.POST.get("firstName")
-        lastName = request.POST.get("lastName")
         emailAddress = request.POST.get("emailAddress")
         password = request.POST.get("password")
-        password2 = request.POST.get("password2")
 
-        if User.objects.filter(username=username).exists():
-            context["success"] = 1
-        else:
-            user = User.objects.create_user(username, emailAddress, password)
-            user.save()
-            context["success"] = 2
-            return render(request, 'money/login.html')
+        if username is None:
+            print("username is:", username)
+            if User.objects.filter(username=username).exists():
+                context["success"] = 1
+            else:
+                user = User.objects.create_user(username, emailAddress, password)
+                user.save()
+                context["success"] = 2
+                return HttpResponseRedirect(reverse('login'))
     return render(request, 'money/register.html',context)
 
 

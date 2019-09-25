@@ -11,6 +11,6 @@ urlpatterns = [
     url('banks/(?P<type>[0-9]){1,3}', views.banks, name='banks'),
     path('register/', views.register, name='register'),
     path('home/',views.homePage, name='home'),
-    url(r'transactions/(?P<type>[0-9]){1}/',views.index, name='transactions'),
+    url(r'transactions/(?P<type>[0-9])/',views.index, name='transactions'),
 ]
 

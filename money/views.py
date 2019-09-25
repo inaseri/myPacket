@@ -69,6 +69,11 @@ def index(requset,type):
         sumOfBank = (sumOfIncome + cashOfSelectedBank) - sumOfExpens
         context['sum_bank'] = sumOfBank
 
+    if requset.method == 'POST':
+        idOfSelcted = requset.POST.get('changeTransaction')
+        idOfSelcted = int(idOfSelcted)
+        return HttpResponseRedirect(reverse('addTransactions', kwargs={'type': idOfSelcted}))
+
     context['user'] = requset.user
     return render(requset,'money/transactions.html',context)
 
@@ -121,6 +126,7 @@ def addTransaction(request, type):
             context["saveTransaction"] = 4
         except:
             pass
+
 
     context['user'] = request.user
     return render(request, 'money/AddPage.html',context)
@@ -209,15 +215,16 @@ def register(request):
         emailAddress = request.POST.get("emailAddress")
         password = request.POST.get("password")
 
-        if username is None:
-            print("username is:", username)
+        if username is not None:
+
             if User.objects.filter(username=username).exists():
-                context["success"] = 1
+                context['success'] = 1
+                print("context[success] is:", context['success'])
             else:
                 user = User.objects.create_user(username, emailAddress, password)
                 user.save()
-                context["success"] = 2
-                return HttpResponseRedirect(reverse('login'))
+                context['success'] = 2
+                return HttpResponseRedirect(reverse('login'), context)
     return render(request, 'money/register.html',context)
 
 

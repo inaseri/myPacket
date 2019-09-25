@@ -28,7 +28,7 @@
     <!--Main Navigation-->
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
-        <a class="navbar-brand" onclick="window.history.back();"><strong>برگشت</strong></a>
+        <a class="navbar-brand" href="{% url 'home' %}"><strong>برگشت</strong></a>
       </nav>
     </header>
 
@@ -186,8 +186,9 @@
                                         {% for transaction in transactions %}
                                             <tr>
                                                 <td class="pt-3-half" contenteditable="true">
-                                                    <span class="table-remove"><button type="button"
-                                                                                       class="btn btn-danger btn-rounded btn-sm my-0">ویرایش</button></span>
+                                                    <span class="table-remove">
+                                                        <button class="btn btn-danger btn-rounded btn-sm my-0" name="changeTransaction" value="{{ transaction.id }}">ویرایش</button>
+                                                    </span>
                                                 </td>
                                                 <td class="pt-3-half" contenteditable="true">{{ transaction.cash|intcomma }}</td>
                                                 <td class="pt-3-half" contenteditable="true">{{ transaction.date|jdate:'%y/%m/%d' }}</td>

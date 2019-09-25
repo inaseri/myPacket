@@ -23,10 +23,10 @@
   <script>
     $("#save").submit(function () {
     });
-	{% if success == 1%}
-	    alert("شما از قبل ثبت نام نموده اید");
-	{% elif success == 2 %}
-        alert("ثبت نام شما با موفقیت صورت گرفت")
+    {% if success == 1 %}
+        alert("لطفا یک عنوان برای تراکنش خود بنویسید");
+    {% elif success == 2 %}
+        alert("رقم تراکنش خود را مشخص کنید");
     {% endif %}
   </script>
   {% progressive_web_app_meta %}
@@ -69,7 +69,7 @@
           <div class="row">
               <div class="col-md-4"></div>
               <div class="col-md-4">
-                    <button type="submit" class="btn blue-gradient" style="width: 105%">ثبت نام</button>
+                    <button type="submit" class="btn blue-gradient" style="width: 105%" id="submit">ثبت نام</button>
               </div>
               <div class="col-md-4"></div>
           </div>

@@ -70,12 +70,52 @@ def index(requset,type):
         context['sum_bank'] = sumOfBank
 
     if requset.method == 'POST':
-        idOfSelcted = requset.POST.get('changeTransaction')
-        idOfSelcted = int(idOfSelcted)
-        return HttpResponseRedirect(reverse('addTransactions', kwargs={'type': idOfSelcted}))
+        idForChage = requset.POST.get("change")
+        if idForChage is not None:
+            return HttpResponseRedirect(reverse('change', kwargs={'id': idForChage}))
 
     context['user'] = requset.user
     return render(requset,'money/transactions.html',context)
+
+
+@login_required(login_url=r'accounts/login')
+def changeTransaction(request,id):
+
+    context = {}
+
+    all = Transactions.objects.filter(id=id)
+    for transactions in all:
+        context['title'] = transactions.title
+        context['cash'] = transactions.cash
+        context['bank'] = transactions.source
+        context['desc'] = transactions.desc
+
+    # this two lines use for get name of banks and show them in html
+    source = Banks.objects.all().values('name_bank').filter(owner=request.user)
+    context['banks'] = source
+
+    if request.method == "POST":
+        title = request.POST.get("title")
+        if title == "":
+            context["saveTransaction"] = 2
+
+        cash = request.POST.get("cash")
+        if cash == "":
+            context["saveTransaction"] = 3
+
+        desc = request.POST.get("desc")
+        if desc == "":
+            desc = "بدون توضیحات"
+
+        bank = Banks.objects.get(name_bank=request.POST.get("bank"))
+        try:
+            Transactions.objects.filter(id=id).update(title=title, cash=cash, desc=desc, source=bank)
+            context["saveTransaction"] = 4
+        except:
+            print("cont update transaction")
+
+
+    return render(request, 'money/changeTransaction.html', context)
 
 
 @login_required(login_url=r'accounts/login')
@@ -85,6 +125,7 @@ def addTransaction(request, type):
     # this two lines use for get name of banks and show them in html
     source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['name_bank'] = source
+
     # type_transaction = request.session.get('selected_type')
     type_transaction = type
     if request.method == 'POST':

@@ -36,12 +36,12 @@
     <div id="mainRowPhones">
         <form method="post">
             {% csrf_token %}
-            <div class="row" style="margin-top: 30%">
-                <div class="col-3 col-sm-3"></div>
-                <div class="col-6 col-sm-6">
+            <div class="row" style="margin-top: 20%">
+{#                <div class="col-3 col-sm-3"></div>#}
+                <div class="col-12 col-sm-12">
                     <div class="card">
                         <!-- Card image -->
-                        <img class="card-img-top" src="{% static 'ic-bank.png' %}" alt="Card image cap">
+                        <img class="w-25" src="{% static 'ic-bank.png' %}" style="margin-left: 37%; margin-top: 3%;">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->
@@ -52,13 +52,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-3 col-sm-3"></div>
+{#                <div class="col-3 col-sm-3"></div>#}
             </div>
-            <div class="row" style="margin-top: 10%">
+            <div class="row" style="margin-top: 5%">
                 <div class="col-6 col-sm-6">
                     <div class="card">
                         <!-- Card image -->
-                        <img class="card-img-top" src="{% static 'ic-income.png' %}" alt="Card image cap">
+                        <img class="w-50" src="{% static 'ic-income.png' %}" style="margin-left: 25%; margin-top: 3%;">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->
@@ -72,23 +72,23 @@
                 <div class="col-6 col-sm-6">
                     <div class="card">
                         <!-- Card image -->
-                        <img class="card-img-top" src="{% static 'ic-cost.png' %}" alt="Card image cap">
+                        <img class="w-50" src="{% static 'ic-cost.png' %}" style="margin-left: 25%; margin-top: 3%;">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->
                             <h4 class="card-title"><a>هزینه</a></h4>
                             <!-- Button -->
                             <button class="btn peach-gradient" value="2" name="add" style="width: 100%;">افزودن</button>
-                            <button class="btn purple-gradient" value="2" name="add" style="width: 100%;">همه</button>
+                            <button class="btn purple-gradient" value="2" name="list" style="width: 100%;">همه</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 10%; margin-bottom: 30%;">
+            <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
                 <div class="col-6 col-sm-6">
                     <div class="card">
                         <!-- Card image -->
-                        <img class="card-img-top" src="{% static 'ic-debt.jpg' %}" alt="Card image cap">
+                        <img class="w-50" src="{% static 'ic-debt.jpg' %}" style="margin-left: 25%; margin-top: 3%;">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->
@@ -102,7 +102,7 @@
                 <div class="col-6 col-sm-6">
                     <div class="card">
                         <!-- Card image -->
-                        <img class="card-img-top" src="{% static 'ic-demand.png' %}" alt="Card image cap">
+                        <img class="w-50" src="{% static 'ic-demand.png' %}" style="margin-left: 25%; margin-top: 3%;">
                         <!-- Card content -->
                         <div class="card-body">
                             <!-- Title -->

@@ -12,5 +12,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('home/',views.homePage, name='home'),
     url(r'transactions/(?P<type>[0-9])/',views.index, name='transactions'),
+    url('changeTransaction/(?P<id>[0-9]{1,3})', views.changeTransaction, name='change'),
 ]
 

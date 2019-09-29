@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+{% load pwa %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>تغییر تراکنش</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $("#type").submit(function () {
+    });
+    {% if saveTransaction == 2 %}
+        alert("لطفا یک عنوان برای تراکنش خود بنویسید");
+    {% elif saveTransaction == 3 %}
+        alert("رقم تراکنش خود را مشخص کنید");
+    {% elif saveTransaction == 4 %}
+        alert("تراکنش شما با موفقیت به روز رسانی شد");
+    {% endif %}
+    $(document).ready(function () {
+        $("#submit").click(function () {
+        var banks = $('#selBank');
+        if (banks.val() === '') {
+            alert("لطفا یک حساب را از حساب های خود انتخاب کنید یا یک حساب جدید ایجاد کنید");
+        $('#selBank').focus();
+            return false;
+        }
+        else return;
+        });
+    });
+  </script>
+  {% progressive_web_app_meta %}
+</head>
+
+  <body style="background-color: #f1f1f1;">
+    <!--Main Navigation-->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+        <a class="navbar-brand" href="{% url 'home' %}"><strong>برگشت</strong></a>
+      </nav>
+    </header>
+    <div class="container-fluid">
+        {% load humanize %}
+        <form method="post" id="type">
+            {% csrf_token %}
+            <div class="row" style="margin-top: 20%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <select name="bank" id="selBank" class="browser-default custom-select">
+                    <option value="{{ bank }}" type="text">{{ bank }}</option>
+                    {% for bank in banks %}
+                         <option value="{{ bank.name_bank }}">{{ bank.name_bank }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <input placeholder="تاریخ" type="text" name="date" class="form-control jalali-datepicker" id="date" value="{{ date }}">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="عنوان مبادله" type="text" name="title" class="form-control" id="title" value="{{ title }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="رقم مبادله" type="number" name="cash" class="form-control" id="cash" value="{{ cash }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="توضیحات" type="text" name="desc" class="form-control" id="desc" value="{{ desc }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-default btn-lg btn-block" id="submit" style="margin-left: 2px;">ذخیره</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </form>
+    </div>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
+  <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
+  <script src="{% static 'money/js/daterangepicker-fa-ex.js' %}"></script>
+  <script>
+        $(document).ready(function () {
+        var night;
+        var isRtl = true;
+        var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
+        var dateFrom = false ? moment("") : undefined;
+        var dateTo = false ? moment("") : undefined;
+        var $dateRanger = $("#dateRangePicker");
+
+        $dateRanger.daterangepicker({
+            clearLabel: 'Clear',
+            autoUpdateInput: !!(dateFrom && dateTo),
+            minDate: moment(),
+            autoApply: true,
+            opens: isRtl ? 'left' : 'right',
+            locale: {
+                separator: ' - ',
+                format: dateFormat
+            },
+            startDate: dateFrom,
+            endDate: dateTo,
+            jalaali: isRtl,
+            showDropdowns: true
+        }).on('apply.daterangepicker', function (ev, picker) {
+            night = picker.endDate.diff(picker.startDate, 'days');
+            if (night > 0) {
+                $(this).val(picker.startDate.format(dateFormat));
+                $('#dateRangePickerEnd').val(picker.endDate.format(dateFormat));
+            } else {
+                $(this).val('')
+            }
+        });
+
+
+        $('.ga-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            // autoUpdateInput: !!(dateFrom && dateTo),
+            //minDate: moment(),
+            autoApply: true,
+            opens: 'right',
+            singleDatePicker: true,
+            showDropdowns: true,
+            language: 'en'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $('.jalali-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            autoApply: true,
+            opens: 'left',
+            singleDatePicker: true,
+            showDropdowns: true,
+            jalaali: true,
+            language: 'fa'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $(document).on('mouseover', '.daterangepicker .calendar td', function () {
+            var gagDate = $(this).attr('data-original-title');
+            $('.date-hover').text('');
+            $('.date-hover').text(gagDate);
+
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+    });
+    </script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+
+
+  </body>
+</html>

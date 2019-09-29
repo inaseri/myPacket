@@ -1,0 +1,35 @@
+{% load static %}
+.card-title {
+    text-align: center;
+    font-size: 17px;
+    font-family: "Myriad Pro";
+}
+
+.btn {
+    margin-left: -5px;
+}
+
+.pt-3-half {
+    padding-top: 1.4rem;
+}
+
+image {
+    margin-left: 37% !important;
+}
+
+@font-face {
+  font-family: 'bnazanin';
+  src: local('Bnazanin'),
+       url('../font/BNazanin.ttf')format("truetype");
+}
+
+@media only screen and (max-width: 998px) {
+    .hideAll {
+        display: none;
+    }
+}
+@media only screen and (min-width: 998px) {
+    .showAll {
+        display: none;
+    }
+}

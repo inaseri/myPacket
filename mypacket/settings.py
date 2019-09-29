@@ -128,7 +128,7 @@ PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
 PWA_APP_SCOPE = '/money',
 PWA_APP_ORIENTATION = 'any'
-PWA_APP_START_URL = ''
+PWA_APP_START_URL = '/money'
 PWA_APP_ICONS = [
 {
 'src': '/static/my-app-icone.png',

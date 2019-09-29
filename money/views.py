@@ -202,7 +202,7 @@ def addBank(request, type):
 
 
 @login_required(login_url=r'accounts/login')
-def banks(request, type):
+def banks(request,type):
     context = {}
     allbanks = Banks.objects.all().filter(owner=request.user)
     sumOfBnak = 0
@@ -213,13 +213,36 @@ def banks(request, type):
     context['all_banks'] = allbanks
     context['user'] = request.user
 
-    if request.method == 'POST':
-        showBank = request.POST.get("goToBank")
-        showBank = int(showBank)
-        print("show bank is:", showBank)
-        return HttpResponseRedirect(reverse('addBank', kwargs={'type': showBank}))
     return render(request,'money/banks.html', context)
 
+
+def changeBank(request,id):
+    context = {}
+
+    bank = Banks.objects.filter(id=id)
+    for bankDetail in bank:
+        context['bankName'] = bankDetail.name_bank
+        context['bankCash'] = bankDetail.cash_bank
+
+    if request.method == 'POST':
+        # this two lines get name and cash of bank for save in db
+        nameOfBank = request.POST.get("bankName")
+        cashOfBank = request.POST.get("cashInBank")
+
+        if nameOfBank is None or nameOfBank == "":
+            context["saveBank"] = 0
+        else:
+            # this if check the cash is null or not, if it was null we assign 0 to cash_bank
+            if cashOfBank is None or cashOfBank == '':
+                cashOfBank = 0
+                Banks.objects.filter(id=id).update(name_bank=nameOfBank, cash_bank=cashOfBank)
+                context["saveBank"] = 1
+            else:
+                Banks.objects.filter(id=id).update(name_bank=nameOfBank, cash_bank=cashOfBank)
+                context["saveBank"] = 1
+            print("saveBank is:", context["saveBank"])
+
+    return render(request,'money/changeBank.html', context)
 
 def clogin(request):
     context = {}

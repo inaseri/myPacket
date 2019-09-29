@@ -37,24 +37,28 @@
                    <div class="row" style="margin-bottom: 3%;">
                        <div class="col-12 col-md-12">
                            <div class="card">
-                               <div class="card-body">
-                                   <button value="{{ all_bank.id }}" name="goToBank" style="display: contents; text-align: right" ><p class="card-text">{{ all_bank.name_bank }}</p></button>
-                                   <button value="{{ all_bank.id }}" name="goToBank" style="display: contents; text-align: left" ><p class="card-text">{{ all_bank.cash_bank|intcomma }}</p></button>
-                               </div>
+                              <div class="card-body">
+                                  <a href="{% url 'changeBank' all_bank.id %}" style="display: contents; text-align: right" >
+                                      <p class="card-text" style="text-align: right;">{{ all_bank.name_bank }}</p>
+                                      <p style="text-align: left;">{{ all_bank.cash_bank|intcomma }}</p>
+                                  </a>
+                              </div>
                            </div>
                        </div>
                    </div>
                {% endfor %}
           </div>
           <div id="mainRowCamputer">
-              <div class="row" style="margin-top: 20%;"></div>
+              <div class="row" style="margin-top: 5%;"></div>
               {% for all_bank in all_banks %}
                   <div class="row" style="margin-bottom: 3%;">
                       <div class="col-12 col-md-12">
                           <div class="card">
                               <div class="card-body">
-                                  <button value="{{ all_bank.id }}" name="goToBank" style="display: contents; text-align: right" ><p class="card-text">{{ all_bank.name_bank }}</p></button>
-                                  <button value="{{ all_bank.id }}" name="goToBank" style="display: contents; text-align: left" ><p class="card-text">{{ all_bank.cash_bank|intcomma }}</p></button>
+                                  <a href="{% url 'changeBank' all_bank.id %}" style="display: contents; text-align: right" >
+                                      <p class="card-text" style="text-align: right;">{{ all_bank.name_bank }}</p>
+                                      <p style="text-align: left;">{{ all_bank.cash_bank|intcomma:False }}</p>
+                                  </a>
                               </div>
                           </div>
                       </div>

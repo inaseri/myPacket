@@ -80,7 +80,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <span class="badge badge-pill badge-primary" style="width: 100%; height: 60%; margin-top: 5%; font-size: medium">مجموع {{ type }}: {{ sumOfType|intcomma }}</span>
+                        <span class="badge badge-pill badge-primary" style="width: 100%; height: 60%; margin-top: 5%; font-size: medium">مجموع {{ type }}: {{ sumOfType|intcomma:False }}</span>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -106,7 +106,7 @@
                                                     <span class="table-remove"><a type="submit"
                                                     class="btn btn-danger btn-rounded btn-sm my-0" href="{% url 'change' transaction.id %}">ویرایش</a></span>
                                                 </td>
-                                                <td class="pt-3-half">{{ transaction.cash|intcomma }}</td>
+                                                <td class="pt-3-half">{{ transaction.cash|intcomma:False }}</td>
                                                 <td class="pt-3-half">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
                                                 <td class="pt-3-half">{{ transaction.desc }}</td>
                                                 <td class="pt-3-half">{{ transaction.title }}</td>
@@ -163,7 +163,7 @@
                 <div class="row">
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <span class="badge badge-pill badge-primary" style="width: 100%; height: 60%; margin-top: 5%; font-size: medium">مجموع {{ type }}: {{ sumOfType|intcomma }}</span>
+                        <span class="badge badge-pill badge-primary" style="width: 100%; height: 60%; margin-top: 5%; font-size: medium">مجموع {{ type }}: {{ sumOfType|intcomma:False }}</span>
                     </div>
                     <div class="col-md-4"></div>
                 </div>
@@ -191,7 +191,7 @@
                                                         <a class="btn btn-danger btn-rounded btn-sm my-0" href="{% url 'change' transaction.id %}" name="change">ویرایش</a>
                                                     </span>
                                                 </td>
-                                                <td class="pt-3-half">{{ transaction.cash|intcomma }}</td>
+                                                <td class="pt-3-half">{{ transaction.cash|intcomma:False }}</td>
                                                 <td class="pt-3-half">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
                                                 <td class="pt-3-half">{{ transaction.desc }}</td>
                                                 <td class="pt-3-half">{{ transaction.title }}</td>

@@ -102,14 +102,14 @@
                                         <tbody>
                                         {% for transaction in transactions %}
                                             <tr>
-                                                <td class="pt-3-half" contenteditable="true">
-                                                    <span class="table-remove"><button type="submit"
-                                                    class="btn btn-danger btn-rounded btn-sm my-0" value="{{ transaction.id }}" name="change">ویرایش</button></span>
+                                                <td class="pt-3-half">
+                                                    <span class="table-remove"><a type="submit"
+                                                    class="btn btn-danger btn-rounded btn-sm my-0" href="{% url 'change' transaction.id %}">ویرایش</a></span>
                                                 </td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.cash|intcomma }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.desc }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.title }}</td>
+                                                <td class="pt-3-half">{{ transaction.cash|intcomma }}</td>
+                                                <td class="pt-3-half">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
+                                                <td class="pt-3-half">{{ transaction.desc }}</td>
+                                                <td class="pt-3-half">{{ transaction.title }}</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>
@@ -186,15 +186,15 @@
                                         <tbody>
                                         {% for transaction in transactions %}
                                             <tr>
-                                                <td class="pt-3-half" contenteditable="true">
+                                                <td class="pt-3-half">
                                                     <span class="table-remove">
-                                                        <button class="btn btn-danger btn-rounded btn-sm my-0" value="{{ transaction.id }}" name="change"">ویرایش</button>
+                                                        <a class="btn btn-danger btn-rounded btn-sm my-0" href="{% url 'change' transaction.id %}" name="change">ویرایش</a>
                                                     </span>
                                                 </td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.cash|intcomma }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.desc }}</td>
-                                                <td class="pt-3-half" contenteditable="true">{{ transaction.title }}</td>
+                                                <td class="pt-3-half">{{ transaction.cash|intcomma }}</td>
+                                                <td class="pt-3-half">{{ transaction.date|jdate:'%y/%m/%d' }}</td>
+                                                <td class="pt-3-half">{{ transaction.desc }}</td>
+                                                <td class="pt-3-half">{{ transaction.title }}</td>
                                             </tr>
                                         {% endfor %}
                                         </tbody>

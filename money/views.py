@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
 import jdatetime
 from django.urls import reverse
+from django.contrib import messages
 # from django.contrib.auth.models import User
 
 
@@ -94,7 +95,7 @@ def changeTransaction(request,id):
     source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['banks'] = source
 
-    if request.method == "POST":
+    if 'update' in request.POST:
         title = request.POST.get("title")
         if title == "":
             context["saveTransaction"] = 2
@@ -111,8 +112,17 @@ def changeTransaction(request,id):
         try:
             Transactions.objects.filter(id=id).update(title=title, cash=cash, desc=desc, source=bank)
             context["saveTransaction"] = 4
+            messages.error(request, 'تراکنش شما به موفقیت به روز رسانی شد')
         except:
             print("cont update transaction")
+
+    elif 'delete' in request.POST:
+        typeList = Transactions.objects.filter(id=id)
+        type = 0
+        for typeLists in typeList:
+            type = typeLists.type
+        Transactions.objects.filter(id=id).delete()
+        return HttpResponseRedirect(reverse('transactions', kwargs={'type': type}))
 
 
     return render(request, 'money/changeTransaction.html', context)
@@ -185,16 +195,19 @@ def addBank(request, type):
 
         if nameOfBank is None or nameOfBank == "":
             context["saveBank"] = 0
+            messages.error(request, 'نام حساب را به درستی وارد کنید')
         else:
             # this if check the cash is null or not, if it was null we assign 0 to cash_bank
             if cashOfBank is None or cashOfBank == '':
                 cashOfBank = 0
                 Banks(name_bank=nameOfBank,cash_bank= cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
+                messages.error(request, 'حساب شما با موفقیت ذخیره شد')
             else:
                 Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
-            print("saveBank is:", context["saveBank"])
+                messages.error(request, 'حساب شما با موفقیت ذخیره شد')
+
 
 
     context['user'] = request.user
@@ -224,23 +237,31 @@ def changeBank(request,id):
         context['bankName'] = bankDetail.name_bank
         context['bankCash'] = bankDetail.cash_bank
 
-    if request.method == 'POST':
+    if 'update' in request.POST:
         # this two lines get name and cash of bank for save in db
         nameOfBank = request.POST.get("bankName")
         cashOfBank = request.POST.get("cashInBank")
 
         if nameOfBank is None or nameOfBank == "":
             context["saveBank"] = 0
+            messages.error(request, 'نام حساب را به درستی وارد کنید')
         else:
             # this if check the cash is null or not, if it was null we assign 0 to cash_bank
             if cashOfBank is None or cashOfBank == '':
                 cashOfBank = 0
                 Banks.objects.filter(id=id).update(name_bank=nameOfBank, cash_bank=cashOfBank)
                 context["saveBank"] = 1
+                messages.error(request, 'حساب شما با موفقیت به روز رسانی شد')
+                return HttpResponseRedirect(reverse('banks', kwargs={'type': 3}))
             else:
                 Banks.objects.filter(id=id).update(name_bank=nameOfBank, cash_bank=cashOfBank)
                 context["saveBank"] = 1
-            print("saveBank is:", context["saveBank"])
+                messages.error(request, 'حساب شما با موفقیت به روز رسانی شد')
+                return HttpResponseRedirect(reverse('banks', kwargs={'type': 3}))
+    elif 'delete' in request.POST:
+        Banks.objects.filter(id=id).delete()
+        return HttpResponseRedirect(reverse('banks', kwargs={'type': 3}))
+
 
     return render(request,'money/changeBank.html', context)
 
@@ -280,15 +301,16 @@ def register(request):
         password = request.POST.get("password")
 
         if username is not None:
-
             if User.objects.filter(username=username).exists():
                 context['success'] = 1
-                print("context[success] is:", context['success'])
+                messages.error(request, 'شما از قبل ثبت نام نموده اید')
             else:
                 user = User.objects.create_user(username, emailAddress, password)
                 user.save()
                 context['success'] = 2
+                messages.error(request, 'ثبت نام شما با موفقیت انجام شد')
                 return HttpResponseRedirect(reverse('login'), context)
+
     return render(request, 'money/register.html',context)
 
 

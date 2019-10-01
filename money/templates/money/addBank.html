@@ -33,15 +33,40 @@
 <body style="background-color: #f1f1f1;">
 <!--Main Navigation-->
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
     <a class="navbar-brand" href="{% url 'home' %}"><strong>برگشت</strong></a>
   </nav>
 </header>
 
 <div class="container">
+
+
+      <div id="mainRowPhones">
+          <div class="row" style="margin-top: 20%;">
+            <div class="col-md-12">
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+      </div>
+      <div id="mainRowCamputer">
+          <div class="row" style="margin-top: 7%;">
+                <div class="col-md-12">
+                    {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+      </div>
+
     <form method="post" id="type">
         {% csrf_token %}
-        <div class="row" style="margin-top: 20%;">
+        <div class="row" style="margin-top: 5%;">
             <div class="col-md-3"></div>
             <div class="col-md-3">
                 <div class="md-form">
@@ -76,5 +101,9 @@
   <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript">
+      document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+      document.getElementById("mainRowPhones").classList.toggle("showAll")
+  </script>
   </body>
 </html>

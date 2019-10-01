@@ -32,16 +32,39 @@
 
 <body style="background-color: #f1f1f1;">
 <!--Main Navigation-->
+
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
     <a class="navbar-brand" onclick="window.history.back()"><strong>برگشت</strong></a>
   </nav>
 </header>
 
 <div class="container">
+      <div id="mainRowPhones">
+          <div class="row" style="margin-top: 20%;">
+                <div class="col-md-12">
+                    {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+      </div>
+      <div id="mainRowCamputer">
+          <div class="row" style="margin-top: 7%;">
+                <div class="col-md-12">
+                    {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+      </div>
     <form method="post" id="type">
         {% csrf_token %}
-        <div class="row" style="margin-top: 20%;">
+        <div class="row" style="margin-top: 10%;">
             <div class="col-md-3"></div>
             <div class="col-md-3">
                 <div class="md-form">
@@ -55,12 +78,15 @@
             </div>
             <div class="col-md-3"></div>
         </div>
-        <div class="row" style="margin-top: 5%;">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-default btn-lg btn-block" id="submit">ذخیره</button>
+        <div class="row" style="margin-top: 2%;">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-default" id="submit" name="update" style="width: 100%;">ذخیره</button>
             </div>
-            <div class="col-md-3"></div>
+            <div class="col-md-4">
+                <button type="submit" class="btn btn-danger" id="submit" name="delete" style="width: 100%;">حذف</button>
+            </div>
+            <div class="col-md-2"></div>
         </div>
     </form>
 </div>
@@ -76,5 +102,9 @@
   <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+  </script>
   </body>
 </html>

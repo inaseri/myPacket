@@ -48,8 +48,9 @@
 
   <body style="background-color: #f1f1f1;">
     <!--Main Navigation-->
+
     <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
         <a class="navbar-brand" onclick="window.history.back()"><strong>برگشت</strong></a>
       </nav>
     </header>
@@ -99,10 +100,13 @@
                 </div>
                 <div class="col-md-4"></div>
             </div>
-            <div class="row" style="margin-top: 2%;">
+            <div class="row" style="margin-top: 2%; margin-left: 1px;">
                 <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <button type="submit" class="btn btn-default btn-lg btn-block" id="submit" style="margin-left: 2px;">ذخیره</button>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-default" id="submit" name="update" style="width: 100%;">ذخیره</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger" id="submit" name="delete" style="width: 100%;">حذف</button>
                 </div>
                 <div class="col-md-4"></div>
             </div>
@@ -193,7 +197,11 @@
 
     });
     </script>
-  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+    <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+    </script>
 
 
   </body>

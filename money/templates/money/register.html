@@ -34,16 +34,44 @@
 </head>
 
 <body style="background-color: #f1f1f1;">
+
 <!--Main Navigation-->
+
+
 <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark pink scrolling-navbar">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
     <a class="navbar-brand" href="{% url 'index' %}"><strong>My Packet</strong></a>
   </nav>
 </header>
+
     <div class="container-fluid">
+
+      <div id="mainRowPhones">
+          <div class="row" style="margin-top: 20%;">
+            <div class="col-md-12">
+                {% for message in messages %}
+                    <div class="alert alert-success">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+          </div>
+      </div>
+      <div id="mainRowCamputer">
+          <div class="row" style="margin-top: 5%;">
+                <div class="col-md-12">
+                    {% for message in messages %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+      </div>
+
       <form method="post" id="save" >
           {% csrf_token %}
-          <div class="row" style="margin-top: 8%;">
+          <div class="row">
               <div class="col-md-4"></div>
               <div class="col-md-4 md-form">
                     <i class="fas fa-envelope prefix"></i>
@@ -95,5 +123,9 @@
   <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
+  <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
+		document.getElementById("mainRowPhones").classList.toggle("showAll")
+  </script>
   </body>
 </html>

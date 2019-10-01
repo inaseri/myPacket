@@ -2,9 +2,9 @@ from __future__ import unicode_literals
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-class User(AbstractUser):
+class User(AbstractUser, models.Model):
     pass
-
+    firstLoad = models.BooleanField(default=True)
 
 class Banks(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -23,6 +23,5 @@ class Transactions(models.Model):
     cash = models.IntegerField(default=0)
     desc = models.TextField(default="بدون توضیحات")
     type = models.IntegerField()
-
     def __str__(self):
         return self.title

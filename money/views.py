@@ -317,6 +317,15 @@ def register(request):
 @login_required(login_url=r'accounts/login')
 def homePage(requset):
     context = {}
+
+    user =  User.objects.filter(username=requset.user)
+    for users in user:
+        if users.firstLoad == True:
+            context['firstLoad'] = True
+            User.objects.filter(username=requset.user).update(firstLoad=False)
+        else:
+            context['firstLoad'] = False
+
     if requset.method == 'POST':
         typeAdd = requset.POST.get("add")
         if typeAdd == "1" or typeAdd == "2" or typeAdd == "4" or typeAdd == "5":
@@ -338,4 +347,4 @@ def homePage(requset):
             return HttpResponseRedirect(reverse('banks', kwargs={'type':typeList}))
 
 
-    return render(requset,'money/home.html')
+    return render(requset,'money/home.html',context)

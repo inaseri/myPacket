@@ -64,7 +64,8 @@
 <!--Main Navigation-->
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
-    <a class="navbar-brand" data-toggle="modal" href="#myModal"><strong>My Packet</strong></a>
+    <a class="navbar-brand" data-toggle="modal" href=""><strong>My Packet</strong></a>
+      <a class="nav-link" href="#centralModalSuccess" style="color: white;">آموزش برنامه<span class="sr-only">(current)</span></a>
       <a class="nav-link" href="{% url 'logout' %}" style="color: white;">خروج<span class="sr-only">(current)</span></a>
   </nav>
 </header>
@@ -249,7 +250,9 @@
       document.getElementById("mainRowPhones").classList.toggle("showAll")
   </script>
   <script>
-    $('#centralModalSuccess').modal('show');
+      {% if firstLoad %}
+          $('#centralModalSuccess').modal('show');
+      {% endif %}
   </script>
 
 </body>

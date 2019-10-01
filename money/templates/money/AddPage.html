@@ -50,7 +50,10 @@
     <!--Main Navigation-->
     <header>
       <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
-        <a class="navbar-brand" href="{% url 'home' %}"><strong>برگشت</strong></a>
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'iconfinder-icon.svg' %}" style="height: 35px; width: 35px;">
+            <strong style="font-family: bnazanin; margin-left: -10px;">برگشت</strong>
+        </a>
       </nav>
     </header>
     <div class="container-fluid">

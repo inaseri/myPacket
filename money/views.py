@@ -14,7 +14,18 @@ def index(requset,type):
     context = {}
     sum = 0
     selectedSource = None
-    # type = requset.session.get('selected_type_list')
+
+    if int(type) == 1:
+        context['listTitle'] = "درآمد ها"
+    elif int(type) == 2:
+        context['listTitle'] = 'هزینه ها'
+    elif int(type) == 3:
+        context['listTitle'] = 'حساب ها'
+    elif int(type) == 4:
+        context['listTitle'] = 'بدهی ها'
+    elif int(type) == 5:
+        context['listTitle'] = 'مطالبه ها'
+
     # this two lines use for get all bank name and show them in html
     source = Banks.objects.all().filter(owner=requset.user)
     context['name_bank'] = source
@@ -74,6 +85,8 @@ def index(requset,type):
         idForChage = requset.POST.get("change")
         if idForChage is not None:
             return HttpResponseRedirect(reverse('change', kwargs={'id': idForChage}))
+
+
 
     context['user'] = requset.user
     return render(requset,'money/transactions.html',context)
@@ -135,6 +148,18 @@ def addTransaction(request, type):
     # this two lines use for get name of banks and show them in html
     source = Banks.objects.all().values('name_bank').filter(owner=request.user)
     context['name_bank'] = source
+
+
+    if int(type) == 1:
+        context['listTitle'] = "درآمد"
+    elif int(type) == 2:
+        context['listTitle'] = 'هزینه'
+    elif int(type) == 3:
+        context['listTitle'] = 'حساب'
+    elif int(type) == 4:
+        context['listTitle'] = 'بدهی'
+    elif int(type) == 5:
+        context['listTitle'] = 'مطالبه'
 
     # type_transaction = request.session.get('selected_type')
     type_transaction = type

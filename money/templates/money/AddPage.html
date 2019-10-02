@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <meta name="HandheldFriendly" content="true" />
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>افزودن تراکنش</title>
+  <title> افزودن {{ listTitle }}</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -54,6 +54,7 @@
             <img src="{% static 'iconfinder-icon.svg' %}" style="height: 35px; width: 35px;">
             <strong style="font-family: bnazanin; margin-left: -10px;">برگشت</strong>
         </a>
+        <p class="navbar-nav" style="text-align: left; color: white; font-family: bnazanin; font-size: 18px; margin-top: 8px;">{{ listTitle }}</p>
       </nav>
     </header>
     <div class="container-fluid">

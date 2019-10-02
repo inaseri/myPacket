@@ -17,12 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url, include
 from django.conf.urls import url
-from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
     path('money/',include('money.urls')),
     path('admin/', admin.site.urls),
-    url('^', include('django.contrib.auth.urls')),
     url('', include('pwa.urls')),
 ]

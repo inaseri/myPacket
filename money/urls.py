@@ -1,8 +1,10 @@
 from django.urls import path,include
 from . import views
 from django.conf.urls import url
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
+    url('^', include('django.contrib.auth.urls')),
     path('', views.homePage, name='index'),
     path('accounts/login/', views.clogin, name='login'),
     path(r'accounts/logout/',views.clogout,name="logout"),

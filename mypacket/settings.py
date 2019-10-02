@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = "money.User"
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -147,6 +149,13 @@ PWA_APP_SPLASH_SCREEN = [
 PWA_APP_DIR = 'rtl'
 PWA_APP_LANG = 'en-US'
 
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'testsite_app'
+EMAIL_HOST_PASSWORD = 'iman.3802'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'TestSite Team <inaseri.20@gmail.com>'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

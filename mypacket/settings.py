@@ -150,11 +150,13 @@ PWA_APP_DIR = 'rtl'
 PWA_APP_LANG = 'en-US'
 
 
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'inaseri.20@gmail.com'
-EMAIL_HOST_PASSWORD = 'iman.3802'
-EMAIL_PORT = 587
+EMAIL_HOST = 'Jibeman.inaseri.ir'
+EMAIL_HOST_PASSWORD = 'Iman.3802'
+EMAIL_HOST_USER = 'inaseri'
+EMAIL_PORT      = 25
+EMAIL_USE_TLS   = False
+# DEFAULT_FROM_EMAIL  = 'webmaster@my-host.com'
+# SERVER_EMAIL    = 'root@my-domain.com'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

@@ -45,7 +45,6 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = "money.User"
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # During development only
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -161,14 +160,13 @@ PWA_APP_DIR = 'rtl'
 PWA_APP_LANG = 'en-US'
 
 
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='inaseri.20@gmail.com'
+EMAIL_HOST_PASSWORD='iman.3802'
+EMAIL_PORT=587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'inaseri.20@gmail.com'
-SERVER_EMAIL = 'inaseri.20@gmail.com'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'inaseri.20@gmail.com'
-EMAIL_HOST_PASSWORD = 'iman.3802'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

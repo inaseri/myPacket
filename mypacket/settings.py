@@ -84,22 +84,22 @@ WSGI_APPLICATION = 'mypacket.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inaseri_jibeman',
-        'USER': 'inaseri_jibeman',
-        'PASSWORD': 'hER7g0@jG*FZ',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'inaseri_jibeman',
+#         'USER': 'inaseri_jibeman',
+#         'PASSWORD': 'hER7g0@jG*FZ',
+#         'HOST': '127.0.0.1',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -161,13 +161,14 @@ PWA_APP_DIR = 'rtl'
 PWA_APP_LANG = 'en-US'
 
 
-EMAIL_HOST = 'Jibeman.inaseri.ir'
-EMAIL_HOST_PASSWORD = 'Iman.3802'
-EMAIL_HOST_USER = 'inaseri'
-EMAIL_PORT      = 25
-EMAIL_USE_TLS   = False
-# DEFAULT_FROM_EMAIL  = 'webmaster@my-host.com'
-# SERVER_EMAIL    = 'root@my-domain.com'
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'inaseri.20@gmail.com'
+SERVER_EMAIL = 'inaseri.20@gmail.com'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'test@gmail.com'
+EMAIL_HOST_PASSWORD = 'iman.3802'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

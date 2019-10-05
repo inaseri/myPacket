@@ -171,8 +171,10 @@ def addTransaction(request, type):
                 context["saveTransaction"] = 2
 
             cash = request.POST.get("cash")
+            print("cash is: ", cash)
             if cash == "":
                 context["saveTransaction"] = 3
+                print("cash is: ", cash)
 
             desc = request.POST.get("desc")
             if desc == "":

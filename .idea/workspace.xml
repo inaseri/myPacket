@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5d9a7e5e-dabb-408a-8b8e-60d22eeee53a" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/money/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="436" column="9" lean-forward="false" selection-start-line="436" selection-start-column="9" selection-end-line="436" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="97" column="88" lean-forward="false" selection-start-line="97" selection-start-column="88" selection-end-line="97" selection-end-column="88" />
+              <folding>
+                <element signature="n#for#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#6;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#for#2;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="e#13513#15811#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="banks.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="45" column="103" lean-forward="false" selection-start-line="45" selection-start-column="103" selection-end-line="45" selection-end-column="103" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>postGender</find>
+      <find>disabled</find>
+      <find>calendar</find>
+      <find>Fo</find>
+      <find>Format</find>
+      <find>DIRS</find>
+      <find>dateutil</find>
+      <find>save</find>
+      <find>bank</find>
+      <find>footer-top</find>
+      <find>footer</find>
+      <find>row</find>
+      <find>submit</find>
+      <find>type</find>
+      <find>memberModal</find>
+      <find>#e91e63!important</find>
+      <find>#e91e63</find>
+      <find>pink.</find>
+      <find>.pink</find>
+      <find>message</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/money/templatetags/Iman.py" />
+        <option value="$PROJECT_DIR$/money/templatetags/__init__.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/MainAdd.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/money/static/money/materialize.min.css" />
+        <option value="$USER_HOME$/Desktop/Text input/index.html" />
+        <option value="$USER_HOME$/Desktop/index.html" />
+        <option value="$USER_HOME$/Desktop/Text input-1/index.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/addpagetest.html" />
+        <option value="$PROJECT_DIR$/../Balaghe/BalaghePWA/templates/balaghahPWA/Home.html" />
+        <option value="$PROJECT_DIR$/money/static/money/style.css" />
+        <option value="$PROJECT_DIR$/money/templates/money/chagenTransaction.html" />
+        <option value="$USER_HOME$/Downloads/MDB-Free_4/index.html" />
+        <option value="$PROJECT_DIR$/money/static/money/css/style.min.css" />
+        <option value="$PROJECT_DIR$/money/static/money/css/mdb.min.css" />
+        <option value="$PROJECT_DIR$/money/static/money/css/mdb.lite.css" />
+        <option value="$PROJECT_DIR$/money/models.py" />
+        <option value="$PROJECT_DIR$/money/static/money/js/daterangepicker-fa-ex.js" />
+        <option value="$PROJECT_DIR$/money/static/money/js/moment-jalaali.js" />
+        <option value="$PROJECT_DIR$/money/static/money/js/daterangepicker-fa.js" />
+        <option value="$PROJECT_DIR$/money/static/money/js/moment.min.js" />
+        <option value="$PROJECT_DIR$/money/templates/money/transactions.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/password_reset_complete.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/password_reset_email.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_confirm.html" />
+        <option value="$PROJECT_DIR$/mypacket/urls.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/register.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/login.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_change.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_change_done.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_done.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_complete.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_email.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_form.html" />
+        <option value="$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt" />
+        <option value="$PROJECT_DIR$/money/forms.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/AddPage.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/addBank.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/changeBank.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/changeTransaction.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/home.html" />
+        <option value="$PROJECT_DIR$/money/static/money/css/style.css" />
+        <option value="$PROJECT_DIR$/mypacket/settings.py" />
+        <option value="$PROJECT_DIR$/money/urls.py" />
+        <option value="$PROJECT_DIR$/money/views.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/banks.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/report.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="mypacket" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/money/static" />
+      <recent name="$PROJECT_DIR$/money/templates/money" />
+      <recent name="$PROJECT_DIR$/money/static/money" />
+      <recent name="$PROJECT_DIR$/money/static/money/js" />
+      <recent name="$PROJECT_DIR$/money/static/money/css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="myPacket" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="myPacket" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5d9a7e5e-dabb-408a-8b8e-60d22eeee53a" name="Default" comment="" />
+      <created>1566711727246</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566711727246</updated>
+    </task>
+    <task id="LOCAL-00016" summary="اضافه کردن فوتر به کل برنامه">
+      <created>1566974442422</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1566974442422</updated>
+    </task>
+    <task id="LOCAL-00017" summary="کامل کردن فوتر">
+      <created>1566974919137</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1566974919137</updated>
+    </task>
+    <task id="LOCAL-00018" summary="کامل کردن فوتر">
+      <created>1566975104011</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1566975104011</updated>
+    </task>
+    <task id="LOCAL-00019" summary="اضافه کردن فوتر به همه صفحات">
+      <created>1566975580222</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1566975580222</updated>
+    </task>
+    <task id="LOCAL-00020" summary="حذف کد های اضافی">
+      <created>1566975890802</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1566975890802</updated>
+    </task>
+    <task id="LOCAL-00021" summary="رفع باگ از صفحه افزودن و مشاهده همه و تغییر در یو ار ال و تبدیل سشن به انتقال اطلاعات  از راه یو ار ال">
+      <created>1567008203038</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1567008203038</updated>
+    </task>
+    <task id="LOCAL-00022" summary="ساخت مجدد صفحه خانه">
+      <created>1567267987829</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1567267987829</updated>
+    </task>
+    <task id="LOCAL-00023" summary="کامل کردن صفحه خانه">
+      <created>1567325841874</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1567325841874</updated>
+    </task>
+    <task id="LOCAL-00024" summary="برداشتن اسکرول به چپ و راست صفحه خانه">
+      <created>1567348367745</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1567348367746</updated>
+    </task>
+    <task id="LOCAL-00025" summary="تغییر کامل در ظاهر صفحات">
+      <created>1567666203826</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1567666203826</updated>
+    </task>
+    <task id="LOCAL-00026" summary="جهش به bootstrap material design">
+      <created>1569250087577</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1569250087577</updated>
+    </task>
+    <task id="LOCAL-00027" summary="تغییر در static root">
+      <created>1569252658068</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1569252658068</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add min.css">
+      <created>1569309396817</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1569309396817</updated>
+    </task>
+    <task id="LOCAL-00029" summary="تغییر در ستینگ و صفحات html">
+      <created>1569312262063</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1569312262063</updated>
+    </task>
+    <task id="LOCAL-00030" summary="تغییر در ستینگ و صفحات html">
+      <created>1569400040610</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1569400040610</updated>
+    </task>
+    <task id="LOCAL-00031" summary="بستن زوم در صفحات">
+      <created>1569400787838</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1569400787838</updated>
+    </task>
+    <task id="LOCAL-00032" summary="اضافه کردن به روز رسانی تراکنش ها&#10;رفع یکسری از باگ ها">
+      <created>1569747390065</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1569747390065</updated>
+    </task>
+    <task id="LOCAL-00033" summary="افزودن صفحه به روز رسانی تراکنش ها">
+      <created>1569747465059</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1569747465059</updated>
+    </task>
+    <task id="LOCAL-00034" summary="رفع باگ">
+      <created>1569751050516</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1569751050516</updated>
+    </task>
+    <task id="LOCAL-00035" summary="اضافه کردن صفحه ویرایش حساب ها&#10;اصلاح عدم نمایش جدا کننده اعداد">
+      <created>1569767731237</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1569767731237</updated>
+    </task>
+    <task id="LOCAL-00036" summary="تفییر در static url">
+      <created>1569767928426</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1569767928426</updated>
+    </task>
+    <task id="LOCAL-00037" summary="تفییر در static url">
+      <created>1569768141133</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1569768141133</updated>
+    </task>
+    <task id="LOCAL-00038" summary="تغییر در ریدارکت">
+      <created>1569768522104</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1569768522104</updated>
+    </task>
+    <task id="LOCAL-00039" summary="اضافه کردن آموزش اپ به کل برنامه">
+      <created>1569772641042</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1569772641042</updated>
+    </task>
+    <task id="LOCAL-00040" summary="رفع باگ مدال آموزش برنامه">
+      <created>1569775122654</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1569775122654</updated>
+    </task>
+    <task id="LOCAL-00041" summary="رفع باگ مدال آموزش برنامه">
+      <created>1569775230506</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1569775230506</updated>
+    </task>
+    <task id="LOCAL-00042" summary="رفع باگ مدال آموزش برنامه">
+      <created>1569775481997</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1569775481997</updated>
+    </task>
+    <task id="LOCAL-00043" summary="تغییر رنگ هدر&#10;رفع باگ تاریخ&#10;اضافه کردن حذف&#10;تغییر ظاهر برنامه در صفحه خانه و تراکنش ها">
+      <created>1569939386772</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1569939386773</updated>
+    </task>
+    <task id="LOCAL-00044" summary="اضافه کردن آموزش برنامه در اولین مشاهده و لاگین">
+      <created>1569945523536</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1569945523536</updated>
+    </task>
+    <task id="LOCAL-00045" summary="اصلا js">
+      <created>1569947276743</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1569947276743</updated>
+    </task>
+    <task id="LOCAL-00046" summary="رفع باگ عدم نمایش آموزش درهنگام کلیک کردن">
+      <created>1569948162747</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1569948162747</updated>
+    </task>
+    <task id="LOCAL-00047" summary="اضافه کردن ایکون بک به کل برنامه">
+      <created>1569949524876</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1569949524876</updated>
+    </task>
+    <task id="LOCAL-00048" summary="اصلاح js های تاریخ شمار فارسی">
+      <created>1570000069383</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1570000069384</updated>
+    </task>
+    <task id="LOCAL-00049" summary="تغییر در هدر برنامه">
+      <created>1570001429542</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1570001429542</updated>
+    </task>
+    <task id="LOCAL-00050" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570005337546</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1570005337547</updated>
+    </task>
+    <task id="LOCAL-00051" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570006120443</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1570006120443</updated>
+    </task>
+    <task id="LOCAL-00052" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570007580795</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1570007580795</updated>
+    </task>
+    <task id="LOCAL-00053" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570007750637</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1570007750637</updated>
+    </task>
+    <task id="LOCAL-00054" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570007979430</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1570007979430</updated>
+    </task>
+    <task id="LOCAL-00055" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570008277033</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1570008277033</updated>
+    </task>
+    <task id="LOCAL-00056" summary="اضافه کردن ریست پسورد با ادمین جنگو">
+      <created>1570008732381</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1570008732381</updated>
+    </task>
+    <task id="LOCAL-00057" summary="تغییر رقم ها از تکست به integer و جدا کننده رقم ها">
+      <created>1570093354247</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1570093354248</updated>
+    </task>
+    <task id="LOCAL-00058" summary="رفع باگ بازیابی رمز عبور با ایمیل">
+      <created>1570267698000</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1570267698000</updated>
+    </task>
+    <task id="LOCAL-00059" summary="برگرداندن اخرین تغییرات">
+      <created>1570287100107</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1570287100107</updated>
+    </task>
+    <task id="LOCAL-00060" summary="تغییر در دیتا بیس">
+      <created>1570287642856</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1570287642856</updated>
+    </task>
+    <task id="LOCAL-00061" summary="تغییر در هاست">
+      <created>1570287982865</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1570287982865</updated>
+    </task>
+    <task id="LOCAL-00062" summary="تغییر در ستینگ ارسال ایمیل">
+      <created>1570288646982</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1570288646982</updated>
+    </task>
+    <task id="LOCAL-00063" summary="حذف جداکننده ارقام">
+      <created>1570294578321</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1570294578321</updated>
+    </task>
+    <task id="LOCAL-00064" summary="اصلاح دیتا بیس">
+      <created>1570294676482</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1570294676482</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="بستن زوم در صفحات" />
+    <MESSAGE value="اضافه کردن به روز رسانی تراکنش ها&#10;رفع یکسری از باگ ها" />
+    <MESSAGE value="افزودن صفحه به روز رسانی تراکنش ها" />
+    <MESSAGE value="رفع باگ" />
+    <MESSAGE value="اضافه کردن صفحه ویرایش حساب ها&#10;اصلاح عدم نمایش جدا کننده اعداد" />
+    <MESSAGE value="تفییر در static url" />
+    <MESSAGE value="تغییر در ریدارکت" />
+    <MESSAGE value="اضافه کردن آموزش اپ به کل برنامه" />
+    <MESSAGE value="رفع باگ مدال آموزش برنامه" />
+    <MESSAGE value="تغییر رنگ هدر&#10;رفع باگ تاریخ&#10;اضافه کردن حذف&#10;تغییر ظاهر برنامه در صفحه خانه و تراکنش ها" />
+    <MESSAGE value="اضافه کردن آموزش برنامه در اولین مشاهده و لاگین" />
+    <MESSAGE value="اصلا js" />
+    <MESSAGE value="رفع باگ عدم نمایش آموزش درهنگام کلیک کردن" />
+    <MESSAGE value="اضافه کردن ایکون بک به کل برنامه" />
+    <MESSAGE value="اصلاح js های تاریخ شمار فارسی" />
+    <MESSAGE value="تغییر در هدر برنامه" />
+    <MESSAGE value="اضافه کردن ریست پسورد با ادمین جنگو" />
+    <MESSAGE value="تغییر رقم ها از تکست به integer و جدا کننده رقم ها" />
+    <MESSAGE value="رفع باگ بازیابی رمز عبور با ایمیل" />
+    <MESSAGE value="برگرداندن اخرین تغییرات" />
+    <MESSAGE value="تغییر در دیتا بیس" />
+    <MESSAGE value="تغییر در هاست" />
+    <MESSAGE value="تغییر در ستینگ ارسال ایمیل" />
+    <MESSAGE value="حذف جداکننده ارقام" />
+    <MESSAGE value="اصلاح دیتا بیس" />
+    <option name="LAST_COMMIT_MESSAGE" value="اصلاح دیتا بیس" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/money/static/money/style.css" />
+    <entry file="file://$PROJECT_DIR$/newenv/lib/python3.7/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="10198" column="10" lean-forward="true" selection-start-line="10198" selection-start-column="10" selection-end-line="10198" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/materialize.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1319">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="43" column="118313" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="178907" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9794">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.lite.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="135" column="5" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.lite.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="25" column="1205" lean-forward="true" selection-start-line="25" selection-start-column="1205" selection-end-line="25" selection-end-column="1205" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/MDB-Free_4/index.html" />
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/daterangepicker-fa-ex.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20718">
+          <caret line="1151" column="4" lean-forward="false" selection-start-line="1151" selection-start-column="4" selection-end-line="1151" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/moment-jalaali.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5706">
+          <caret line="317" column="268" lean-forward="false" selection-start-line="317" selection-start-column="268" selection-end-line="317" selection-end-column="268" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/jquery-3.4.1.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/daterangepicker-fa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="767">
+          <caret line="229" column="148" lean-forward="false" selection-start-line="229" selection-start-column="148" selection-end-line="229" selection-end-column="148" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/mdb.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/mdb.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2218">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/popper.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/js/moment.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8244">
+          <caret line="6" column="14501" lean-forward="false" selection-start-line="6" selection-start-column="14501" selection-end-line="6" selection-end-column="14501" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_done.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_complete.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_confirm.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_email.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_confirm.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="40" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_form.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="106" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_change.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_done.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_complete.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_change_done.html" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt" />
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_form.html" />
+    <entry file="file://$PROJECT_DIR$/mypacket/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_email.html" />
+    <entry file="file://$PROJECT_DIR$/money/forms.py" />
+    <entry file="file://$PROJECT_DIR$/money/templates/money/AddPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="198" column="11" lean-forward="false" selection-start-line="198" selection-start-column="11" selection-end-line="198" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/addBank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="659">
+          <caret line="110" column="11" lean-forward="false" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/changeBank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1926">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/changeTransaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3708">
+          <caret line="206" column="11" lean-forward="false" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/ic-bank.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/ic-income.svg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/transactions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="545">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="306" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-303">
+          <caret line="43" column="4" lean-forward="false" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="45" column="103" lean-forward="false" selection-start-line="45" selection-start-column="103" selection-end-line="45" selection-end-column="103" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#nav#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="97" column="88" lean-forward="false" selection-start-line="97" selection-start-column="88" selection-end-line="97" selection-end-column="88" />
+          <folding>
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#4;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#1;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#6;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#5;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#9;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#script#10;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="e#13513#15811#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="436" column="9" lean-forward="false" selection-start-line="436" selection-start-column="9" selection-end-line="436" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

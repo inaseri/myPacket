@@ -26,7 +26,7 @@ SECRET_KEY = 'ox5@xlm^j9ii52f8kuw0b1%k&4mp9z3-j5icg#j&d(yc$7l*6u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.28','172.16.1.191','127.0.0.1','0.0.0.0','jibeman.inaseri.ir','192.168.1.22','172.16.1.151']
+ALLOWED_HOSTS = ['192.168.1.28','172.16.1.191','127.0.0.1','0.0.0.0','jibeman.inaseri.ir','192.168.1.22','172.16.1.225']
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'money',
     'pwa',
+    'chartjs',
 ]
 
 AUTH_USER_MODEL = "money.User"
@@ -83,22 +84,22 @@ WSGI_APPLICATION = 'mypacket.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'inaseri_jibeman',
-        'USER': 'inaseri_jibeman',
-        'PASSWORD': 'hER7g0@jG*FZ',
-        'HOST': '127.0.0.1',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'inaseri_jibeman',
+#         'USER': 'inaseri_jibeman',
+#         'PASSWORD': 'hER7g0@jG*FZ',
+#         'HOST': '127.0.0.1',
+#         'PORT': '',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

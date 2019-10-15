@@ -16,5 +16,7 @@ urlpatterns = [
     url(r'transactions/(?P<type>[0-9])/',views.index, name='transactions'),
     url('changeTransaction/(?P<id>[0-9]{1,3})', views.changeTransaction, name='change'),
     url('changeBank/(?P<id>[0-9]{1,3})', views.changeBank, name='changeBank'),
+    path('report/', views.report, name='report'),
+    url(r'^api/data/$', views.getDataChart, name='api-data')
 ]
 

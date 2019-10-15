@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+{% load static %}
+{% load pwa %}
+{% load Iman %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>گزارش فعالیت</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
+  <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+  {% progressive_web_app_meta %}
+</head>
+
+  <body style="background-color: #f1f1f1;">
+    <!--Main Navigation-->
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'iconfinder-icon.svg' %}" style="height: 35px; width: 35px;">
+            <strong style="font-family: bnazanin; margin-left: -10px;">برگشت</strong>
+        </a>
+          <p class="navbar-nav" style="text-align: left; color: white; font-family: bnazanin; font-size: 18px; margin-top: 8px;">گزارش فعالیت</p>
+      </nav>
+    </header>
+
+    <div class="container-fluid">
+      {% load humanize %}
+        <form method="post">
+            {% csrf_token %}
+            <div id="mainRowPhones" url-endpoint="{% url 'api-data' %}">
+                <div class="row" style="margin-top: 20%;">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <select class="browser-default custom-select" name="bank">
+                        <option value="0">{% if selected_source %} {{ selected_source }} {% else %} همه {% endif %}</option>
+                            {% for banks in bank %}
+                                <option value="{{ banks.id }}">{{ banks.name_bank }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
+                        <div class="md-form">
+                            <input placeholder="تاریخ" type="text" name="start_date" class="jalali-datepicker form-control" id="date"{% if start_date %} value="{{ start_date }}" {% endif %} onclick="disable();">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h5><span class="badge badge-primary" style="width: 100%; height: 100%; font-family: bnazanin">تا تاریخ</span></h5>
+                    </div>
+                    <div class="col-md-2" style="margin-top: -5%;">
+                        <div class="md-form">
+                            <input placeholder="تاریخ" type="text" name="end_date" class="jalali-datepicker form-control" id="date"{% if end_date %} value="{{ end_date }}" {% endif %} onclick="disable();">
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4" style="margin-left: 8px;">
+                        <button type="submit" class="btn btn-default btn-rounded" style="width: 100%;">فیلتر کردن</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <h4><span class="badge badge-primary" style="width: 100%; height: 100%; margin-top: 5%; font-family: bnazanin;">{{ sum|intcomma:False }} :مجموع </span></h4>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+                <div class="row" style="margin-top: 30px;"></div>
+                {% for transactions in reportArray %}
+                   <div class="row" style="margin-bottom: 3%;">
+                       <div class="col-12 col-md-12">
+                           <div class="card">
+                              <div class="card-body">
+                                      <p class="card-title" style="text-align: right; font-family: bnazanin;">عنوان: {{ transactions.title }}</p>
+                                      <p class="card-text" style="text-align: center; font-family: bnazanin;"> حساب: {{ transactions.source }}</p>
+                                      <p style="text-align: left; font-family: bnazanin;">{{ transactions.cash|intcomma:False }}</p>
+                              </div>
+                           </div>
+                       </div>
+                   </div>
+                {% endfor %}
+                <div class="col-12" style="margin-top: 30px; margin-bottom: 30px;">
+                    <canvas style="color-rendering: blue;" id="myChartMobile" width="100%" height="100%"></canvas>
+                </div>
+            </div>
+
+            <div id="mainRowCamputer">
+                <div class="row" style="margin-top: 8%;" url-endpoint="{% url 'api-data' %}">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <select class="browser-default custom-select" name="bank">
+                        <option value="0">{% if selected_source %} {{ selected_source }} {% else %} همه {% endif %}</option>
+                            {% for banks in bank %}
+                                <option value="{{ banks.id }}">{{ banks.name_bank }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
+                        <div class="md-form">
+                            <input placeholder="تاریخ" type="text" name="end_date" class="form-control jalali-datepicker" id="date" readonly="readonly" {% if end_date %} value="{{ end_date }}" {% endif %} >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <h4><span class="badge badge-primary" style="width: 100%; height: 100%; margin-top: 15%; font-family: bnazanin;">تا تاریخ</span></h4>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="md-form">
+                            <input placeholder="تاریخ" type="text" name="start_date" class="form-control jalali-datepicker" id="date" readonly="readonly" {% if start_date %} value="{{ start_date }}" {% endif %} >
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-default btn-rounded" style="width: 100%;">فیلتر کردن</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <h4><span class="badge badge-primary" style="width: 100%; height: 100%; margin-top: 5%; margin-right: 6px; font-family: bnazanin">  {{ sum|intcomma:False }} :مجموع</span></h4>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="row" style="margin-top: 10px;">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" onclick="showAll()" style="width: 100%;">نمایش جدول و نمودار</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-secondary" onclick="hideChart()" style="width: 100%;">نمایش نموداری</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default" onclick="hideTable()" style="width: 100%;">نمایش جدولی</button>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+                <div id="tableOfContents">
+                    <div class="row" style="margin-top: 3%; margin-bottom: 3%;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="table" class="table-editable">
+                                        <table class="table table-bordered table-responsive-md table-striped text-center">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">رقم</th>
+                                                <th class="text-center">تاریخ</th>
+                                                <th class="text-center">توضیحات</th>
+                                                <th class="text-center">عنوان</th>
+                                                <th class="text-center">نوع</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for transactions in reportArray %}
+                                                <tr>
+                                                    <td class="pt-3-half">{{ transactions.cash|intcomma:False }}</td>
+                                                    <td class="pt-3-half">{{ transactions.date|jdate:'%y/%m/%d' }}</td>
+                                                    <td class="pt-3-half">{{ transactions.desc }}</td>
+                                                    <td class="pt-3-half">{{ transactions.title }}</td>
+                                                    {% if transactions.type == 1 %}
+                                                        <td class="pt-3-half">درآمد</td>
+                                                    {% elif transactions.type == 2%}
+                                                        <td class="pt-3-half">هزینه</td>
+                                                    {% endif %}
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+                <div id="chartOfContents">
+                    <div class="row" style="margin-bottom: 3%; margin-top: 3%;">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <canvas style="color-rendering: blue;" id="myChart" width="100%" height="100%"></canvas>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'money/js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
+  <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
+  <script src="{% static 'money/js/daterangepicker-fa-ex.js' %}"></script>
+  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
+  <script type="text/javascript">
+		document.getElementById("mainRowCamputer").classList.toggle("hideAll");
+		document.getElementById("mainRowPhones").classList.toggle("showAll");
+  </script>
+  <script>
+        $(document).ready(function () {
+        var night;
+        var isRtl = true;
+        var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
+        var dateFrom = false ? moment("") : undefined;
+        var dateTo = false ? moment("") : undefined;
+        var $dateRanger = $("#dateRangePicker");
+
+        $dateRanger.daterangepicker({
+            clearLabel: 'Clear',
+            autoUpdateInput: !!(dateFrom && dateTo),
+            minDate: moment(),
+            autoApply: true,
+            opens: isRtl ? 'left' : 'right',
+            locale: {
+                separator: ' - ',
+                format: dateFormat
+            },
+            startDate: dateFrom,
+            endDate: dateTo,
+            jalaali: isRtl,
+            showDropdowns: true
+        }).on('apply.daterangepicker', function (ev, picker) {
+            night = picker.endDate.diff(picker.startDate, 'days');
+            if (night > 0) {
+                $(this).val(picker.startDate.format(dateFormat));
+                $('#dateRangePickerEnd').val(picker.endDate.format(dateFormat));
+            } else {
+                $(this).val('')
+            }
+        });
+
+
+        $('.ga-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            // autoUpdateInput: !!(dateFrom && dateTo),
+            //minDate: moment(),
+            autoApply: true,
+            opens: 'right',
+            singleDatePicker: true,
+            showDropdowns: true,
+            language: 'en'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $('.jalali-datepicker').daterangepicker({
+            clearLabel: 'Clear',
+            autoApply: true,
+            opens: 'left',
+            singleDatePicker: true,
+            showDropdowns: true,
+            jalaali: true,
+            language: 'fa'
+        }).on('apply.daterangepicker', function () {
+            $('.tooltip').hide();
+            $('.date-select').text($(this).val());
+        });
+
+        $(document).on('mouseover', '.daterangepicker .calendar td', function () {
+            var gagDate = $(this).attr('data-original-title');
+            $('.date-hover').text('');
+            $('.date-hover').text(gagDate);
+
+            $('[data-toggle="tooltip"]').tooltip()
+        });
+
+    });
+    </script>
+  <script>
+    var enpoint = '/money/api/data';
+    var defaultData =[];
+    var labels = [];
+    $.ajax({
+        method: "GET",
+        url: enpoint,
+        success: function (data) {
+            labels = data.labels;
+            defaultData = data.default;
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'حساب های شما',
+                        data: defaultData,
+                    }]
+                }
+            });
+        },
+        error: function (error_data) {
+            console.log("error")
+            console.log(error_data)
+        }
+    });
+  </script>
+  <script>
+    var enpoint = '/money/api/data';
+    var defaultData =[];
+    var labels = [];
+    $.ajax({
+        method: "GET",
+        url: enpoint,
+        success: function (data) {
+            labels = data.labels;
+            defaultData = data.default;
+            var ctx = document.getElementById('myChartMobile').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'حساب های شما',
+                        data: defaultData,
+                    }]
+                }
+            });
+        },
+        error: function (error_data) {
+            console.log("error");
+            console.log(error_data)
+        }
+    });
+  </script>
+  <script>
+    var chart = document.getElementById("chartOfContents");
+    var table = document.getElementById("tableOfContents");
+    chart.style.display = "none";
+    table.style.display = "none";
+
+    function hideTable() {
+        if (table.style.display === "none") {
+            table.style.display = "block";
+        } else {
+            table.style.display = "none";
+        }
+    }
+
+    function hideChart() {
+        if (chart.style.display === "none") {
+            chart.style.display = "block";
+        } else {
+            chart.style.display = "none";
+        }
+    }
+
+    function showAll() {
+        if (table.style.display === "none" && chart.style.display === "none") {
+            chart.style.display = "block";
+            table.style.display = "block";
+        } else {
+            chart.style.display = "none";
+            table.style.display = "none";
+        }
+    }
+  </script>
+  </body>
+</html>

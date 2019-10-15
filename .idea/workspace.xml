@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d9a7e5e-dabb-408a-8b8e-60d22eeee53a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/mypacket/settings.py" afterPath="$PROJECT_DIR$/mypacket/settings.py" />
+      <change beforePath="$PROJECT_DIR$/money/migrations/0001_initial.py" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="91" selection-end-column="3" />
+              <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="91" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -233,6 +233,12 @@
               <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
               <item name="myPacket" type="462c0819:PsiDirectoryNode" />
               <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -340,13 +346,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566711727246</updated>
-    </task>
-    <task id="LOCAL-00016" summary="اضافه کردن فوتر به کل برنامه">
-      <created>1566974442422</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1566974442422</updated>
     </task>
     <task id="LOCAL-00017" summary="کامل کردن فوتر">
       <created>1566974919137</created>
@@ -684,7 +683,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570294676482</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="اصلاح دیتا بیس">
+      <created>1571150435214</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1571150435215</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1028,7 +1034,7 @@
     <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="86" column="6" lean-forward="true" selection-start-line="86" selection-start-column="6" selection-end-line="91" selection-end-column="3" />
+          <caret line="86" column="6" lean-forward="false" selection-start-line="86" selection-start-column="6" selection-end-line="91" selection-end-column="3" />
           <folding />
         </state>
       </provider>

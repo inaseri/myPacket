@@ -93,9 +93,9 @@
                        <div class="col-12 col-md-12">
                            <div class="card">
                               <div class="card-body">
-                                      <p class="card-title" style="text-align: right; font-family: bnazanin;">عنوان: {{ transactions.title }}</p>
-                                      <p class="card-text" style="text-align: center; font-family: bnazanin;"> حساب: {{ transactions.source }}</p>
-                                      <p style="text-align: left; font-family: bnazanin;">{{ transactions.cash|intcomma:False }}</p>
+                                      <p class="card-title" style="text-align: right; font-family: bnazanin;">عنوان:{% if transactions.type == 1 %} (درآمد) {% elif transactions.type == 2 %}  (هزینه) {% endif %} {{ transactions.title }} </p>
+                                      <p class="card-text" style="text-align: center; font-family: bnazanin;"> حساب: {{ transactions.source }} {{ transactions.date|jdate:'%y/%m/%d' }}</p>
+                                      <p class="card-title" style="text-align: left; font-family: bnazanin;">{{ transactions.cash|intcomma:False }}</p>
                               </div>
                            </div>
                        </div>

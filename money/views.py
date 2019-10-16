@@ -199,9 +199,15 @@ def addTransaction(request, type):
             if int(type) == 1:
                 updateCash = cash + cashInBnak
                 Banks.objects.filter(name_bank=bank).update(cash_bank=updateCash)
+                print("cash is:", cash)
+                print("cash in bank is:", cashInBnak)
+                print("updated cash for income is:", updateCash)
             elif int(type) == 2:
-                updateCash = cash - cashInBnak
+                updateCash = cashInBnak - cash
                 Banks.objects.filter(name_bank=bank).update(cash_bank=updateCash)
+                print("cash is:", cash)
+                print("cash in bank is:", cashInBnak)
+                print("updated cash for cost is:", updateCash)
 
             context["saveTransaction"] = 4
         except:

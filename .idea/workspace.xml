@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d9a7e5e-dabb-408a-8b8e-60d22eeee53a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Bold.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Bold.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Bold.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Bold.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Light.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Light.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Light.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Light.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Medium.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Medium.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Medium.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Medium.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Regular.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Regular.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Regular.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Regular.woff2" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Thin.eot" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Thin.ttf" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Thin.woff" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/money/static/money/font/roboto/Roboto-Thin.woff2" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/mypacket/settings.py" afterPath="$PROJECT_DIR$/mypacket/settings.py" />
+      <change beforePath="$PROJECT_DIR$/money/templates/base.html" afterPath="$PROJECT_DIR$/money/templates/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,93 +39,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding>
-                <element signature="e#848#3207#0#HTML" expanded="false" />
-                <element signature="e#3210#4004#0#HTML" expanded="false" />
-                <element signature="e#4007#4808#0#HTML" expanded="false" />
-                <element signature="e#4811#5712#0#HTML" expanded="false" />
-                <element signature="n#for#0;n#!!top" expanded="false" />
-                <element signature="n#for#2;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transactions.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/templates/money/transactions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3069">
-              <caret line="276" column="11" lean-forward="false" selection-start-line="276" selection-start-column="11" selection-end-line="276" selection-end-column="11" />
-              <folding>
-                <element signature="e#848#3207#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddPage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/templates/money/AddPage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="16" />
-              <folding>
-                <element signature="n#if#0;n#!!top" expanded="false" />
-                <element signature="e#1474#3833#0#HTML" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/money/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/static/money/css/style.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="5" column="532" lean-forward="false" selection-start-line="5" selection-start-column="528" selection-end-line="5" selection-end-column="532" />
+            <state relative-caret-position="317">
+              <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -237,12 +135,12 @@
         <option value="$PROJECT_DIR$/money/templates/money/changeBank.html" />
         <option value="$PROJECT_DIR$/money/templates/money/AddPage.html" />
         <option value="$PROJECT_DIR$/money/templates/money/changeTransaction.html" />
-        <option value="$PROJECT_DIR$/money/templates/base.html" />
         <option value="$PROJECT_DIR$/money/templates/money/home.html" />
         <option value="$PROJECT_DIR$/money/templates/money/login.html" />
         <option value="$PROJECT_DIR$/money/templates/money/register.html" />
         <option value="$PROJECT_DIR$/money/templates/money/report.html" />
         <option value="$PROJECT_DIR$/money/templates/money/transactions.html" />
+        <option value="$PROJECT_DIR$/money/templates/base.html" />
       </list>
     </option>
   </component>
@@ -450,13 +348,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566711727246</updated>
-    </task>
-    <task id="LOCAL-00023" summary="کامل کردن صفحه خانه">
-      <created>1567325841874</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1567325841874</updated>
     </task>
     <task id="LOCAL-00024" summary="برداشتن اسکرول به چپ و راست صفحه خانه">
       <created>1567348367745</created>
@@ -794,7 +685,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571417917215</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="اضافه کردن فونت robot">
+      <created>1571418822270</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1571418822270</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -851,7 +749,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="تفییر در static url" />
     <MESSAGE value="تغییر در ریدارکت" />
     <MESSAGE value="اضافه کردن آموزش اپ به کل برنامه" />
     <MESSAGE value="رفع باگ مدال آموزش برنامه" />
@@ -876,7 +773,8 @@
     <MESSAGE value="تغییر در نحوه محاسبه هزینه کل و تغییر در آموزش برنامه" />
     <MESSAGE value="تغییر در دیتا بیس" />
     <MESSAGE value="تغییر در ساختار قالب ها" />
-    <option name="LAST_COMMIT_MESSAGE" value="تغییر در ساختار قالب ها" />
+    <MESSAGE value="اضافه کردن فونت robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="اضافه کردن فونت robot" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -885,13 +783,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="43" column="118313" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="43" selection-end-column="178907" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/static/money/css/mdb.lite.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -1101,26 +992,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="180">
+          <caret line="5" column="532" lean-forward="false" selection-start-line="5" selection-start-column="528" selection-end-line="5" selection-end-column="532" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding>
-            <element signature="e#848#3207#0#HTML" expanded="false" />
-            <element signature="e#3210#4004#0#HTML" expanded="false" />
-            <element signature="e#4007#4808#0#HTML" expanded="false" />
-            <element signature="e#4811#5712#0#HTML" expanded="false" />
-            <element signature="n#for#0;n#!!top" expanded="false" />
-            <element signature="n#for#2;n#!!top" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,42 +1045,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding>
+            <element signature="e#848#3207#0#HTML" expanded="false" />
+            <element signature="e#3210#4004#0#HTML" expanded="false" />
+            <element signature="e#4007#4808#0#HTML" expanded="false" />
+            <element signature="e#4811#5712#0#HTML" expanded="false" />
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/static/my-app-icone.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/money/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/static/money/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="5" column="532" lean-forward="false" selection-start-line="5" selection-start-column="528" selection-end-line="5" selection-end-column="532" />
+        <state relative-caret-position="317">
+          <caret line="18" column="2" lean-forward="false" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
           <folding />
         </state>
       </provider>

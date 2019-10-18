@@ -1,29 +1,19 @@
-<!DOCTYPE html>
+{%  extends "base.html" %}
 {% load static %}
-{% load pwa %}
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="HandheldFriendly" content="true" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>جیب من</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+{% block title %}
+     تمامی حساب ها
+{% endblock %}
+{% block css %}{% endblock %}
+{% block js %}
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-  <!-- Bootstrap core CSS -->
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
-  {% progressive_web_app_meta %}
-</head>
-
-<body style="background-color: #f1f1f1;">
+  <script>
+      {% if firstLoad %}
+          $('#centralModalSuccess').modal('show');
+      {% endif %}
+  </script>
+{% endblock %}
+{% block body %}
 
 
 <!-- Central Modal Medium Success -->
@@ -259,25 +249,4 @@
         </form>
     </div>
 </div>
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
-  <script type="text/javascript">
-      document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-      document.getElementById("mainRowPhones").classList.toggle("showAll")
-  </script>
-  <script>
-      {% if firstLoad %}
-          $('#centralModalSuccess').modal('show');
-      {% endif %}
-  </script>
-
-</body>
-</html>
+{% endblock %}

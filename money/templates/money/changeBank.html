@@ -1,37 +1,19 @@
-<!DOCTYPE html>
+{%  extends "base.html" %}
 {% load static %}
-{% load pwa %}
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="HandheldFriendly" content="true" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>ویرایش حساب بانکی</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+{% block title %}
+     تمامی حساب ها
+{% endblock %}
+{% block css %}{% endblock %}
+{% block js %}
   <script>
-    $("#type").submit(function () {
-    });
     {% if saveBank == 1 %}
-        alert("حساب شما با موفقیت ذخیره شد");
+        alert("حساب شما با موفقیت به روز رسانی شد");
     {% elif saveBank == 0 %}
         alert("نام حساب را وارد نکردید، لطفا مجددا تلاش کنید")
     {% endif %}
   </script>
-  {% progressive_web_app_meta %}
-</head>
-
-<body style="background-color: #f1f1f1;">
-<!--Main Navigation-->
+{% endblock %}
+{% block body %}
 
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
@@ -93,21 +75,4 @@
         </div>
     </form>
 </div>
-
-  <!--JavaScript at end of body for optimized loading-->
-  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
-  <script type="text/javascript">
-		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-		document.getElementById("mainRowPhones").classList.toggle("showAll")
-  </script>
-  </body>
-</html>
+{% endblock %}

@@ -1,35 +1,22 @@
-<!DOCTYPE html>
+{%  extends "base.html" %}
 {% load static %}
-{% load pwa %}
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="HandheldFriendly" content="true" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>تغییر تراکنش</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
+{% block title %}
+     تمامی حساب ها
+{% endblock %}
+{% block css %}
   <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
   <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
+{% endblock %}
+{% block js %}
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script>
-    $("#type").submit(function () {
-    });
     {% if saveTransaction == 2 %}
         alert("لطفا یک عنوان برای تراکنش خود بنویسید");
     {% elif saveTransaction == 3 %}
         alert("رقم تراکنش خود را مشخص کنید");
     {% elif saveTransaction == 4 %}
-        alert("تراکنش شما با موفقیت به روز رسانی شد");
+        alert("تراکنش شما با موفقیت ذخیره شد");
     {% endif %}
     $(document).ready(function () {
         $("#submit").click(function () {
@@ -43,88 +30,6 @@
         });
     });
   </script>
-  {% progressive_web_app_meta %}
-</head>
-
-  <body style="background-color: #f1f1f1;">
-    <!--Main Navigation-->
-
-    <header>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
-        <a class="navbar-brand" onclick="window.history.back()" style="color: white;">
-            <img src="{% static 'iconfinder-icon.svg' %}" style="height: 35px; width: 35px;">
-            <strong style="font-family: bnazanin; margin-left: -10px;">برگشت</strong>
-        </a>
-      </nav>
-    </header>
-    <div class="container-fluid">
-        {% load humanize %}
-        <form method="post" id="type">
-            {% csrf_token %}
-            <div class="row" style="margin-top: 20%;">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <select name="bank" id="selBank" class="browser-default custom-select">
-                    <option value="{{ bank }}" type="text">{{ bank }}</option>
-                    {% for bank in banks %}
-                         <option value="{{ bank.name_bank }}">{{ bank.name_bank }}</option>
-                    {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row" style="margin-top: 2%;">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <div class="md-form">
-                        <input placeholder="تاریخ" type="text" name="date" class="form-control jalali-datepicker" id="date" value="{{ date }}">
-                    </div>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row" style="margin-top: 2%;">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <input placeholder="عنوان مبادله" type="text" name="title" class="form-control" id="title" value="{{ title }}">
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row" style="margin-top: 2%;">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <input placeholder="رقم مبادله" type="text" pattern="[0-9]*" step=1.0 inputmode="numeric" id="cashInBank" name="cash" class="form-control" value="{{ cash }}">
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row" style="margin-top: 2%;">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                    <input placeholder="توضیحات" type="text" name="desc" class="form-control" id="desc" value="{{ desc }}">
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-            <div class="row" style="margin-top: 2%; margin-left: 1px;">
-                <div class="col-md-4"></div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-default" id="submit" name="update" style="width: 100%;">ذخیره</button>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-danger" id="submit" name="delete" style="width: 100%;">حذف</button>
-                </div>
-                <div class="col-md-4"></div>
-            </div>
-        </form>
-    </div>
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'money/js/jquery-3.4.1.min.js' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
   <script src="{% static 'money/js/moment-jalaali.js' %}"></script>
@@ -201,9 +106,72 @@
     });
   </script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
-  <script type="text/javascript">
-		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-		document.getElementById("mainRowPhones").classList.toggle("showAll")
-  </script>
-  </body>
-</html>
+{% endblock %}
+{% block body %}
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
+        <a class="navbar-brand" onclick="window.history.back()" style="color: white;">
+            <img src="{% static 'iconfinder-icon.svg' %}" style="height: 35px; width: 35px;">
+            <strong style="font-family: bnazanin; margin-left: -10px;">برگشت</strong>
+        </a>
+      </nav>
+    </header>
+    <div class="container-fluid">
+        {% load humanize %}
+        <form method="post" id="type">
+            {% csrf_token %}
+            <div class="row" style="margin-top: 20%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <select name="bank" id="selBank" class="browser-default custom-select">
+                    <option value="{{ bank }}" type="text">{{ bank }}</option>
+                    {% for bank in banks %}
+                         <option value="{{ bank.name_bank }}">{{ bank.name_bank }}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="md-form">
+                        <input placeholder="تاریخ" type="text" name="date" class="form-control jalali-datepicker" id="date" value="{{ date }}">
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="عنوان مبادله" type="text" name="title" class="form-control" id="title" value="{{ title }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="رقم مبادله" type="text" pattern="[0-9]*" step=1.0 inputmode="numeric" id="cashInBank" name="cash" class="form-control" value="{{ cash }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%;">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <input placeholder="توضیحات" type="text" name="desc" class="form-control" id="desc" value="{{ desc }}">
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row" style="margin-top: 2%; margin-left: 1px;">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-default" id="submit" name="update" style="width: 100%;">ذخیره</button>
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-danger" id="submit" name="delete" style="width: 100%;">حذف</button>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

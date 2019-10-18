@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d9a7e5e-dabb-408a-8b8e-60d22eeee53a" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/money/templates/base.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/AddPage.html" afterPath="$PROJECT_DIR$/money/templates/money/AddPage.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/addBank.html" afterPath="$PROJECT_DIR$/money/templates/money/addBank.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/banks.html" afterPath="$PROJECT_DIR$/money/templates/money/banks.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/changeBank.html" afterPath="$PROJECT_DIR$/money/templates/money/changeBank.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/changeTransaction.html" afterPath="$PROJECT_DIR$/money/templates/money/changeTransaction.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/home.html" afterPath="$PROJECT_DIR$/money/templates/money/home.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/login.html" afterPath="$PROJECT_DIR$/money/templates/money/login.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/register.html" afterPath="$PROJECT_DIR$/money/templates/money/register.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/report.html" afterPath="$PROJECT_DIR$/money/templates/money/report.html" />
+      <change beforePath="$PROJECT_DIR$/money/templates/money/transactions.html" afterPath="$PROJECT_DIR$/money/templates/money/transactions.html" />
       <change beforePath="$PROJECT_DIR$/mypacket/settings.py" afterPath="$PROJECT_DIR$/mypacket/settings.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,54 +31,10 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/money/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="205" column="46" lean-forward="false" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
+            <state relative-caret-position="794">
+              <caret line="502" column="27" lean-forward="false" selection-start-line="502" selection-start-column="16" selection-end-line="502" selection-end-column="27" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="2" selection-end-line="91" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/templates/money/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="54" column="199" lean-forward="false" selection-start-line="54" selection-start-column="199" selection-end-line="54" selection-end-column="199" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="97" column="60" lean-forward="false" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
-              <folding>
-                <element signature="n#for#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#for#2;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -76,19 +43,95 @@
       <file leaf-file-name="banks.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="45" column="103" lean-forward="false" selection-start-line="45" selection-start-column="103" selection-end-line="45" selection-end-column="103" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
+      <file leaf-file-name="report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding>
+                <element signature="e#848#3207#0#HTML" expanded="false" />
+                <element signature="e#3210#4004#0#HTML" expanded="false" />
+                <element signature="e#4007#4808#0#HTML" expanded="false" />
+                <element signature="e#4811#5712#0#HTML" expanded="false" />
+                <element signature="n#for#0;n#!!top" expanded="false" />
+                <element signature="n#for#2;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transactions.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/transactions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1664">
+              <caret line="276" column="11" lean-forward="false" selection-start-line="276" selection-start-column="11" selection-end-line="276" selection-end-column="11" />
+              <folding>
+                <element signature="e#848#3207#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddPage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/AddPage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="16" />
+              <folding>
+                <element signature="n#if#0;n#!!top" expanded="false" />
+                <element signature="e#1474#3833#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="register.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templates/money/register.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="n#block#1;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Iman.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/money/templatetags/Iman.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-              <folding />
+              <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,8 +176,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/money/templatetags/Iman.py" />
-        <option value="$PROJECT_DIR$/money/templatetags/__init__.py" />
         <option value="$PROJECT_DIR$/money/templates/money/MainAdd.html" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/money/static/money/materialize.min.css" />
@@ -154,7 +195,6 @@
         <option value="$PROJECT_DIR$/money/static/money/js/moment-jalaali.js" />
         <option value="$PROJECT_DIR$/money/static/money/js/daterangepicker-fa.js" />
         <option value="$PROJECT_DIR$/money/static/money/js/moment.min.js" />
-        <option value="$PROJECT_DIR$/money/templates/money/transactions.html" />
         <option value="$PROJECT_DIR$/money/templates/money/password_reset_done.html" />
         <option value="$PROJECT_DIR$/money/templates/money/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/money/templates/money/password_reset_complete.html" />
@@ -162,8 +202,6 @@
         <option value="$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt.html" />
         <option value="$PROJECT_DIR$/money/templates/registration/password_reset_confirm.html" />
         <option value="$PROJECT_DIR$/mypacket/urls.py" />
-        <option value="$PROJECT_DIR$/money/templates/money/register.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/login.html" />
         <option value="$PROJECT_DIR$/money/templates/money/password_reset_form.html" />
         <option value="$PROJECT_DIR$/money/templates/registration/password_change.html" />
         <option value="$PROJECT_DIR$/money/templates/registration/password_change_done.html" />
@@ -173,17 +211,22 @@
         <option value="$PROJECT_DIR$/money/templates/registration/password_reset_form.html" />
         <option value="$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt" />
         <option value="$PROJECT_DIR$/money/forms.py" />
-        <option value="$PROJECT_DIR$/money/templates/money/AddPage.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/addBank.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/changeBank.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/changeTransaction.html" />
         <option value="$PROJECT_DIR$/money/static/money/css/style.css" />
         <option value="$PROJECT_DIR$/money/urls.py" />
-        <option value="$PROJECT_DIR$/money/templates/money/banks.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/home.html" />
-        <option value="$PROJECT_DIR$/money/templates/money/report.html" />
         <option value="$PROJECT_DIR$/money/views.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/base.html" />
         <option value="$PROJECT_DIR$/mypacket/settings.py" />
+        <option value="$PROJECT_DIR$/money/templates/money/banks.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/addBank.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/changeBank.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/AddPage.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/changeTransaction.html" />
+        <option value="$PROJECT_DIR$/money/templates/base.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/home.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/login.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/register.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/report.html" />
+        <option value="$PROJECT_DIR$/money/templates/money/transactions.html" />
       </list>
     </option>
   </component>
@@ -193,7 +236,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -212,7 +255,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -257,6 +299,14 @@
               <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
               <item name="myPacket" type="462c0819:PsiDirectoryNode" />
               <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -265,6 +315,12 @@
               <item name="money" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="money" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
+              <item name="myPacket" type="462c0819:PsiDirectoryNode" />
+              <item name="money" type="462c0819:PsiDirectoryNode" />
+              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="myPacket" type="b2602c69:ProjectViewProjectNode" />
@@ -275,6 +331,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -286,11 +343,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/money/templates" />
       <recent name="$PROJECT_DIR$/money/static" />
       <recent name="$PROJECT_DIR$/money/templates/money" />
       <recent name="$PROJECT_DIR$/money/static/money" />
       <recent name="$PROJECT_DIR$/money/static/money/js" />
-      <recent name="$PROJECT_DIR$/money/static/money/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -342,13 +399,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566711727246</updated>
-    </task>
-    <task id="LOCAL-00021" summary="رفع باگ از صفحه افزودن و مشاهده همه و تغییر در یو ار ال و تبدیل سشن به انتقال اطلاعات  از راه یو ار ال">
-      <created>1567008203038</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1567008203038</updated>
     </task>
     <task id="LOCAL-00022" summary="ساخت مجدد صفحه خانه">
       <created>1567267987829</created>
@@ -686,26 +736,32 @@
       <option name="project" value="LOCAL" />
       <updated>1571233584737</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="تغییر در دیتا بیس">
+      <created>1571233614780</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1571233614780</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -714,6 +770,28 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291262" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22708334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282353" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -738,7 +816,6 @@
     <MESSAGE value="تغییر رقم ها از تکست به integer و جدا کننده رقم ها" />
     <MESSAGE value="رفع باگ بازیابی رمز عبور با ایمیل" />
     <MESSAGE value="برگرداندن اخرین تغییرات" />
-    <MESSAGE value="تغییر در دیتا بیس" />
     <MESSAGE value="تغییر در هاست" />
     <MESSAGE value="تغییر در ستینگ ارسال ایمیل" />
     <MESSAGE value="حذف جداکننده ارقام" />
@@ -747,7 +824,8 @@
     <MESSAGE value="حذف db.sqlite اضافی" />
     <MESSAGE value="حذف init های اضافی" />
     <MESSAGE value="تغییر در نحوه محاسبه هزینه کل و تغییر در آموزش برنامه" />
-    <option name="LAST_COMMIT_MESSAGE" value="تغییر در نحوه محاسبه هزینه کل و تغییر در آموزش برنامه" />
+    <MESSAGE value="تغییر در دیتا بیس" />
+    <option name="LAST_COMMIT_MESSAGE" value="تغییر در دیتا بیس" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -756,14 +834,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/money/static/money/style.css" />
-    <entry file="file://$PROJECT_DIR$/newenv/lib/python3.7/site-packages/django/contrib/admin/static/admin/js/vendor/jquery/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="10198" column="10" lean-forward="true" selection-start-line="10198" selection-start-column="10" selection-end-line="10198" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/static/money/materialize.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1319">
@@ -876,21 +946,7 @@
     <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_email.html" />
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_confirm.html" />
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_subject.txt.html" />
-    <entry file="file://$PROJECT_DIR$/money/templates/money/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="40" column="29" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/templates/money/password_reset_form.html" />
-    <entry file="file://$PROJECT_DIR$/money/templates/money/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="106" column="34" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="138" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_change.html" />
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_done.html" />
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_complete.html" />
@@ -906,34 +962,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/money/templates/registration/password_reset_email.html" />
     <entry file="file://$PROJECT_DIR$/money/forms.py" />
-    <entry file="file://$PROJECT_DIR$/money/templates/money/AddPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="198" column="11" lean-forward="false" selection-start-line="198" selection-start-column="11" selection-end-line="198" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/addBank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="110" column="11" lean-forward="false" selection-start-line="110" selection-start-column="11" selection-end-line="110" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/changeBank.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1926">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/changeTransaction.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3708">
-          <caret line="206" column="11" lean-forward="false" selection-start-line="206" selection-start-column="11" selection-end-line="206" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/static/ic-bank.svg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -942,13 +970,6 @@
     <entry file="file://$PROJECT_DIR$/money/static/ic-income.svg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/transactions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="32" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="306" selection-end-column="7" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/money/urls.py">
@@ -969,57 +990,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="45" column="103" lean-forward="false" selection-start-line="45" selection-start-column="103" selection-end-line="45" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/money/static/money/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="101" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/changeBank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-529">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/addBank.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/changeTransaction.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="176" column="11" lean-forward="false" selection-start-line="176" selection-start-column="11" selection-end-line="176" selection-end-column="11" />
+          <folding>
+            <element signature="n#if#0;n#!!top" expanded="false" />
+            <element signature="e#1521#3819#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/money/templates/money/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="54" column="199" lean-forward="false" selection-start-line="54" selection-start-column="199" selection-end-line="54" selection-end-column="199" />
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+    <entry file="file://$PROJECT_DIR$/money/templatetags/Iman.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="97" column="60" lean-forward="false" selection-start-line="97" selection-start-column="60" selection-end-line="97" selection-end-column="60" />
+        <state relative-caret-position="144">
+          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
           <folding>
-            <element signature="n#for#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#0;n#div#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#for#2;n#!!top" expanded="false" />
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="16" lean-forward="true" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="n#block#1;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/money/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="205" column="46" lean-forward="false" selection-start-line="205" selection-start-column="46" selection-end-line="205" selection-end-column="46" />
+        <state relative-caret-position="794">
+          <caret line="502" column="27" lean-forward="false" selection-start-line="502" selection-start-column="16" selection-end-line="502" selection-end-column="27" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mypacket/settings.py">
+    <entry file="file://$PROJECT_DIR$/money/templates/money/banks.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="2" selection-end-line="91" selection-end-column="3" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding>
+            <element signature="e#848#3207#0#HTML" expanded="false" />
+            <element signature="e#3210#4004#0#HTML" expanded="false" />
+            <element signature="e#4007#4808#0#HTML" expanded="false" />
+            <element signature="e#4811#5712#0#HTML" expanded="false" />
+            <element signature="n#for#0;n#!!top" expanded="false" />
+            <element signature="n#for#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/AddPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="109" selection-end-column="16" />
+          <folding>
+            <element signature="n#if#0;n#!!top" expanded="false" />
+            <element signature="e#1474#3833#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/money/templates/money/transactions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1664">
+          <caret line="276" column="11" lean-forward="false" selection-start-line="276" selection-start-column="11" selection-end-line="276" selection-end-column="11" />
+          <folding>
+            <element signature="e#848#3207#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

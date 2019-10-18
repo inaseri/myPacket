@@ -1,0 +1,40 @@
+<!DOCTYPE html>{% load static %}{% load pwa %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>{% block title %}{%  endblock %}</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
+{% block css %}{% endblock %}
+  {% progressive_web_app_meta %}
+</head>
+
+  <body style="background-color: #f1f1f1;">
+{% block body %}{% endblock %}
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="{% static 'money/js/jquery-3.4.1.min.js' %}"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
+  <script type="text/javascript">
+      document.getElementById("mainRowCamputer").classList.toggle("hideAll");
+      document.getElementById("mainRowPhones").classList.toggle("showAll");
+  </script>
+  {%  block js %}{% endblock %}
+  </body>
+</html>

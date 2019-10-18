@@ -1,43 +1,13 @@
-<!DOCTYPE html>
+{%  extends "base.html" %}
 {% load static %}
-{% load pwa %}
-{% load Iman %}
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="HandheldFriendly" content="true" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>ثبت نام</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <!-- Bootstrap core CSS -->
-  <link href="{% static 'money/css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href=" {% static 'money/css/mdb.min.css' %}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="{% static 'money/css/style.css' %}" rel="stylesheet">
-  <link href="{% static 'money/daterangepicker.css' %}" rel="stylesheet" type="text/css" media="all" />
-  <link href="{% static 'money/datepicker-theme.css' %}" rel="stylesheet" type="text/css" media="all"  />
-  <script>
-    $("#save").submit(function () {
-    });
-    {% if success == 1 %}
-        alert("لطفا یک عنوان برای تراکنش خود بنویسید");
-    {% elif success == 2 %}
-        alert("رقم تراکنش خود را مشخص کنید");
-    {% endif %}
-  </script>
-  {% progressive_web_app_meta %}
-</head>
-
-<body style="background-color: #f1f1f1;">
-
-<!--Main Navigation-->
-
-
+{% block title %}
+     تمامی حساب ها
+{% endblock %}
+{% block css %}
+    <style>.fas{color:black !important;}</style>
+{% endblock %}
+{% block js %}{% endblock %}
+{% block body %}
 <header>
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark default-color scrolling-navbar">
     <a class="navbar-brand" href="{% url 'index' %}"><strong>My Packet</strong></a>
@@ -118,21 +88,4 @@
           </div>
       </form>
     </div>
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'money/js/' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'money/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'money/js/mdb.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
-  <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}" ></script>
-  <script type="text/javascript">
-		document.getElementById("mainRowCamputer").classList.toggle("hideAll")
-		document.getElementById("mainRowPhones").classList.toggle("showAll")
-  </script>
-  </body>
-</html>
+{% endblock %}

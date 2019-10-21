@@ -91,16 +91,16 @@ WSGI_APPLICATION = 'mypacket.wsgi.application'
 #    }
 #}
 #
- DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'inaseri_jibeman',
-         'USER': 'inaseri_jibeman',
-         'PASSWORD': 'hER7g0@jG*FZ',
-         'HOST': '127.0.0.1',
-         'PORT': '',
-     }
+DATABASES = {
+ 'default': {
+     'ENGINE': 'django.db.backends.mysql',
+     'NAME': 'inaseri_jibeman',
+     'USER': 'inaseri_jibeman',
+     'PASSWORD': 'hER7g0@jG*FZ',
+     'HOST': '127.0.0.1',
+     'PORT': '',
  }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

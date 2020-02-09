@@ -104,7 +104,7 @@ WSGI_APPLICATION = 'mypacket.wsgi.application'
 #  }
 # }
 
-ATABASES = {
+DATABASES = {
  'default': {
      'ENGINE': 'django.db.backends.mysql',
      'NAME': 'inaseri_jibeman',

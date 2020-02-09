@@ -26,7 +26,7 @@ SECRET_KEY = 'ox5@xlm^j9ii52f8kuw0b1%k&4mp9z3-j5icg#j&d(yc$7l*6u'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.1.28','172.16.1.191','127.0.0.1','0.0.0.0','jibeman.inaseri.ir','192.168.1.22','172.16.1.225']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,14 +84,27 @@ WSGI_APPLICATION = 'mypacket.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 #
+
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #    }
 #}
-#
-DATABASES = {
+
+# for alulbayt system
+# DATABASES = {
+#  'default': {
+#      'ENGINE': 'django.db.backends.mysql',
+#      'NAME': 'inaseri_jibeman',
+#      'USER': 'root',
+#      'PASSWORD': 'Iman.3802',
+#      'HOST': '127.0.0.1',
+#      'PORT': '',
+#  }
+# }
+
+ATABASES = {
  'default': {
      'ENGINE': 'django.db.backends.mysql',
      'NAME': 'inaseri_jibeman',
@@ -101,6 +114,7 @@ DATABASES = {
      'PORT': '',
  }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -143,9 +157,9 @@ PWA_APP_DESCRIPTION = "مدیریت هزینه ها بدون هزینه"
 PWA_APP_THEME_COLOR = '#0A0302'
 PWA_APP_BACKGROUND_COLOR = '#ffffff'
 PWA_APP_DISPLAY = 'standalone'
-PWA_APP_SCOPE = '/money',
+PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'any'
-PWA_APP_START_URL = '/money'
+PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
 {
 'src': '/static/my-app-icone.png',

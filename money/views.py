@@ -47,7 +47,7 @@ def index(requset,type):
 
     # this loop calculate sum of transactions just in one type
     for transaction in transactions:
-        cash = transaction.cash
+        cash = int(transaction.cash)
         sum = cash + sum
     context['sumOfType'] = sum
 
@@ -125,6 +125,7 @@ def changeTransaction(request,id):
 
         bank = Banks.objects.get(name_bank=request.POST.get("bank"))
         try:
+            cash = int(cash.replace(',', ''))
             Transactions.objects.filter(id=id).update(title=title, cash=cash, desc=desc, source=bank)
             context["saveTransaction"] = 4
             messages.error(request, 'تراکنش شما به موفقیت به روز رسانی شد')
@@ -173,12 +174,14 @@ def addTransaction(request, type):
                 context["saveTransaction"] = 2
 
             cash = request.POST.get("cash")
+
             if cash == "":
                 context["saveTransaction"] = 3
                 print("cash is: ", cash)
+            cash = int(cash.replace(',', ''))
 
             desc = request.POST.get("desc")
-            if desc == "":
+            if desc is None and desc == "":
                 desc = "بدون توضیحات"
             bank = Banks.objects.get(name_bank=request.POST.get("bank"))
             date = request.POST.get("date")
@@ -186,7 +189,7 @@ def addTransaction(request, type):
             date = stringToDate(date)
 
             # this line use for save data in database
-            Transactions(source=bank, date=date, title=title, cash=cash, desc=desc, type=type_transaction, owner=request.user).save()
+            Transactions(source=bank, date=date, title=title, cash=int(cash), desc=desc, type=type_transaction, owner=request.user).save()
 
             selectedBank = Banks.objects.filter(name_bank=bank)
 
@@ -239,6 +242,7 @@ def addBank(request, type):
                 context["saveBank"] = 1
                 messages.error(request, 'حساب شما با موفقیت ذخیره شد')
             else:
+                cashOfBank = int(cashOfBank.replace(',', ''))
                 Banks(name_bank=nameOfBank, cash_bank=cashOfBank,owner=request.user).save()
                 context["saveBank"] = 1
                 messages.error(request, 'حساب شما با موفقیت ذخیره شد')
@@ -289,6 +293,7 @@ def changeBank(request,id):
                 messages.error(request, 'حساب شما با موفقیت به روز رسانی شد')
                 return HttpResponseRedirect(reverse('banks', kwargs={'type': 3}))
             else:
+                cashOfBank = cashOfBank.replace(',', '')
                 Banks.objects.filter(id=id).update(name_bank=nameOfBank, cash_bank=cashOfBank)
                 context["saveBank"] = 1
                 messages.error(request, 'حساب شما با موفقیت به روز رسانی شد')
@@ -299,6 +304,7 @@ def changeBank(request,id):
 
 
     return render(request,'money/changeBank.html', context)
+
 
 def clogin(request):
     context = {}
@@ -315,7 +321,7 @@ def clogin(request):
         if user is not None:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(request.GET.get("get","/money"))
+                return HttpResponseRedirect(request.GET.get("get","/"))
             else:
                 print("The Username Or Password is incorrect!")
     return render(request, 'money/login.html', context)
@@ -325,7 +331,7 @@ def clogin(request):
 def clogout(request):
     if request.user.is_authenticated:
         logout(request)
-        return HttpResponseRedirect(request.GET.get("next","/money"))
+        return HttpResponseRedirect(request.GET.get("next",""))
 
 
 def register(request):
@@ -349,7 +355,7 @@ def register(request):
     return render(request, 'money/register.html',context)
 
 
-@login_required(login_url=r'accounts/login')
+@login_required
 def homePage(requset):
     context = {}
 

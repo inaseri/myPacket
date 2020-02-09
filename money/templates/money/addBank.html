@@ -4,15 +4,7 @@
      تمامی حساب ها
 {% endblock %}
 {% block css %}{% endblock %}
-{% block js %}
-  <script>
-    {% if saveBank == 1 %}
-        alert("حساب شما با موفقیت ذخیره شد");
-    {% elif saveBank == 0 %}
-        alert("نام حساب را وارد نکردید، لطفا مجددا تلاش کنید");
-    {% endif %}
-  </script>
-{% endblock %}
+
 {% block body %}
 <!--Main Navigation-->
 <header>
@@ -62,7 +54,7 @@
             </div>
             <div class="col-md-3">
                 <div class="md-form">
-                    <input placeholder="رقم حساب" type="text" pattern="[0-9]*" step=1.0 inputmode="numeric" id="cashInBank" name="cashInBank" class="form-control">
+                    <input placeholder="رقم حساب" type="tel"  step=1.0  id="cashInBank" name="cashInBank" class="form-control number">
                 </div>
             </div>
             <div class="col-md-3"></div>
@@ -76,4 +68,23 @@
         </div>
     </form>
 </div>
+
+{% block js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script>
+        $('input.number').keyup(function(event) {
+
+          // skip for arrow keys
+          if(event.which >= 37 && event.which <= 40) return;
+
+          // format number
+          $(this).val(function(index, value) {
+            return value
+            .replace(/\D/g, "")
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            ;
+          });
+        });
+    </script>
+{% endblock %}
 {% endblock %}

@@ -105,6 +105,21 @@
 
     });
   </script>
+  <script>
+        $('input.number').keyup(function(event) {
+
+          // skip for arrow keys
+          if(event.which >= 37 && event.which <= 40) return;
+
+          // format number
+          $(this).val(function(index, value) {
+            return value
+            .replace(/\D/g, "")
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+            ;
+          });
+        });
+    </script>
   <script type="text/javascript" src="{% static 'money/js/moment.min.js' %}"></script>
 {% endblock %}
 {% block body %}
@@ -153,7 +168,7 @@
             <div class="row" style="margin-top: 2%;">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <input placeholder="رقم مبادله" type="text" pattern="[0-9]*" step=1.0 inputmode="numeric" name="cash" class="form-control" id="cash">
+                    <input placeholder="رقم مبادله" type="tel" step=1.0 inputmode="numeric" name="cash" class="form-control number" id="cash">
                 </div>
                 <div class="col-md-4"></div>
             </div>

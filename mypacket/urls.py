@@ -20,8 +20,8 @@ from django.conf.urls import url
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path('money/',include('money.urls')),
+    path('',include('money.urls')),
     path('admin/', admin.site.urls),
-    url(r'^$',RedirectView.as_view(url='money/', permanent=False)),
+    # url(r'^$',RedirectView.as_view(url='money/', permanent=False)),
     url('', include('pwa.urls')),
 ]
